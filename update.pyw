@@ -30,8 +30,8 @@ for cmd in commands:
         break
 
 # 切换到 Hexo 文章目录，并执行 Hexo 命令
-print(hexoPostDir)
 os.chdir(hexoPostDir)
+print(os.getcwd())
 
 hexoCommands = [
     ["hexo", "g", "-d"]
