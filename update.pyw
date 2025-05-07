@@ -39,7 +39,9 @@ hexoCommands = [
 
 for cmd in hexoCommands:
     print(f"\n>> 正在执行: {' '.join(cmd)}")
-    result = subprocess.run(cmd)
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if result.returncode != 0:
         print("出错，停止执行。")
+        print("标准输出:", result.stdout)
+        print("标准错误:", result.stderr)
         break
