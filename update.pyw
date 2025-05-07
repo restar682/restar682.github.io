@@ -1,5 +1,8 @@
 import subprocess
 import sys
+import os
+
+os.chdir(r"F:\myBlog\restar682.github.io")
 
 # 获取 commit message（默认为 "update"）
 commit_msg = "update"
