@@ -31,7 +31,7 @@ for cmd in commands:
 
 # 切换到 Hexo 文章目录，并执行 Hexo 命令
 os.chdir(hexoPostDir)
-print(os.getcwd())
+# print(os.getcwd())
 
 hexoCommands = [
     ["hexo", "g", "-d"]
