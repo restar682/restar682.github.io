@@ -24,7 +24,7 @@ commands = [
 
 for cmd in commands:
     print(f"\n>> 正在执行: {' '.join(cmd)}")
-    result = subprocess.run(cmd, shell=True)
+    result = subprocess.run(cmd)
     if result.returncode != 0:
         print("出错，停止执行。")
         break
