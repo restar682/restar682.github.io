@@ -50,3 +50,5 @@ hexoCommands = [
 for cmd in hexoCommands:
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True, encoding='utf-8')
     print(f"\n>> 正在执行: {' '.join(cmd)}")
+
+print("\n✅ 全部完成！")
