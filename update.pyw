@@ -26,6 +26,10 @@ for cmd in commands:
     print(f"\n>> 正在执行: {' '.join(cmd)}")
     result = subprocess.run(cmd, capture_output=True, text=True)
 
+    # 打印命令输出（可选）
+    print(result.stdout)
+    print(result.stderr)
+
     # 检查 commit 是否没有内容
     if cmd[1] == "commit" and "nothing to commit" in result.stdout:
         print("没有要提交的内容，停止执行。")
