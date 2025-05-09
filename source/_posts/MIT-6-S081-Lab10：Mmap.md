@@ -1,6 +1,6 @@
 ---
 title: MIT-6-S081-Lab10：Mmap
-description: Lab10 要求实现简化版的 `mmap` 系统调用，将文件映射到用户空间，并支持将修改写回磁盘。
+description: Lab10 要求实现简化版的 mmap 系统调用，将文件映射到用户空间，并支持将修改写回磁盘。
 date: 2025-05-06 14:22:28
 categories: 6.s081
 tags: [操作系统, 文件系统, 陷阱指令, 缺页异常, Linux, 6.s081]
