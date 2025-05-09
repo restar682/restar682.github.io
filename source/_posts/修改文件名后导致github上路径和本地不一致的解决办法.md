@@ -1,5 +1,6 @@
 ---
 title: 修改文件名后导致github上路径和本地不一致的解决办法
+description: 其实不只是修改文件名，有什么与本地预览不一样的都可以这么搞）
 date: 2025-05-07 00:04:32
 tags: [DEBUG, git]
 categories: DEBUG

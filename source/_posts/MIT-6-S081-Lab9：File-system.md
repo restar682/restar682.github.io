@@ -1,5 +1,6 @@
 ---
 title: MIT-6-S081-Lab9：File system
+description: Lab9 就是要扩展 XV6 文件系统，使得支持大文件与符号链接功能。
 date: 2025-04-29 22:27:20
 categories: 6.s081
 tags: [操作系统, 文件系统, Linux, 6.s081]

@@ -1,5 +1,6 @@
 ---
 title: PS版权警告解决方案
+description: PS有的时候真的很烦……
 date: 2025-04-22 00:04:46
 tags: [DEBUG, 网络, PS, 绘画]
 categories: DEBUG
