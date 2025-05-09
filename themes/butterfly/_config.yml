@@ -1131,4 +1131,6 @@ categoryBar:
       cover: /images/5.jpg
     - descr: '工具'
       cover: /images/6.jpg
+    - descr: '绘画'
+      cover: /images/7.jpg
   custom_css: /css/categorybar.css
