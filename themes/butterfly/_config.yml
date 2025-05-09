@@ -1111,3 +1111,24 @@ cdn:
     # valine:
     # waline_css:
     # waline_js:
+
+# hexo-butterfly-categories-card
+# see https://akilar.top/posts/a9131002/
+categoryBar:
+  enable: true # 开关
+  priority: 10 #过滤器优先权
+  enable_page: / # 应用页面
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  column: odd # odd：3列 | even：4列
+  row: 1 #显示行数，默认两行，超过行数切换为滚动显示
+  message:
+    - descr: '6.s081'
+      cover: /images/4.jpg
+    - descr: '绘画'
+      cover: /images/5.jpg
+    - descr: '工具'
+      cover: /images/6.jpg
+  custom_css: /css/categorybar.css
