@@ -39,14 +39,14 @@
     font-size: 1.85em
 
     +minWidth768()
-      font-size: 2.85em
+      font-size: 3.85em
 
   #site-subtitle
     color: var(--light-grey)
     font-size: 1.15em
 
     +minWidth768()
-      font-size: 1.72em
+      font-size: 2.32em
 
   #site_social_icons
     display: none
@@ -154,9 +154,6 @@
 
       #blog-info
         color: var(--font-color)
-
-        &:hover
-          color: $light-blue
 
         .site-name
           text-shadow: none
@@ -315,6 +312,16 @@
 
     .nav-page-title
       display: none
+
+    .nav-site-title
+      box-sizing: border-box !important
+      height: 36.4px !important
+      line-height: 36.4px !important
+      // 移除父元素的flex对齐影响
+      position: relative !important
+      display: inline-flex !important
+      align-items: center !important
+      justify-content: center !important
 
   #toggle-menu
     display: none

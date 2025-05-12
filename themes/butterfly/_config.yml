@@ -1034,9 +1034,9 @@ css_prefix: true
 # insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 inject:
   head:
-    - <link rel="stylesheet" href="/css/modify.css">
     - <link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/XMx86jzlQw0brz3/latest/iconfont.css">
     - <link rel="stylesheet" href="/css/icat.css">
+    - <link rel="stylesheet" href="/css/modify.css">
   bottom:
     
 

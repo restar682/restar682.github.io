@@ -8,7 +8,8 @@
 }
 /* 菜单栏居中 */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px)
+{
     #blog-info a:hover {
         background: 0;
         transition: unset;
@@ -28,9 +29,6 @@
 #nav.show {
     display: flex;
     justify-content: center;
-}
-#nav .site-page {
-    padding-bottom: 14px;
 }
 #nav-group {
     width: 1400px;
