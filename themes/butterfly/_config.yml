@@ -17,7 +17,6 @@ nav:
   fixed: false
 
 menu:
-  首页: / || fas fa-home
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   图库||fas fa-image:
@@ -306,7 +305,7 @@ aside:
     sort_order:
     limit: 6
     # unit: mins, save data to localstorage
-    storage: 10
+    storage: 12
     avatar: true
   card_categories:
     enable: true
@@ -472,8 +471,9 @@ mathjax:
 search:
   # choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  path: search.xml
+  placeholder: 
 
   # algolia search
   algolia_search:
@@ -483,7 +483,7 @@ search:
   # local search
   local_search:
     # preload the search data when the page loads.
-    preload: false
+    preload: true
     # show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # unescape html strings to the readable one.
@@ -1035,6 +1035,8 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/modify.css">
+    - <link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/XMx86jzlQw0brz3/latest/iconfont.css">
+    - <link rel="stylesheet" href="/css/icat.css">
   bottom:
     
 
