@@ -3,7 +3,14 @@
 // 顶部图
 #page-header
   background: transparent !important
-
+  width: 100% !important
+  
+  // 滚动后的样式覆盖(针对可能的.fixed或.scroll类)
+  &.fixed, &.scroll, &.not-top
+    width: 100vw !important // 使用视口宽度
+    max-width: 100% !important
+    left: 0 !important
+    right: 0 !important
   &.post-bg, &.not-home-page
     height: 280px !important
   #post-info
@@ -11,7 +18,6 @@
     text-align: center
   #page-site-info
     top: 140px !important
-
   @media screen and (max-width: 768px)
     &.not-home-page
       height: 200px !important
@@ -19,6 +25,40 @@
       bottom: 10px !important
     #page-site-info
       top: 100px !important
+
+// 鼠标悬停效果
+#blog-info
+  display: inline-block 
+
+  a
+    position: relative
+    display: inline-block
+    transition: all .3s ease
+    box-sizing: border-box
+    height: 36.4px !important
+    width: 36.4px !important
+    
+    &:hover
+      background: #80c6f3
+      border-radius: 8px
+      width: auto !important
+      
+      .site-name
+        opacity: 0 // 文字消失
+        visibility: hidden
+        transition: opacity .3s, visibility .3s
+      
+      &::after
+        content: "\e03a" // 图标代码
+        font-family: "iconfont" !important
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        color: white
+        font-size: 22px
+        opacity: 1
+        visibility: visible
 
 .top-img
   height: 300px
