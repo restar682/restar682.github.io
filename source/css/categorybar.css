@@ -2,7 +2,8 @@
   width: 100% !important;
 }
 ul.categoryBar-list {
-  margin: 5px 5px 0 5px !important;
+  min-height: 383px !important;
+  margin: 5px 5px 5px 5px !important;
   padding: 0 !important;
 }
 li.categoryBar-list-item {
