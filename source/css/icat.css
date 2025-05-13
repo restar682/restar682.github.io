@@ -55,6 +55,11 @@
     margin-right: auto;
 }
 
+#nav .menus_items
+{
+    margin-left: 200px;
+    margin-right: auto;
+}
 #nav .menus_items .menus_item .menus_item_child,
 #nav .menus_items .icat_menus_item .menus_item_child
 {
