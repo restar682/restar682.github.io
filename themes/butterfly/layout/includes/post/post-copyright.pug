@@ -2,7 +2,7 @@ if theme.post_copyright.enable && page.copyright !== false
   - const author = page.copyright_author || config.author
   - const authorHref = page.copyright_author_href || theme.post_copyright.author_href || config.url
   - const url = page.copyright_url || page.permalink
-  - const info = page.copyright_info || _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
+  - const info = page.copyright_info || `本博客文章版权归 restar682 所有，采用 <a href="${theme.post_copyright.license_url}">${theme.post_copyright.license}</a> 许可协议，转载请注明原作者！`
   .post-copyright
     .post-copyright__author
       span.post-copyright-meta
