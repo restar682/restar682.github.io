@@ -1,5 +1,5 @@
 ---
-title: NJU-Compiler-Note0:实验环境配置
+title: NJU-Compiler-Lab0:实验环境配置
 date: 2025-05-21 11:27:35
 categories: NJU-Compiler
 tags: [编译原理, 环境配置, Linux, NJU-Compiler]

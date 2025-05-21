@@ -1129,10 +1129,12 @@ categoryBar:
   message:
     - descr: '6.s081'
       cover: /images/4.jpg
-    - descr: '绘画'
+    - descr: 'NJU-Compiler'
       cover: /images/5.jpg
-    - descr: '工具'
+    - descr: 'DEBUG'
       cover: /images/6.jpg
+    - descr: '工具'
+      cover: /images/8.jpg
     - descr: '绘画'
-      cover: /images/7.jpg
+      cover: /images/9.jpg
   custom_css: /css/categorybar.css
