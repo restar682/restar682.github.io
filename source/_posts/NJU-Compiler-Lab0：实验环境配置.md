@@ -7,7 +7,7 @@ tags: [编译原理, 环境配置, Linux, NJU-Compiler]
 ---
 想学的东西太多了是这样的……时间根本不够用(T_T)所以打算先学南大的编译原理，应该比 cs143 简单一些，中文也更加方便理解。
 
-先整理一下环境配置，我用的 Linux 20.04，跟着老师的教程不是很难：
+先整理一下环境配置，我用的 Ubuntu 20.04，跟着老师的教程不是很难：
 
 ---
 ## Java 环境
@@ -30,13 +30,7 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
-使配置生效：
-
-```bash
-source ~/.bashrc
-```
-
-验证是否配置成功：
+可以用下面的语句来验证是否配置成功：
 
 ```bash
 java -version
