@@ -2,6 +2,7 @@
 title: NJU-Compiler-Lab0:实验环境配置
 date: 2025-05-21 11:27:35
 categories: NJU-Compiler
+description: NJU 编译原理环境配置。
 tags: [编译原理, 环境配置, Linux, NJU-Compiler]
 ---
 想学的东西太多了是这样的……时间根本不够用(T_T)所以打算先学南大的编译原理，应该比 cs143 简单一些，中文也更加方便理解。

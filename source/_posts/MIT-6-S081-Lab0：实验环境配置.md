@@ -2,6 +2,7 @@
 title: MIT-6.S081-Lab0：实验环境配置
 date: 2025-02-27 20:27:08
 categories: 6.s081
+description: 6.s081 环境配置。
 tags: [操作系统, 环境配置, Linux, 6.s081]
 ---
 想学学操作系统，准备开坑6.s081。
