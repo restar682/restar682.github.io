@@ -1,0 +1,145 @@
+#nav-right
+{
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 180px;
+    display: flex;
+    flex-wrap: nowrap;
+
+    #search-button
+    {
+        font-size: 0;
+        .fas {
+            font-size: 1rem !important;
+            display: inline-block !important;
+        }
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    #blog-info a:hover
+    {
+        background: 0;
+        transition: unset;
+        border-radius: 0;
+    }
+
+    #blog-info a:hover .site-name
+    {
+        color: var(--icat-write) !important;
+        position: relative;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    #blog-info a:hover .site-name:after
+    {
+        display: none;
+    }
+}
+
+#nav.show
+{
+    display: flex;
+    justify-content: center;
+}
+
+#nav-group
+{
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nav .menus_items
+{
+    margin-left: 200px;
+    margin-right: auto;
+}
+#nav .menus_items .menus_item .menus_item_child,
+#nav .menus_items .icat_menus_item .menus_item_child
+{
+    margin-top: 14px;
+    border: 1px solid var(--icat-secondbg);
+}
+
+#nav .menus_items .menus_item .menus_item_child li a,
+#nav .menus_items .icat_menus_item .menus_item_child li a
+{
+    padding: 8px 34px;
+    text-align: center;
+}
+
+#travellings
+{
+    padding: 0 14px 0 0;
+}
+
+.layout
+{
+    width: 100%;
+    max-width: 1300px;
+}
+
+.layout > div:first-child
+{
+    width: 100%;
+}
+
+#post
+{
+    width: 78%;
+}
+
+.aside-content
+{
+    max-width: 312px;
+    min-width: 300px;
+}
+
+.layout.hide-aside
+{
+    max-width: 1400px;
+}
+
+
+@media screen and (max-width: 768px)
+{
+    #recent-posts > .recent-post-item
+    {
+        height: auto;
+    }
+    #recent-posts > .recent-post-item > .recent-post-info
+    {
+        padding: 20px 20px 30px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#post .post-copyright {
+    background: var(--icat-card-bg);
+    padding: 1rem 1.3rem;
+    overflow: hidden;
+    border: var(--style-border);
+    border-width: 1px;
+    transition: 0.3s;
+    position: relative;
+    margin: 1.5rem 0px 0.5rem;
+    border-radius: 8px;
+}
+#post .post-copyright:before {
+    position: absolute;
+    right: 22px;
+    top: -77px;
+    content: "\e039";
+    font-size: 180px;
+    font-family: "iconfont";
+    color: var(--icat-fontcolor);
+    opacity: 0.1;
+    filter: blur(7px);
+}
