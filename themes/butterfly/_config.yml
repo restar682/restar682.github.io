@@ -1129,7 +1129,7 @@ categoryBar:
   message:
     - descr: '6.s081'
       cover: /images/4.jpg
-    - descr: 'NJU-Compiler'
+    - descr: 'CS143'
       cover: /images/5.jpg
     - descr: 'DEBUG'
       cover: /images/6.jpg
