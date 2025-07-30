@@ -33,7 +33,11 @@ tags: [操作系统, 页表, Linux, 6.s081]
 
 内核通过独立的全局页表（`kernel_pagetable`）管理所有内核资源，该页表在系统启动时初始化，采用恒等映射（虚拟地址 `KERNBASE = 0x80000000` 起直接对应物理地址，刚好对应顶级页目录的条目2）。当进程通过陷阱（如系统调用或中断）进入内核态时，硬件执行 `trampoline` 页中的代码（`uservec`），显式将 `satp` 寄存器切换到内核页表，使 CPU 能够访问内核代码、设备和进程独立的内核栈。内核通过内核页表直接读写物理内存和硬件寄存器，例如设备接口（UART、磁盘）被映射到固定的内核虚拟地址，而每个进程的内核栈则通过内核页表映射到独立的高端地址，用户页表无法访问这些区域。这种设计通过硬件级页表切换和严格的内核/用户地址空间隔离，确保内核始终在受控环境中执行，用户程序的错误或恶意行为不会影响内核稳定性。
 
-<img src="/illustrations/MIT-6-S081-Lab3/1.png" alt="映射示意图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab3/1.png" alt="映射示意图">
+  <figcaption>图一：映射示意图</figcaption>
+</figure>
+
 
 在QEMU中，0~0x80000000用于映射设备接口，而0x80000000(KERNBASE) ~ 0x86400000(PHYSTOP)为RAM。对0~0x80000000内的物理地址进行读写可以与设备交互，具体内容将在后面的课程中介绍。
 
@@ -236,7 +240,10 @@ allocproc(void)
 
 下图更详细地显示了 XV6 中执行进程的用户内存布局。堆栈是一个单独的页面，显示的是exec创建的初始内容，包含命令行参数的字符串以及指向它们的指针数组位于堆栈的最顶端。
 
-<img src="/illustrations/MIT-6-S081-Lab3/2.png" alt="用户地址空间结构图">
+<figure style="text-align: center; margin-top: 1em;">
+  <img src="/illustrations/MIT-6-S081-Lab3/2.png" alt="用户地址空间结构图">
+  <figcaption>图二：用户地址空间结构图</figcaption>
+</figure>
 
 和内核栈一样，XV6 会在堆栈正下方放置一个无效的保护页（guard page）。如果用户堆栈溢出，并且进程试图使用堆栈下方的地址，则硬件将生成页面错误异常，因为映射无效。实际操作系统可能会在用户堆栈溢出时自动为其分配更多内存。
 
@@ -477,7 +484,10 @@ kvmpa(uint64 va)
 
 至此第二个实验完成了，在 qemu 里面运行 `usertests`，出现下面的结果说明成功：
 
-<img src="/illustrations/MIT-6-S081-Lab3/3.png" alt="实验2结果图">
+<figure style="text-align: center; margin-top: 1em;">
+  <img src="/illustrations/MIT-6-S081-Lab3/3.png" alt="实验2结果图">
+  <figcaption>图三：实验2结果图</figcaption>
+</figure>
 
 另外，我之前对此时的系统调用流程有些疑问。当进行系统调用的时候， `trampoline.S` 会将页表切换到内核页表，我之前在纠结是不是也要修改这一部分。但实际上并不需要，因为查看汇编代码可以发现，它实际上是交换了用户页表和内核页表，或者说将 `satp` 里的地址与 `myproc()->trapframe->kernel_atp` 里的交换了。那么，只需要在调度进程的时候切换内核页表就行了，无需考虑系统调用的问题。
 

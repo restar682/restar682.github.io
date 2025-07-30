@@ -291,6 +291,9 @@ copyout(pagetable_t pagetable, uint64 dstva, char *src, uint64 len)
 ```
 
 # 小结
-至此Lab6宣告结束，这个Lab运用到的知识比较全面，不过并不算难。感觉整个6.s081就是每次Lab都会涉及到一点点后面的内容，又不具体告诉你原理，可能是想让大家自己探索吧。不过也有可能是操作系统整个浑然一体，不可避免的需要用到其他部分的接口。总之，XV6 确实很精妙啊！
+至此 Lab6 宣告结束，这个Lab运用到的知识比较全面，不过并不算难。感觉整个 6.s081 就是每次 Lab 都会涉及到一点点后面的内容，又不具体告诉你原理，可能是想让大家自己探索吧。不过也有可能是操作系统整个浑然一体，不可避免的需要用到其他部分的接口。总之，XV6 确实很精妙啊！
 
-<img src="/illustrations/MIT-6-S081-Lab6/1.png" alt="通关截图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab6/1.png" alt="通关截图">
+  <figcaption>通关截图</figcaption>
+</figure>

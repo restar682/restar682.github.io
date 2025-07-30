@@ -118,7 +118,10 @@ RISC（精简指令集）与 CISC（复杂指令集）是处理器架构的两�
 
 以下是 XV6 的所有通用寄存器：
 
-<img src="/illustrations/MIT-6-S081-Lab4/1.png" alt="XV6 的通用寄存器">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab4/1.png" alt="XV6 的通用寄存器">
+  <figcaption>图一：XV6 的通用寄存器</figcaption>
+</figure>
 
 寄存器是 CPU 内部预定义的超高速存储单元，直接参与执行运算（如加减乘除和逻辑操作）。寄存器的重要性在于，汇编代码的操作不是直接在内存中执行，而是在寄存器上进行。寄存器中的数据可以来自内存，也可以来自其他寄存器。运算完成后，结果可以存储在内存或另一个寄存器中。由于寄存器非常快速，我们往往倾向于用寄存器去运算，只有数据量超过寄存器容量或者需要长期存储数据的时候才会使用内存。
 
@@ -136,7 +139,10 @@ RISC（精简指令集）与 CISC（复杂指令集）是处理器架构的两�
 
 栈的基本结构图如下：
 
-<img src="/illustrations/MIT-6-S081-Lab4/2.png" alt="栈的基本结构图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab4/2.png" alt="栈的基本结构图">
+  <figcaption>图二：栈的基本结构图</figcaption>
+</figure>
 
 每个函数调用都会创建一个栈帧（stack frame），每个区域对应一个栈帧。栈帧的分配通过移动堆栈指针（stack pointer, 即 SP）完成。
 
@@ -262,4 +268,7 @@ sys_sigreturn(void)
 # 小结
 至此Lab4宣告结束，总体并不算难，跟着hint一步步做如果之前的课程比较扎实做起来还是挺舒服的。最大的感悟是Lab提供的知识真的只是这一块的很小一部分，绝大部分知识都来自于文档和讲座，甚至Lab答疑课都能让人注意到许多遗漏的小地方。然而，这些实验又不可或缺，它能帮助我们梳理之前的知识。总之，重点还是应该放在文档跟讲座的理解上，Lab终究不是重点。最后附上通关截图：
 
-<img src="/illustrations/MIT-6-S081-Lab4/3.png" alt="通关截图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab4/3.png" alt="通关截图">
+  <figcaption>图三：通关截图</figcaption>
+</figure>
