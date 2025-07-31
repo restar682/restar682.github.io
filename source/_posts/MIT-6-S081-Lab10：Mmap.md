@@ -281,4 +281,7 @@ safestrcpy(np->name, p->name, sizeof(p->name));
 完结撒花！操作系统之旅大概暂时就到这里，花了大概两个月的时间……其实看中间的其他博客你就知道为什么拖了这么久了……这是进大学以来完整（大概）自学的第一门公开课，之前试图学 MIT-Missing-Semester 不知道为啥就咕咕咕了，总之学完了还是相当开心的啦。通过 XV6 这个简单的操作系统，我对操作系统的大致结构有了基本的了解，也学到了一些常见的处理技巧，收获算是相当不错。感觉最方便的调试方式还是直接输出），gdb 什么的真不熟吧（笑）。接下来大概是 cs143？希望自己还能坚持下去，又义无反顾地投向下一个坑了呢。
 
 照例扔一张通关截图在这里。
-<img src="/illustrations/MIT-6-S081-Lab10/1.png" alt="通关截图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab10/1.png" alt="通关截图">
+  <figcaption>图一：通关截图</figcaption>
+</figure>

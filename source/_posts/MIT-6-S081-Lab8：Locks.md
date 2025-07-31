@@ -363,5 +363,7 @@ Lab8 也相当的简单，就是让你细化锁的粒度。但是吧，这种单
 无论如何，锁还是一个相当实用的工具，能够有效地解决并发问题。如果要自己设计，想必也会相当麻烦。
 
 最后照例附上通关截图：
-
-<img src="/illustrations/MIT-6-S081-Lab8/1.png" alt="通关截图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab8/1.png" alt="通关截图">
+  <figcaption>图一：通关截图</figcaption>
+</figure>

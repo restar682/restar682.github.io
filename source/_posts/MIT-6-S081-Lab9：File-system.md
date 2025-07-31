@@ -68,7 +68,10 @@ XV6 文件系统的实现分为7层，如下表所示：
 ## 磁盘层
 XV6 将磁盘划分为若干区域，如图所示。**块 0** 不被文件系统使用，它存放的是引导扇区。**块 1** 是超级块，包含文件系统的元数据，如文件系统的总大小（以块为单位）、数据块的数量、索引节点（inode）的数量以及日志所占的块数。紧随其后的是**日志区域**，从块 2 开始，用于支持崩溃恢复。日志之后是**索引节点区**，每个块存放多个 inode，用于描述文件。再往后是**位图区域**，用于记录哪些数据块正在被使用。剩余的部分是**数据块区域**：每个块要么被标记为空闲（由位图决定），要么用于存储文件或目录的内容。超级块由一个名为 `mkfs` 的独立程序初始化，它负责构建初始的文件系统结构。
 
-<img src="/illustrations/MIT-6-S081-Lab9/1.png" alt="磁盘划分">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab9/1.png" alt="磁盘划分">
+  <figcaption>图一：磁盘划分</figcaption>
+</figure>
 
 ## 缓冲区高速缓存层
 **Buffer cache（缓冲区高速缓存）** 在 XV6 中承担两个主要职责：
@@ -210,7 +213,10 @@ inode 缓存只缓存当前被内核数据结构引用的 inode，它的主要�
 
 磁盘上的 inode 结构体 `struct dinode` 包含一个 `size` 字段和一个块号数组 `addrs`，如下图所示。文件的数据存储在由 `addrs` 数组指定的数据块中。数组的前 `NDIRECT` 个元素直接给出了数据块的地址，这些块被称为**直接块（direct blocks）**。数组的最后一个元素不是数据块地址，而是一个**间接块（indirect block）**的地址；这个间接块本身是一个数据块，其中存储着更多数据块的地址，总共可容纳 `NINDIRECT` 个。
 
-<img src="/illustrations/MIT-6-S081-Lab9/2.png" alt="inode结构">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab9/2.png" alt="inode结构">
+  <figcaption>图二：inode结构</figcaption>
+</figure>
 
 因此，文件的前 `NDIRECT × BSIZE` 字节（例如 12 KB）可以通过 inode 直接访问；而接下来的 `NINDIRECT × BSIZE` 字节（例如 256 KB）则需通过读取间接块来访问。这种分层结构在磁盘上是一种高效的表示方式，但对调用者来说相对复杂。
 
@@ -383,7 +389,10 @@ itrunc(struct inode *ip)
 ```
 
 出现下图测试结果说明正确。
-<img src="/illustrations/MIT-6-S081-Lab9/3.png" alt="大文件测试">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab9/3.png" alt="大文件测试">
+  <figcaption>图三：大文件测试</figcaption>
+</figure>
 
 ## Symbolic links(moderate)
 这个实验要我们实现符号链接，也就是软链接。它实际上不是数据的副本，而是对另一个路径的引用。相比于硬链接，它可以跨文件系统使用，可以指向目录，甚至可以指向不存在的目标，灵活性很高。而且依托于硬链接，它的实现也简单得多。尽管可能有悬挂链接等问题，开销也更大，但在实现重定向、快捷方式和抽象路径层等时非常方便。
@@ -492,5 +501,7 @@ sys_open(void)
 Lab9 难度相对还比较大，因为文件系统本身就比较复杂，它的实现之精妙令我叹为观止。即使看完了手册和视频，写完了Lab，我仍然觉得自己对文件系统的理解不够深入。七层的设计，每一层都有非常重要的作用，睡眠锁、自旋锁的自如使用，获取扇区时自动上锁的设计，日志与直写策略的交替使用，都淋漓尽致地向我展现着操作系统的精美。不得不说，作为 XV6 学习过程中最后的一块拼图，它的确让我对操作系统的理解更加深刻了几分。至此 XV6 的手册部分就全部阅读完成了，还是有点令人感慨，几个月的操作系统之旅，虽说学得还比较认真，但也只了解了这么一个小巧的 XV6 的大部分思想，源码部分终究是走马观花，不够深入。更多的想法等到最后总结时再写吧，前面还有 Lab10 跟 Lab11（不知道会不会写），希望不要太难。
 
 最后照例附上通关截图：
-
-<img src="/illustrations/MIT-6-S081-Lab9/4.png" alt="通关截图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab9/4.png" alt="通关截图">
+  <figcaption>图四：通关截图</figcaption>
+</figure>

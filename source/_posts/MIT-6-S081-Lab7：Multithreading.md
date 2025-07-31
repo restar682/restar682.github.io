@@ -396,7 +396,11 @@ thread_switch:
 ## Using threads (moderate)
 这个实验也很简单，要我们解决并发时候的竞态问题。我们可以发现是插入桶的时候可能有并发问题，那么最简单的解决方法就是给整个表上一个锁。但这样就将所有的操作都串行化了，没有利用多线程的性能，加上额外开销导致性能甚至比单线程要低。
 
-<img src="/illustrations/MIT-6-S081-Lab7/1.png" alt="表级锁结果">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab7/1.png" alt="表级锁结果">
+  <figcaption>图一：表级锁结果</figcaption>
+</figure>
+
 
 更好的方法是给每个桶加一个锁，如果需要插入修改，就给对应的桶上锁。不要忘了测试前要 `make ph`。
 
@@ -435,7 +439,10 @@ main(int argc, char *argv[])
   ...
 }
 ```
-<img src="/illustrations/MIT-6-S081-Lab7/2.png" alt="桶级锁结果">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab7/2.png" alt="桶级锁结果">
+  <figcaption>图二：桶级锁结果</figcaption>
+</figure>
 
 ## Barrier(moderate)
 最后一个实验是实现一个屏障，让所有线程同步。不难看出这个就是 `sleep` 和 `wakeup` 机制的最简单利用。我们在睡眠前获取锁，带锁进入睡眠，被唤醒后再释放锁即可。
@@ -460,5 +467,7 @@ barrier()
 ```
 # 小结
 Lab7 慢慢悠悠地完结了，这Lab难度跟手册上的例子难度差的不是一点半点，简单的过头了。如果对比较难的手册内容都理解了的话，稍微简化一些就可以搬到Lab中用了。总之，进程是操作系统中相当有趣的一部分。通过多个进程、线程的切换，可以很好地协调整个系统，提高效率。
-
-<img src="/illustrations/MIT-6-S081-Lab7/3.png" alt="通关截图">
+<figure style="text-align: center;">
+  <img src="/illustrations/MIT-6-S081-Lab7/3.png" alt="通关截图">
+  <figcaption>图三：通关截图</figcaption>
+</figure>
