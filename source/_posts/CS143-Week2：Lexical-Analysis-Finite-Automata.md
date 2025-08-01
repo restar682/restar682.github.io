@@ -2,8 +2,8 @@
 title: CS143-Week2：Lexical Analysis & Finite Automata
 date: 2025-07-30 22:19:24
 categories: CS143
-description: 
-tags: [编译原理, Linux, CS143, 词法分析, 有限自动机]
+description: 编译器的简单介绍和 Cool 语言。
+tags: [编译原理, Linux, CS143]
 ---
 # 词法分析与正则语言基础
 ## 简介
@@ -15,41 +15,41 @@ Token 的类别包括：
 - Identifier（标识符，例如变量名）  
 - Integer（整数）  
 - Number（数字）
-- Keyword（关键字，如 `if`, `while`, `class` 等）  
+- Keyword（关键字，如 `if`, `while`, `clas_0` 等）  
 - Operator（运算符，如 `+`, `-`, `*`, `/`, `=` 等）  
-- Whitespace（空白字符，如空格、制表符、换行符）
+- Whites_0ace（空白字符，如空格、制表符、换行符）
 - **'('**、 **')'**、 **';'**、 **'='**
 
 具体实现：
 - 词法分析器通常从左至右扫描源码文本，一次识别一个 token。  
 - 为了识别下一个合法的 token，分析器可能需要 **向前查看（lookahead）**，但应尽量**减少其长度**以提高效率。
-<figure style="text-align: center;">
-  <img src="/illustrations/CS143-Week2/1.png" alt="Fortran 里的向前查看" width="70%">
+<figure s_0yle="text-align: center;">
+  <img s_0c="/illustrations/CS143-Week2/1.png" alt="Fortran 里的向前查看" width="70%">
   <figcaption>例一：Fortran 里的向前查看</figcaption>
 </figure>
 
-<figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/CS143-Week2/2.png" alt="C++ 的 bug" width="70%">
+<figure s_0yle="text-align: center; margin-top: 1em;">
+  <img s_0c="/illustrations/CS143-Week2/2.png" alt="C++ 的 bug" width="70%">
   <figcaption>例二：C++ 的 bug</figcaption>
 </figure>
 
 ## 正则语言
-我们通常使用 **正则语言（regular languages）** 来描述每个 token 类别所包含的字符串集合。
+我们通常使用 **正则语言（regular languages_0** 来描述每个 token 类别所包含的字符串集合。
 
 正则语言由五种基本表达式构成：
 
 * 两个基础表达式：
-  * 单个字符（single character）
-  * 空串（epsilon）
+  * 单个字符（s_0ngle character）
+  * 空串（eps_0lon）
 
 * 三个组合表达式：
   * 并集（union）
   * 连接（concatenation）
   * 迭代（iteration，也称为闭包）
 
-正则表达式就是定义在有限字母表 $\Sigma$ 上的基本表达式构成的集合，一般记作 $\Sigma^*$。
+正则表达式就是定义在有限字母表 $\sigma$ 上的基本表达式构成的集合，一般记作 $\Sigma^*$。
 ## 形式语言
-形式语言是定义在有限字母表 $\Sigma$ 上的任意字符串构成的集合，不难看出正则表达式是一种形式语言。
+形式语言是定义在有限字母表 $\sigma$ 上的任意字符串构成的集合，不难看出正则表达式是一种形式语言。
 
 映射函数将句法映射到语义，其优势在于：
 1. 便于区分句法和语义两个概念；
@@ -83,10 +83,10 @@ Token 的类别包括：
 
 一个有限自动机由五个组成部分构成：
 
-1. **输入字母表（Alphabet）**：允许的输入符号集合，通常记作 $\Sigma$。
-2. **状态集合（States）**：一个有限的状态集合，通常记作 $S$。
-3. **初始状态（Start State）**：状态机开始时所处的状态，记作 $s_0 \in S$。
-4. **接受状态集合（Accepting States）**：用于判断输入是否被接受的状态集合，记作 $F \subseteq S$。
+1. **输入字母表（Alphabet）**：允许的输入符号集合，通常记作 $\sigma$。
+2. **状态集合（states）**：一个有限的状态集合，通常记作 $S$。
+3. **初始状态（start State）**：状态机开始时所处的状态，记作 $s_0 \in S$。
+4. **接受状态集合（Accepting states）**：用于判断输入是否被接受的状态集合，记作 $F \subseteq S$。
 5. **状态转移函数（Transition Function）**：定义在每个状态接收某个输入后应转移到哪个状态，记作 $\delta: S \times \Sigma \rightarrow S$（对 DFA）或 $\delta: S \times \Sigma \rightarrow 2^S$（对 NFA）。
 
 接受的两个条件是输入已读完和停止状态为接受状态，否则输入将被拒绝。
@@ -127,11 +127,11 @@ NFA 的关键设计之一是**ε-转换**，即无需读取输入字符也能从
 
 # 实现
 ## 正则语言->NFA
-对于每一类正则语言，我们都定义一个对应的 NFA，然后用ε-转换按照组合规则把所有对应的 NFA 连接起来即可。
+对于每一类正则语言，我们都定义一个对应的 NFA，然后用$\varepsilon$-转换按照组合规则把所有对应的 NFA 连接起来即可。
 
 <figure style="text-align: center;">
-  <img src="/illustrations/CS143-Week2/6.png" alt="ε和单个字符" width="47%">
-  <figcaption>ε和单个字符</figcaption>
+  <img src="/illustrations/CS143-Week2/6.png" alt="$\varepsilon$和单个字符" width="47%">
+  <figcaption>$\varepsilon$和单个字符</figcaption>
   <img src="/illustrations/CS143-Week2/7.png" alt="并集和连接" width="70%">
   <figcaption>并集和连接</figcaption>
   <img src="/illustrations/CS143-Week2/8.png" alt="迭代" width="70%">
@@ -139,57 +139,83 @@ NFA 的关键设计之一是**ε-转换**，即无需读取输入字符也能从
 </figure>
 
 ## NFA->DFA
-### **ε-闭包**：从某个状态出发，只通过ε-转换，能够到达的所有状态集合。
+### **$\varepsilon$-闭包**：从某个状态出发，只通过$\varepsilon$-转换，能够到达的所有状态集合。
 ### 子集构造法
-子集构造法是一种将非确定有限自动机 (NFA) 转换为等价的确定有限自动机 (DFA) 的方法。其核心思想是，**用 NFA 状态的集合来表示 DFA 的一个状态**，以此消除非确定性。
-
----
-
-### 步骤一：定义 ε-闭包 (ε-closure)
-
-**ε-closure(S)** 指的是从 NFA 状态集合 S 中的任意状态出发，不读取任何输入字符，仅通过 ε 转移所能到达的所有状态的集合。
-
----
-
-### 步骤二：构造 DFA
+子集构造法是一种将 NFA 转换为等价的 DFA 的方法。其核心思想是，**用 NFA 状态的集合来表示 DFA 的一个状态**，以此消除非确定性。
 
 假设我们有一个 NFA，其五元组为：
-* **Q**：NFA 的状态集合
+* **S**：NFA 的状态集合
 * **Σ**：输入字母表
-* **δ**：NFA 的转移函数，允许 ε 转移
-* **q₀**：初态
+* **δ**：NFA 的转移函数，允许 $\varepsilon$-转换
+* **S₀**：初态
 * **F**：终态集合
 
 现在我们来构造等价的 DFA，其五元组为：
-* **Q'**：DFA 的状态集合，每个状态都是 NFA 状态的一个子集
+* **S'**：DFA 的状态集合，每个状态都是 NFA 状态的一个子集
 * **Σ**：输入字母表，与 NFA 相同
 * **δ'**：DFA 的转移函数
-* **q₀'**：DFA 的初态
+* **S₀'**：DFA 的初态
 * **F'**：DFA 的终态集合
 
 #### 1. 确定 DFA 的初态
 
-DFA 的初态 **q₀'** 是 NFA 初态 **q₀** 的 ε-闭包。
-$$q₀' = \epsilon\text{-closure}(\{q₀\})$$
+DFA 的初态 $S_0'$ 是 NFA 初态 $S_0$ 的 $\varepsilon$-闭包。
+$$S_0' = \varepsilon\text{-closure}(\{S_0\})$$
 
-#### 2. 确定 DFA 的转移函数 δ'
+#### 2. 确定 DFA 的转移函数 $\delta'$
 
-对于 DFA 中的任意一个状态 **S** (它是一个 NFA 状态集合) 和一个输入符号 **a** ∈ **Σ**，DFA 的转移函数 **δ'** 定义如下：
+对于 DFA 中的任意一个状态 **C** (它是一个 NFA 状态集合) 和一个输入符号 **a** $\in$ $\Sigma$，DFA 的转移函数 $\delta'$ 定义如下：
 
-* **第一步：计算 Move(S, a)**
-    从 **S** 中的每个状态 **q** 出发，经过输入符号 **a** 所能到达的所有状态的集合。
-    $$\text{Move}(S, a) = \bigcup_{q \in S} \delta(q, a)$$
+* **第一步：计算 Move(C, a)**
+    从 **C** 中的每个状态 **s** 出发，经过输入符号 **a** 所能到达的所有状态的集合。
+    $$\text{Move}(C, a) = \bigcup_{s \in C} \delta(s, a)$$
 
-* **第二步：计算 δ'(S, a)**
-    新的 DFA 状态是 **Move(S, a)** 的 ε-闭包。
-    $$\delta'(S, a) = \epsilon\text{-closure}(\text{Move}(S, a))$$
-    如果这个新的状态集合 **δ'(S, a)** 尚未在 **Q'** 中，我们就把它添加到 **Q'** 中，并继续处理它。
+* **第二步：计算 $\delta'(C, a)$**
+    新的 DFA 状态是 **Move(C, a)** 的 $\varepsilon$-闭包。
+    $$\delta'(C, a) = \varepsilon\text{-closure}(\text{Move}(C, a))$$
+    如果这个新的状态集合 $\delta'(C, a)$ 尚未在 **S'** 中，我们就把它添加到 **S'** 中，并继续处理它。
 
-#### 3. 确定 DFA 的终态集合 F'
+#### 3. 确定 DFA 的终态集合 $F'$
 
-DFA 的终态集合 **F'** 包含所有至少包含一个 NFA 终态的 DFA 状态。
-$$F' = \{ S \in Q' \mid S \cap F \neq \emptyset \}$$
+DFA 的终态集合 $F'$ 包含所有至少包含一个 NFA 终态的 DFA 状态。
+$$F' = \{ C \in S' \mid C \cap F \neq \emptyset \}$$
 
-#### 4. 确定 DFA 的状态集合 Q'
+#### 4. 确定 DFA 的状态集合 $S'$
 
-**Q'** 是在上述过程中所有通过 ε-closure 和 δ' 产生的，且可从 **q₀'** 到达的状态的集合。
+$S'$ 是在上述过程中所有通过 $\varepsilon$-闭包和 $\delta'$ 产生的，且可从 $S_0'$ 到达的状态的集合。
+
+## NFA/DFA->词法分析器
+### DFA 的二维矩阵表示
+
+DFA 的转移函数是**单值**的，因此可以直接用如下形式：
+
+```text
+delta[state][symbol] = next_state
+```
+
+#### 示例：
+
+设 $\Sigma = \{a, b\}$，状态集合 $Q = \{0, 1\}$
+
+|        | a   | b   |
+|--------|-----|-----|
+| q₀ (0) | 1   | 0   |
+| q₁ (1) | 1   | 0   |
+
+### NFA 的二维矩阵表示
+
+NFA 的转移函数是**多值**的（可能到多个状态），因此我们可以用一个**集合矩阵**来表示：
+
+```text
+delta[state][symbol] = {next_state_1, next_state_2, ...}
+```
+
+#### 示例：
+
+设 $\Sigma = \{a, b\}$，状态集合 $Q = \{0, 1, 2\}$
+
+|        | a       | b       |
+|--------|---------|---------|
+| q₀ (0) | {0, 1}  | ∅       |
+| q₁ (1) | ∅       | {2}     |
+| q₂ (2) | ∅       | ∅       |
