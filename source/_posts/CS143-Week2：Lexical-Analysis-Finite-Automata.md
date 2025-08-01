@@ -2,8 +2,8 @@
 title: CS143-Week2：Lexical Analysis & Finite Automata
 date: 2025-07-30 22:19:24
 categories: CS143
-description: 编译器的简单介绍和 Cool 语言。
-tags: [编译原理, Linux, CS143]
+description: 词法分析的原理与实现。
+tags: [编译原理, Linux, CS143, 词法分析, 正则表达式]
 ---
 # 词法分析与正则语言基础
 ## 简介
