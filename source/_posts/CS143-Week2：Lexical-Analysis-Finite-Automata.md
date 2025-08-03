@@ -23,13 +23,13 @@ Token 的类别包括：
 具体实现：
 - 词法分析器通常从左至右扫描源码文本，一次识别一个 token。  
 - 为了识别下一个合法的 token，分析器可能需要 **向前查看（lookahead）**，但应尽量**减少其长度**以提高效率。
-<figure s_0yle="text-align: center;">
-  <img s_0c="/illustrations/CS143-Week2/1.png" alt="Fortran 里的向前查看" width="70%">
+<figure style="text-align: center;">
+  <img src="/illustrations/CS143-Week2/1.png" alt="Fortran 里的向前查看" width="70%">
   <figcaption>例一：Fortran 里的向前查看</figcaption>
 </figure>
 
-<figure s_0yle="text-align: center; margin-top: 1em;">
-  <img s_0c="/illustrations/CS143-Week2/2.png" alt="C++ 的 bug" width="70%">
+<figure style="text-align: center; margin-top: 1em;">
+  <img src="/illustrations/CS143-Week2/2.png" alt="C++ 的 bug" width="70%">
   <figcaption>例二：C++ 的 bug</figcaption>
 </figure>
 
