@@ -15,9 +15,9 @@ Token 的类别包括：
 - Identifier（标识符，例如变量名）  
 - Integer（整数）  
 - Number（数字）
-- Keyword（关键字，如 `if`, `while`, `clas_0` 等）  
+- Keyword（关键字，如 `if`, `while`, `class` 等）  
 - Operator（运算符，如 `+`, `-`, `*`, `/`, `=` 等）  
-- Whites_0ace（空白字符，如空格、制表符、换行符）
+- Whitespace（空白字符，如空格、制表符、换行符）
 - **'('**、 **')'**、 **';'**、 **'='**
 
 具体实现：
@@ -34,13 +34,13 @@ Token 的类别包括：
 </figure>
 
 ## 正则语言
-我们通常使用 **正则语言（regular languages_0** 来描述每个 token 类别所包含的字符串集合。
+我们通常使用 **正则语言（regular languages）** 来描述每个 token 类别所包含的字符串集合。
 
 正则语言由五种基本表达式构成：
 
 * 两个基础表达式：
-  * 单个字符（s_0ngle character）
-  * 空串（eps_0lon）
+  * 单个字符（single character）
+  * 空串（epsilon）
 
 * 三个组合表达式：
   * 并集（union）
