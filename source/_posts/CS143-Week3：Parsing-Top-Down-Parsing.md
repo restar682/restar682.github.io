@@ -128,7 +128,7 @@ AST 通过以下方式简化结构：
 通过这三个函数的配合——`term` 进行终结符匹配，`S_n` 实现具体产生式匹配，`S` 管理选择与回溯——即可实现对语法结构的递归下降解析。
 
 <figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/CS143-Week3/3.png" alt="一个具体例子" width="65%">
+  <img src="/illustrations/CS143-Week3/3.jpg" alt="一个具体例子" width="65%">
   <figcaption>一个具体例子</figcaption>
 </figure>
 
