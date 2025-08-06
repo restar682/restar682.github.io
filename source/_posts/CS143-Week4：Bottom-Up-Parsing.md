@@ -13,9 +13,9 @@ tags: [编译原理, Linux, CS143, 语法分析, 预测解析]
 - **解析过程**：
     - 构建预测分析表
         - 对每个非终结符，预先计算其 **FIRST** 集（所有产生式右部能推导出的第一个终结符的集合）和 **FOLLOW** 集（在某些句型中可能紧跟该非终结符的终结符集合）。
-        - 对于每个产生式 $A \to \alpha$：
-            - 对每一个 $a \in \text{FIRST}(\alpha)$ 且 $a \neq \varepsilon$，将产生式 $A \to \alpha$ 填入分析表的 $M[A, a]$ 位置。
-            - 如果 $\varepsilon \in \text{FIRST}(\alpha)$，则对每一个 $b \in \text{FOLLOW}(A)$，将产生式 $A \to \alpha$ 填入分析表的 $M[A, b]$ 位置。
+        - 对于每个产生式 $S \to \alpha$：
+            - 对每一个 $a \in \text{FIRST}(\alpha)$ 且 $a \neq \varepsilon$，将产生式 $S \to \alpha$ 填入分析表的 $M[S, a]$ 位置。
+            - 如果 $\varepsilon \in \text{FIRST}(\alpha)$，则对每一个 $b \in \text{FOLLOW}(S)$，将产生式 $S \to \alpha$ 填入分析表的 $M[S, b]$ 位置。
         <figure style="text-align: center; margin-top: 1em;">
           <img src="/illustrations/CS143-Week4/1.png" alt="预测分析表的例子" width="80%">
           <figcaption>预测分析表的例子</figcaption>
@@ -37,3 +37,12 @@ LL(1) 文法是一种适用于自顶向下语法分析的 CFG，其名称中的�
 
 由于 LL(1) 文法具有确定性，可以构造无冲突的预测分析表，使得语法分析过程高效且无需回溯，因此广泛被应用于编译器设计中，尤其适合处理结构清晰的语言构造。但并非所有文法都能转化为 LL(1) 文法，复杂语言可能需要更强的分析方法。
 ### 左因子分解
+若 $S \to \alpha\beta_1 \mid \alpha\beta_2$，且 $\alpha$ 是非空终结符串，则 $\text{FIRST}(\alpha\beta_1) \cap \text{FIRST}(\alpha\beta_2) \neq \emptyset$，无法通过下一个输入符号唯一确定使用哪个产生式。我们可以通过提取公共左因子来解决这个问题。
+
+设公共左因子为 $\alpha$，引入新非终结符 $S'$：
+- 原式：$ S \to \alpha\beta_1 \mid \alpha\beta_2 \mid \cdots \mid \alpha\beta_n $
+- 改写为：
+    $ S \to \alpha S' $  
+    $ S' \to \beta_1 \mid \beta_2 \mid \cdots \mid \beta_n $
+
+改写后的形式消除了原非终结符 $S$ 所带来的预测冲突。此时，$\text{FIRST}(\beta_1), \text{FIRST}(\beta_2), \dots$ 应两两不相交；如果某个 $\beta_i$ 可导出空串（即 $\beta_i \Rightarrow^* \varepsilon$），则还必须确保 $\text{FOLLOW}(S')$ 与其他各 $\text{FIRST}(\beta_j)$ 也无交集，从而满足 LL(1) 文法的判定条件。
