@@ -2,8 +2,8 @@
 title: CS143-Week3：Parsing & Top-Down Parsing
 date: 2025-08-04 07:57:38
 categories: CS143
-description: 
-tags: [编译原理, Linux, CS143, 语法分析, 语法分析树, 抽象语法树]
+description: 介绍了语法分析的核心目标，详细阐述了上下文无关文法和文法中的歧义与错误处理，还讲解了抽象语法树及递归下降解析技术。
+tags: [编译原理, Linux, CS143, 语法分析, 语法分析树, 抽象语法树, 递归下降解析]
 ---
 # 语法分析基础
 ## 简介
