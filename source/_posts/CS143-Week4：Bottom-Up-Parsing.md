@@ -21,13 +21,13 @@ tags: [编译原理, Linux, CS143, 语法分析, 预测解析]
           <figcaption>预测分析表的例子</figcaption>
         </figure>
     - 解析输入串
-        - 初始化分析栈，栈底为 **$**，其上为文法起始符号；
+        - 初始化分析栈，栈底为 $ {\$} $，其上为文法起始符号；
         - 每次查看栈顶符号 $X$ 和当前输入符号 $a$：
             - 若 $X$ 是终结符且 $X = a$，则弹出栈顶，读取下一个输入符号；
             - 若 $X$ 是非终结符，查找分析表 $M[X, a]$：
                 - 若存在对应产生式 $X \to \alpha$，则弹出 $X$，并将 $\alpha$ 的符号从右到左依次压入栈；
                 - 若查表为空或无定义，则报错（语法错误）；
-            - 重复上述过程，直到栈为空且输入符号流结束（即均到达 **$**），表示解析成功。
+            - 重复上述过程，直到栈为空且输入符号流结束（即均到达 $ {\$} $），表示解析成功。
 - **构建结果**：成功时构建出一棵**语法分析树**，所有 Token 位于叶节点，且解析过程是线性的，无回溯开销。
 - **要求**：文法必须是 **LL(1)** 文法。
 
@@ -46,3 +46,29 @@ LL(1) 文法是一种适用于自顶向下语法分析的 CFG，其名称中的�
     $ S' \to \beta_1 \mid \beta_2 \mid \cdots \mid \beta_n $
 
 改写后的形式消除了原非终结符 $S$ 所带来的预测冲突。此时，$\text{FIRST}(\beta_1), \text{FIRST}(\beta_2), \dots$ 应两两不相交；如果某个 $\beta_i$ 可导出空串（即 $\beta_i \Rightarrow^* \varepsilon$），则还必须确保 $\text{FOLLOW}(S')$ 与其他各 $\text{FIRST}(\beta_j)$ 也无交集，从而满足 LL(1) 文法的判定条件。
+
+## FIRST & FOLLOW 集
+### FIRST 集的确定
+
+- **定义**：对于一个符号串 $\alpha$（可以是非终结符、终结符或它们的组合），$FIRST(\alpha)$ 是所有可以从 $\alpha$ 开始推导出的字符串的第一个终结符的集合。如果 $\alpha$ 能够推导出空串 $\varepsilon$，则 $\varepsilon$ 也属于 $FIRST(\alpha)$。
+
+- **算法步骤**：
+
+  1. 如果 $x$ 是终结符，则 $FIRST(x) = {x}$。
+  2. 对于非终结符 $A$ 的每个产生式 $A \to \alpha\_1 \alpha\_2 \dots \alpha\_n$：
+    - 将 $FIRST(\alpha\_1)$ 中除去 $\varepsilon$ 的元素加入 $FIRST(A)$；
+    - 如果 $\varepsilon \in FIRST(\alpha\_1)$，则继续将 $FIRST(\alpha\_2)$ 中除 $\varepsilon$ 的元素加入 $FIRST(A)$，依此类推；
+    - 如果所有 $\alpha\_i\ (i=1,2,\dots,n)$ 都满足 $\varepsilon \in FIRST(\alpha\_i)$，则将 $\varepsilon$ 加入 $FIRST(A)$。
+
+### FOLLOW 集的确定
+
+- **定义**：$FOLLOW(A)$ 是所有在某个句型中紧跟在非终结符 $A$ 后面的终结符的集合。如果 $A$ 可以出现在句子的末尾，则输入结束符号 ${\$}$（表示输入结束）也属于 $FOLLOW(A)$。
+
+- **算法步骤**：
+
+  1. 初始化： $ FOLLOW(S) = \\{ \\$ \\} $ ，其中 $S$ 是文法的开始符号。
+  2. 对于每个产生式 $A \to \alpha B \beta$：
+
+    - 将 $FIRST(\beta)$ 中除 $\varepsilon$ 的元素加入 $FOLLOW(B)$；
+    - 如果 $\varepsilon \in FIRST(\beta)$ 或 $\beta \Rightarrow^\* \varepsilon$，则将 $FOLLOW(A)$ 中的所有元素加入 $FOLLOW(B)$。
+  3. 如果存在产生式 $A \to \alpha B$ 或 $A \to \alpha B \beta$ 且 $\beta \Rightarrow^\* \varepsilon$，重复步骤 2，直到所有 $FOLLOW$ 集稳定为止（不再变化）。
