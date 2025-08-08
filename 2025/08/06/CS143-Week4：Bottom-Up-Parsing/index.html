@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://restar682.github.io/img/head-sculpture.jpg">
 <meta property="article:published_time" content="2025-08-06T01:19:37.000Z">
-<meta property="article:modified_time" content="2025-08-07T14:57:37.138Z">
+<meta property="article:modified_time" content="2025-08-08T01:52:36.933Z">
 <meta property="article:author" content="restar682">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="编译原理">
@@ -22,7 +22,7 @@
   "url": "http://restar682.github.io/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/",
   "image": "http://restar682.github.io/img/head-sculpture.jpg",
   "datePublished": "2025-08-06T01:19:37.000Z",
-  "dateModified": "2025-08-07T14:57:37.138Z",
+  "dateModified": "2025-08-08T01:52:36.933Z",
   "author": [
     {
       "@type": "Person",
@@ -167,7 +167,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<link rel="stylesheet" href="/css/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/" title="回到主页"><span class="site-name">restar682's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">CS143-Week4：Bottom-Up Parsing</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS143-Week4：Bottom-Up Parsing</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-06T01:19:37.000Z" title="发表于 2025-08-06 09:19:37">2025-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-07T14:57:37.138Z" title="更新于 2025-08-07 22:57:37">2025-08-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS143/">CS143</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="预测解析"><a href="#预测解析" class="headerlink" title="预测解析"></a>预测解析</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>预测解析</strong>是一种无需回溯的自顶向下的语法分析算法。</p>
+<link rel="stylesheet" href="/css/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/" title="回到主页"><span class="site-name">restar682's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">CS143-Week4：Bottom-Up Parsing</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS143-Week4：Bottom-Up Parsing</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-06T01:19:37.000Z" title="发表于 2025-08-06 09:19:37">2025-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-08T01:52:36.933Z" title="更新于 2025-08-08 09:52:36">2025-08-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS143/">CS143</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="预测解析"><a href="#预测解析" class="headerlink" title="预测解析"></a>预测解析</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>预测解析</strong>是一种无需回溯的自顶向下的语法分析算法。</p>
 <ul>
 <li><strong>核心思想</strong>：为文法的每个非终结符设计一个确定的解析过程，根据当前输入的 Token <strong>预测</strong>应使用的产生式规则，从而直接选择正确的分支进行匹配，避免回溯。</li>
 <li><strong>解析过程</strong>：<ul>
@@ -252,8 +252,44 @@
 
 <p>自底向上分析是语法推导的逆过程，具体对应最右推导的反向执行。也就是说，归约的顺序与最右推导的展开步骤相反，因此在归约过程中，被归约部分的右侧总是由尚未处理的终结符构成。</p>
 <p>在自底向上解析过程中，最关键的是找到当前可以归约的部分，这个部分称为“句柄”。句柄代表了下一步应当应用的语法规则。</p>
-<p>一个重要事实是：<strong>句柄总是位于分析栈的顶部，而不会隐藏在栈的中间或底部</strong>。或者说，句柄的右端位置是不减的。这是因为自底向上分析对应的是最右推导的逆过程，若句柄的右端位置回退，将与最右推导的顺序相冲突。但这并不意味着一旦在栈顶出现了可归约的结构就需要归约，当产生式有公共右因子，贸然归约可能导致错误。</p>
-<p>还有一个重要的性质是：在分析过程中可能出现的所有合法前缀构成的集合是一个正则语言。这意味着我们可以用一个有限状态自动机来识别这些前缀。这个性质使得我们可以预先构造一个状态机来指导解析过程，将复杂度从 $O(n^2)$ 变为 $O(n)$，大大提升了效率。</p>
+<p>一个重要事实是：<strong>句柄总是位于分析栈的顶部，而不会隐藏在栈的中间或底部</strong>。或者说，句柄的右端位置是不减的。这是因为自底向上分析对应的是最右推导的逆过程，若句柄的右端位置回退，将与最右推导的顺序相冲突。但这并不意味着一旦在栈顶出现了可归约的结构就需要归约，由于上下文的限制，有些符号串虽然形式上匹配某个产生式的右部，但并不是此时应归约的句柄，贸然归约可能导致分析错误。</p>
+<p>还有一个重要的性质是：在分析过程中可能出现的所有合法前缀构成的集合是一个正则语言。</p>
+<p>这是因为：</p>
+<ul>
+<li>文法的产生式是有限的，</li>
+<li>每个产生式可以扩展为一组 <strong>LR项</strong>（如 <code>E → .(T)</code>、<code>E → (.T)</code>、<code>E → (T.)</code>、<code>E → (T).</code>），其中“点”表示当前解析的进度，</li>
+<li>所有这些项的集合是有限的，而“移进”和“归约”操作对应于项之间基于输入符号的转移。</li>
+</ul>
+<p>于是，我们可以构造一个<strong>有限状态自动机</strong>，每个状态是一个项集，表示当前可能所处的所有语法位置；每条边表示一个“移进”或“归约”动作，驱动点在产生式中移动。以文法 $ E \to (T) $ 为例，状态转移如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态</th>
+<th style="text-align:center">输入符号</th>
+<th style="text-align:center">动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\{ E \to \cdot(T) \}$</td>
+<td style="text-align:center">(</td>
+<td style="text-align:center">移进，进入状态 $\{ E \to ( \cdot T) \}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\{ E \to ( \cdot T) \}$</td>
+<td style="text-align:center">id</td>
+<td style="text-align:center">移进，进入状态 $\{ E \to (T \cdot ) \}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\{ E \to (T \cdot ) \}$</td>
+<td style="text-align:center">)</td>
+<td style="text-align:center">归约，使用产生式 $ E \to (T) $</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>从而我们能提前构造出这个自动机（也就是生成 LR 分析表），用查表的方式快速决定每一步该做什么。这使得解析过程从可能的 $O(n^2)$ 甚至更慢，变成<strong>确定性的 $O(n)$</strong>，大大提高了效率。</p>
 <p>在实现上，自底向上解析通常使用一个栈来保存已经处理的符号和状态，再配合一张分析表来决定每一步该做什么。分析表告诉解析器：在某个状态下，看到某个输入符号时，应该移进、归约、接受还是报错。整个过程是自动推进的，不需要回溯。</p>
 <p>相比自顶向下的方法，自底向上解析更强大。它可以处理左递归文法，不需要对文法做额外的变换，比如消除左递归或提取左因子。这使得它可以更自然地描述编程语言中的常见结构，比如连续的加减乘除表达式。正因为这些优点，自底向上解析成为工业级编译器的主流选择。许多语法生成工具，比如 Yacc 和 Bison，都是基于这种思想实现的。</p>
 <blockquote>
