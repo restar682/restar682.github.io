@@ -47,15 +47,15 @@ user code
 
 这一部分用于声明语法分析器所需的各种信息，类似于 C 文件的头部。在这里可以：
 
-- **声明终结符（tokens）**：告诉 Bison 所有词法单元（由 Flex 提供）；
+- **声明终结符**：告诉 Bison 所有词法单元（由 Flex 提供）；
 - **声明非终结符的属性类型**：通过 `%type` 指定每个非终结符使用 `union` 中的哪个成员；
-- **定义属性的联合体（union）**：统一表示所有语法树节点或值的类型；
+- **定义属性的联合体**：统一表示所有语法树节点或值的类型；
 - **指定起始符号**（可选）；
 - **包含头文件**、**定义宏**或**声明全局变量**（用 `%{ ... %}` 包裹）。
 
 常用声明语法：
 
-- **`%union`**：定义所有可能的属性类型（通常是语法树节点指针）：
+- **`%union`**：定义所有可能的属性类型，类型不同储存用到的字段也不同（通常是语法树节点指针）：
   ```bison
   %union {
       int           int_val;
@@ -66,14 +66,14 @@ user code
   }
   ```
 
-- **`%token`**：声明终结符（token），可带类型：
+- **`%token`**：声明终结符，可带类型（即使用 `union` 中的哪个字段）：
   ```bison
   %token <int_val>  INTEGER
   %token <string_val> IDENTIFIER STRING_CONST
   %token IF THEN ELSE FI
   ```
 
-- **`%type`**：声明非终结符的属性类型（即使用 `union` 中的哪个字段）：
+- **`%type`**：声明非终结符的属性类型：
   ```bison
   %type <program> program
   %type <expr>    expression if_expr while_expr
