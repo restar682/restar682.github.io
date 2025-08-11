@@ -61,6 +61,7 @@ user code
       int           int_val;
       char*         string_val;
       Program       program;
+      Expression    expr;
       ···
   }
   ```
@@ -169,12 +170,3 @@ Bison 内置支持语法错误处理：
   ```
 - `yyerrok`：表示错误已处理，恢复正常解析；
 - `yyclearin`：清除当前输入符号，常与 `yyerrok` 一起使用。
-
----
-
-### 运行与调试
-
-- 用 `bison -d parser.y` 生成 `parser.tab.c` 和 `parser.tab.h`；
-- `parser.tab.h` 应被 Flex 文件包含，以共享 token 定义；
-- 编译时链接 Flex 和 Bison 生成的文件；
-- 可使用 `-v` 选项生成 `parser.output` 文件，查看状态机、冲突等信息。
