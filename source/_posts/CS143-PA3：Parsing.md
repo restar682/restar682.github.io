@@ -230,3 +230,9 @@ class : CLASS TYPEID INHERITS TYPEID IS optional_feature_list END ';'
 | `append_Classes(Classes, Classes)` | 拼接两个 `Classes` 列表             |
 | `Class_ nth(int index)`    | 选取列表中第 `index` 个元素          |
 | `int len()`           | 返回列表长度                   |
+
+列表还提供了一个简单的迭代器，包含以下方法：
+
+- `first()`：返回列表第一个元素的索引  
+- `more(index)`：当 `index` 不是最后一个元素时返回 `true`，否则返回 `false`  
+- `next(index)`：返回列表中 `index` 的下一个元素的索引
