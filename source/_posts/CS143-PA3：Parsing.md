@@ -236,3 +236,25 @@ class : CLASS TYPEID INHERITS TYPEID IS optional_feature_list END ';'
 - `first()`：返回列表第一个元素的索引  
 - `more(index)`：当 `index` 不是最后一个元素时返回 `true`，否则返回 `false`  
 - `next(index)`：返回列表中 `index` 的下一个元素的索引
+
+### AST 类层次结构
+Cool 的 AST 采用面向对象的类继承机制组织节点类型，整体结构如下：
+- 除列表外，所有 AST 类均派生自基类 `tree_node`。  
+- 所有列表都是 `tree_node` 类型的列表。  
+- `tree_node` 类及 AST 列表模板定义在 `tree.h` 中。
+
+#### `tree_node` 类
+- 定义了抽象语法树节点所需的基本信息，除去特定构造函数特有的数据。  
+- 包含受保护成员 `line_number`，表示该 AST 节点对应的源代码行号，用于编译器生成精准的错误提示信息。  
+- 提供的重要成员函数包括：  
+  - `dump`：以 pret 格式打印 AST。  
+  - `get_line_number`：访问节点对应的行号。
+
+#### 门类
+- 每个门类是直接从 `tree_node` 派生的类。  
+- 门类的主要作用是将相关构造函数归类，不增加额外功能。
+
+#### 构造器类
+- 每个构造器类都派生自对应的门类。  
+- 每个构造器类定义了一个同名函数，用于构建对应的 AST 节点。  
+- 构造器类自动定义了 `dump` 函数，用于打印节点信息。
