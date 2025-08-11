@@ -175,4 +175,48 @@ Bison 内置支持语法错误处理：
 为了将 Token 序列转换成 AST，我们肯定要了解 Cool 语言的 AST 的定义。（~~怎么这么多要了解的东西~~）
 
 Cool 语言的 AST 代码由 `cool-tree.aps` 文件中的规范自动生成。虽然这些代码结构简单、规则统一，但由于缺乏注释，阅读和理解起来并不直观。接下来，我们将参考 `handouts/cool-tour` 第六节的内容，对其结构进行分析和理解。
-### 
+### APS 简介
+Cool 语言的抽象语法在 APS 中定义。在 APS 术语中，抽象语法树的各种节点（如 let、`+` 等）被称为构造器。AST 的格式由一组 **门类（phyla）** 描述，每个门类包含一个或多个构造器，用于表示特定类型的语法结构。
+
+门类本质上就是类型，它是我们根据功能对构造器进行分组后确定的。例如，将表达式 AST 的构造器与类 AST 的构造器区分开来。门类的定义位于 `cool-tree.aps` 文件的开头。
+```aps
+module COOL[] begin
+  phylum Program;
+  phylum Class_;
+  phylum Classes = LIST [Class_];
+  phylum Feature;
+  phylum Features = LIST [Feature];
+  phylum Formal;
+  ···
+```
+
+从定义可以看出，门类分为两种类型：“正常”门类和“列表”门类。正常门类关联有构造器，列表门类则定义有一组固定的列表操作。
+
+每个构造器都接受带有明确类型的参数，并返回带有明确类型的结果。参数类型可以是先前定义的门类或任何普通的 C++ 类型。实际上，门类的声明会被 APS 编译器转换成对应的 **C++** 类声明。例如：
+
+```aps
+constructor class_(name : Symbol; parent: Symbol; features : Features; filename : Symbol) : Class_;
+```
+
+此声明指定 `class_` 构造函数接受四个参数：
+1. `Symbol`（类型标识符）用于类名  
+2. `Symbol`（类型标识符）用于父类  
+3. `Features`（由 `Feature` 构成的列表）  
+4. `Symbol` 用于存放类定义的文件名
+
+`class_` 构造函数返回类型为 `Class_` 的 AST 节点。在 `cool.y` 中，使用示例如下：
+
+```bison
+class : CLASS TYPEID INHERITS TYPEID IS optional_feature_list END ';'
+    { $$ = class_($2, $4, $6, stringtable.add_string(curr_filename)); }
+```
+
+该构造函数会用四个参数作为子节点构建一个 `Class_` 树节点。由于参数类型已声明，**C++** 类型检查器会强制确保仅将构造函数用于适当类型的参数。
+
+在阅读代码时需要注意：相同的名称在不同上下文中可能表示不同实体。例如：
+- `CLASS`：终端符号  
+- `class`：非终端符号  
+- `class_`：构造器  
+- `Class_`：门类
+
+它们的含义完全不同。此外，在 `cool.y` 的联合声明中还有 `class_` 成员，含义又不同。大多数情况可通过大小写区分，但并非总是如此，因此阅读代码时需特别注意每个符号的角色。
