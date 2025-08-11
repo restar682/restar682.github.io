@@ -73,7 +73,7 @@ user code
   %token IF THEN ELSE FI
   ```
 
-- **`%type`**：声明非终结符的属性类型：
+- **`%type`**：声明非终结符储存的使用的字段：
   ```bison
   %type <program> program
   %type <expr>    expression if_expr while_expr
