@@ -222,4 +222,11 @@ class : CLASS TYPEID INHERITS TYPEID IS optional_feature_list END ';'
 它们的含义完全不同。此外，在 `cool.y` 的联合声明中还有 `class_` 成员，含义又不同。大多数情况可通过大小写区分，但并非总是如此，因此阅读代码时需特别注意每个符号的角色。
 
 ### AST 列表
-对每个普通门类 `X`，APS 都会对应地定义一个列表门类 `Xs`，其类型为 `List [X]`（除了 `Classes` 是 `Class_` 的列表）。APS 为列表型门类提供了一组专用的操作，用于构建和访问列表结构。
+对每个普通门类 `X`，APS 都会对应地定义一个列表门类 `Xs`，其类型为 `List [X]`（除了 `Classes` 是 `Class_` 的列表）。APS 为列表型门类提供了一组专用的操作，用于构建和访问列表结构。常用列表操作函数有：
+| 函数名                | 功能说明                     |
+|---------------------|---------------------------|
+| `nil_Classes()`       | 返回一个空的 `Classes` 列表         |
+| `single_Classes(Class_)` | 根据单个 `Class_` 元素创建长度为1的列表 |
+| `append_Classes(Classes, Classes)` | 拼接两个 `Classes` 列表             |
+| `Class_ nth(int index)`    | 选取列表中第 `index` 个元素          |
+| `int len()`           | 返回列表长度                   |
