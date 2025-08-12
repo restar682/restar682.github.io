@@ -2,7 +2,7 @@
 title: CS143-Week4：Bottom-Up Parsing
 date: 2025-08-06 09:19:37
 categories: CS143
-description: 
+description: 预测解析与自底向上解析。
 tags: [编译原理, Linux, CS143, 语法分析, 预测解析]
 ---
 # 预测解析
