@@ -66,11 +66,13 @@ user code
   }
   ```
 
-- **`%token`**：声明终结符，可带类型（即使用 `union` 中的哪个字段）：
+- **`%token`**：声明终结符，可带类型（即使用 `union` 中的哪个字段），还可手动指定终结符数字编号：
   ```bison
   %token <int_val>  INTEGER
   %token <string_val> IDENTIFIER STRING_CONST
   %token IF THEN ELSE FI
+   /* 手动指定编号*/
+  %token INHERITS 263 LET 264 LOOP 265 POOL 266 THEN 267 WHILE 268  
   ```
 
 - **`%type`**：声明非终结符储存的使用的字段：
@@ -85,7 +87,7 @@ user code
   %start program
   ```
 
-> 注意：所有带属性的终结符和非终结符都必须用 `%token` 或 `%type` 声明类型，否则 Bison 不知道如何存储它们的值，会导致运行时错误。
+> 注意：所有带属性的终结符和非终结符都必须用 `%token` 或 `%type` 声明储存使用的字段，否则 Bison 不知道如何存储它们的值，会导致运行时错误。
 
 #### 2. rules（语法规则区）
 
@@ -254,7 +256,7 @@ class : CLASS TYPEID INHERITS TYPEID IS optional_feature_list END ';'
 | `nil_Classes()`       | 返回一个空的 `Classes` 列表         |
 | `single_Classes(Class_)` | 根据单个 `Class_` 元素创建长度为1的列表 |
 | `append_Classes(Classes, Classes)` | 拼接两个 `Classes` 列表             |
-| `Class_ nth(int index)`    | 选取列表中第 `index` 个元素          |
+| `Class_nth(int index)`    | 选取列表中第 `index` 个元素          |
 | `int len()`           | 返回列表长度                   |
 
 列表还提供了一个简单的迭代器，包含以下方法：
@@ -288,9 +290,223 @@ Cool 的 AST 采用面向对象的类继承机制组织节点类型，整体结�
 ### AST 构造器类属性
 tree 包中每个类定义都包含若干属性。每个构造器类都会为其组成部分定义对应的属性，属性名称与构造器中的字段名一致，且仅对该构造器类及其派生类的成员函数可见。例如，`class_constructor` 类具有以下四个属性：
 
-* `Symbol name;`
-* `Symbol parent;`
-* `Features features;`
-* `Symbol filename;`
+- `Symbol name;`
+- `Symbol parent;`
+- `Features features;`
+- `Symbol filename;`
 
 为 AST 类添加成员函数能够有效提升代码可读性和开发效率。所有扩展均可通过直接编辑 `cool-tree.h` 等头文件完成，无需修改自动生成的 APS 定义。
+
+## 实现
+> 在开始之前，建议先阅读 `handouts/cool-manual` 的第十一、十二节，分别详细介绍了 Cool 的优先级与语法结构。同时，推荐仔细阅读 `cool-tree.asp` 文件，其中定义了所有可用的构造器。
+
+我们先根据优先级和属性确定各个非终结符储存的字段和各个符号的优先级：
+```
+    %type <program> program
+    %type <classes> class_list
+    %type <class_> class
+    
+    %type <feature> feature
+    %type <features> dummy_feature_list
+    
+    %type <formal> formal
+    %type <formals> formal_list
+
+    %type <case_> branch
+    %type <cases> branch_list
+
+    %type <expression> expr dispatch static_dispatch let_expr let_cond case_expr
+    %type <expressions> expr_list actual
+
+    %right ASSIGN
+    %left NOT
+    %nonassoc LE '<' '='
+    %left '+' '-'
+    %left '*' '/'
+    %left ISVOID
+    %left '~'
+    %left '@'
+    %left '.'
+    %nonassoc LET
+```
+
+然后根据语法结构对应的 AST 的构造函数来写就行，然后根据错误要求处理一下错误就行：
+```
+program :
+  class_list
+    { SET_NODELOC(@1); ast_root = program($1); }
+;
+
+class_list :
+    class
+        { $$ = single_Classes($1);
+        parse_results = $$; }
+    | class_list class
+        { $$ = append_Classes($1, single_Classes($2));
+        parse_results = $$; }
+    ;
+
+class :
+    CLASS TYPEID '{' dummy_feature_list '}' ';'
+        { $$ = class_($2, idtable.add_string("Object"), $4,
+                    stringtable.add_string(curr_filename)); }
+    | CLASS TYPEID INHERITS TYPEID '{' dummy_feature_list '}' ';'
+        { $$ = class_($2, $4, $6, stringtable.add_string(curr_filename)); }
+    | error
+    ;
+
+dummy_feature_list :
+    { $$ = nil_Features(); }
+    | feature ';'
+        { $$ = single_Features($1); }
+    | dummy_feature_list feature ';'
+        { $$ = append_Features($1, single_Features($2)); }
+    ;
+
+feature :
+    OBJECTID ':' TYPEID
+        { $$ = attr($1, $3, no_expr()); }
+    | OBJECTID ':' TYPEID ASSIGN expr
+        { $$ = attr($1, $3, $5); }
+    | OBJECTID '(' ')' ':' TYPEID '{' expr '}'
+        { $$ = method($1, nil_Formals(), $5, $7); }
+    | OBJECTID '(' formal_list ')' ':' TYPEID '{' expr '}'
+        { $$ = method($1, $3, $6, $8); }
+    | error
+    ;
+
+formal_list :
+    { $$ = nil_Formals(); }
+    | formal
+        { $$ = single_Formals($1); }
+    | formal_list ',' formal
+        { $$ = append_Formals($1, single_Formals($3)); }
+    ;
+
+formal :
+    OBJECTID ':' TYPEID
+        { $$ = formal($1, $3); }
+    ;
+
+branch_list :
+    { $$ = nil_Cases(); }
+    | branch
+        { $$ = single_Cases($1); }
+    | branch_list branch
+        { $$ = append_Cases($1, single_Cases($2)); }
+    ;
+
+branch :
+    OBJECTID ':' TYPEID DARROW expr ';'
+        { $$ = branch($1, $3, $5); }
+    ;
+
+expr :
+    OBJECTID ASSIGN expr
+        { $$ = assign($1, $3); }
+    | dispatch
+    | static_dispatch
+    | IF expr THEN expr ELSE expr FI
+        { $$ = cond($2, $4, $6); }
+    | WHILE expr LOOP expr POOL
+        { $$ = loop($2, $4); }
+    | WHILE expr LOOP error
+    | '{' expr_list '}'
+        { $$ = block($2); }
+    | let_expr
+    | case_expr
+    | NEW TYPEID
+        { $$ = new_($2); }
+    | ISVOID expr
+        { $$ = isvoid($2); }
+    | expr '+' expr
+        { $$ = plus($1, $3); }
+    | expr '-' expr
+        { $$ = sub($1, $3); }
+    | expr '*' expr
+        { $$ = mul($1, $3); }
+    | expr '/' expr
+        { $$ = divide($1, $3); }
+    | '~' expr
+        { $$ = neg($2); }
+    | expr '<' expr
+        { $$ = lt($1, $3); }
+    | expr LE expr
+        { $$ = leq($1, $3); }
+    | expr '=' expr
+        { $$ = eq($1, $3); }
+    | NOT expr
+        { $$ = comp($2); }
+    | '(' expr ')'
+        { $$ = $2; }
+    | OBJECTID
+        { $$ = object($1); }
+    | INT_CONST
+        { $$ = int_const($1); }
+    | STR_CONST
+        { $$ = string_const($1); }
+    | BOOL_CONST
+        { $$ = bool_const($1); }
+    | error
+    ;
+
+dispatch :
+    OBJECTID '(' actual ')'
+        { $$ = dispatch(object(idtable.add_string("self")), $1, $3); }
+    | expr '.' OBJECTID '(' actual ')'
+        { $$ = dispatch($1, $3, $5); }
+    ;
+
+static_dispatch :
+    expr '@' TYPEID '.' OBJECTID '(' actual ')'
+        { $$ = static_dispatch($1, $3, $5, $7); }
+    ;
+
+actual :
+    { $$ = nil_Expressions(); }
+    | expr
+        { $$ = single_Expressions($1); }
+    | actual ',' expr
+        { $$ = append_Expressions($1, single_Expressions($3)); }
+    ;
+
+expr_list :
+    expr ';'
+        { $$ = single_Expressions($1); }
+    | expr_list expr ';'
+        { $$ = append_Expressions($1, single_Expressions($2)); }
+    | error
+    ;
+
+let_expr :
+    LET OBJECTID ':' TYPEID IN expr
+        { $$ = let($2, $4, no_expr(), $6); }
+    | LET OBJECTID ':' TYPEID ASSIGN expr IN expr
+        { $$ = let($2, $4, $6, $8); }
+    | LET OBJECTID ':' TYPEID ',' let_cond
+        { $$ = let($2, $4, no_expr(), $6); }
+    | LET OBJECTID ':' TYPEID ASSIGN expr ',' let_cond
+        { $$ = let($2, $4, $6, $8); }
+    ;
+
+let_cond :
+    OBJECTID ':' TYPEID IN expr
+        { $$ = let($1, $3, no_expr(), $5); }
+    | OBJECTID ':' TYPEID ASSIGN expr IN expr
+        { $$ = let($1, $3, $5, $7); }
+    | OBJECTID ':' TYPEID ',' let_cond
+        { $$ = let($1, $3, no_expr(), $5); }
+    | OBJECTID ':' TYPEID ASSIGN expr ',' let_cond
+        { $$ = let($1, $3, $5, $7); }
+    ;
+
+case_expr :
+    CASE expr OF branch_list ESAC
+        { $$ = typcase($2, $4); }
+    ;
+```
+
+不知道为啥评测程序好像有 bug……我无论是换谁的程序都判不出来。嗯，所以我找了份大佬的程序对拍，拍过了(*^_^*)
+
+# 小结
+PA3 同样很简单，有一堆只要了解接口的东西要看，但都不是很复杂。有一说一，过于自动化的程序导致了课程内容与作业略有一点脱节，课上讲的解析器原理在作业中完全没有体现，有一点遗憾，不过后面的作业应该会好很多。
