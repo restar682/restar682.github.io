@@ -44,7 +44,7 @@ $SELF\\_TYPE$ 是一种特殊的类型标记，表示方法或属性的返回类
 设 $T, T'$ 是除 SELF_TYPE 外的任意类型。
 
 1. **同类 SELF_TYPE 比较**
-   - $$SELF\_TYPE_C \leq SELF\_TYPE\_C$$ （显然成立）
+   - $$SELF\_TYPE_C \leq SELF\_TYPE\_C$$
    - 注意：不同类的 $$SELF\_TYPE$$ 不能比较，例如 $$SELF\_TYPE_A$$ 和 $$SELF\_TYPE_B$$ 没有可比关系。
 
 2. **SELF_TYPE 和普通类型比较**
