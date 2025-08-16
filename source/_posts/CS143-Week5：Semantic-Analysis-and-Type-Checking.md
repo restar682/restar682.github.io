@@ -2,8 +2,8 @@
 title: CS143-Week5：Semantic Analysis and Type Checking
 date: 2025-08-12 19:03:08
 categories: CS143
-description: 
-tags: [编译原理, Linux, CS143, 语义分析]
+description: 语义分析的内容、类型检查与类型环境管理。
+tags: [编译原理, Linux, CS143, 语义分析, 类型检查]
 ---
 # 语义分析基础
 在语义分析阶段，Coolc 会执行多种检查，包括：
@@ -31,7 +31,6 @@ tags: [编译原理, Linux, CS143, 语义分析]
 
 ## 作用域与符号表
 ### 作用域
-
 **作用域**（Scope）是指一个声明在程序中可见并可被访问的代码范围。
 
 在语义分析中，我们会根据作用域，将标识符的使用与其对应的声明进行匹配。
