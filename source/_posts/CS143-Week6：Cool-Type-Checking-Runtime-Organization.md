@@ -60,10 +60,10 @@ $SELF\\_TYPE$ 是一种特殊的类型标记，表示方法或属性的返回类
 
 规则如下：
 
-1. $lub(SELF\_TYPE\_C, SELF\_TYPE\_C) = SELF\_TYPE\_C$  
+1. $lub(SELF\\_TYPE\_C, SELF\\_TYPE\_C) = SELF\\_TYPE\_C$  
    - 两个相同类的 SELF_TYPE，lub 还是它本身。
 
-2. $lub(SELF\_TYPE\_C, T) = lub(T, SELF\_TYPE\_C) = lub(C, T)$  
+2. $lub(SELF\\_TYPE\_C, T) = lub(T, SELF\\_TYPE\_C) = lub(C, T)$  
    - 把 SELF_TYPE 先替换成 $C$，再做 lub。
 
 3. $lub(T, T')$  
