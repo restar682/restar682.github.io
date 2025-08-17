@@ -1,5 +1,5 @@
 ---
-title: CS143-PA2：Lexical
+title: CS143-PA2：Lexical Analysis
 date: 2025-08-01 11:03:29
 categories: CS143
 description: CS143 PA2：实现 Cool 语言的词法分析器。
