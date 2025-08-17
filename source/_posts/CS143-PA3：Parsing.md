@@ -23,7 +23,7 @@ make parser
 ./lexer test.cl | ./parser
 ```
 
-在编译过程中，Bison 生成的 `cool-parse.cc` 负责语法分析的主要实现；`parser-phase.cc` 提供程序入口，负责驱动并测试语法分析器；`cool-tree.aps` 定义 AST 结构，并自动生成 `cool-tree.h` 与 `cool-tree.cc` 以支持树节点的构造与处理，剩下的 `tokens-lex.cc`、`dumptype.cc` 和 `handle_flags.cc` 等文件为辅助代码，不需要修改。
+在编译过程中，Bison 生成的 `cool-parse.cc` 负责语法分析的主要实现；`parser-phase.cc` 提供程序入口，负责驱动并测试语法分析器；`cool-tree.aps` 定义 AST 结构，并自动生成 `cool-tree.handcode.h` 与 `cool-tree.cc` 以支持树节点的构造与处理，剩下的 `tokens-lex.cc`、`dumptype.cc` 和 `handle_flags.cc` 等文件为辅助代码，不需要修改。
 
 这里所用到的 **Bison** 是一种语法分析器生成工具，它能够根据上下文无关文法规则自动生成语法分析器。其作用是将 `.y` 文件转换为 C/C++ 源码（如 `cool-parse.cc`），并作为库函数与其他源码一起编译。目前我们通过 `parser-phase.cc` 来调用生成的语法分析器代码，后续可能会通过编译器的其他阶段（如语义分析器）来调用。
 
