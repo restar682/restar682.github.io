@@ -468,6 +468,6 @@ PA2 并不算困难，在 Flex 的帮助下，只需要写正则表达式的我�
 顺手贴一个通关截图：
 
 <figure style="text-align: center;">
-  <img src="/illustrations/CS143-PA2/1.png" alt="通关截图" width="100%">
+  <img src="/illustrations/CS143-PA/PA2.png" alt="通关截图" width="100%">
   <figcaption>通关截图</figcaption>
 </figure>

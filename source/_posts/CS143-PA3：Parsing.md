@@ -508,5 +508,14 @@ case_expr :
 
 不知道为啥评测程序好像有 bug……我无论是换谁的程序都判不出来。嗯，所以我找了份大佬的程序对拍，拍过了(*^_^*)
 
+哦，现在我知道了，原来是它用的脚本跟我的 Shell 不匹配……把 `grading` 目录下的 `myparser` 的 `csh` 也改成 `bash` 就行了
+
 # 小结
 PA3 同样很简单，有一堆只要了解接口的东西要看，但都不是很复杂。有一说一，过于自动化的程序导致了课程内容与作业略有一点脱节，课上讲的解析器原理在作业中完全没有体现，有一点遗憾，不过后面的作业应该会好很多。
+
+现在可以贴通关截图哩：
+
+<figure style="text-align: center;">
+  <img src="/illustrations/CS143-PA/PA3.png" alt="通关截图" width="100%">
+  <figcaption>通关截图</figcaption>
+</figure>
