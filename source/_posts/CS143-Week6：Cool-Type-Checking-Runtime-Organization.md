@@ -3,7 +3,7 @@ title: CS143-Week6：Cool Type Checking & Runtime Organization
 date: 2025-08-16 12:22:55
 categories: CS143
 description: 
-tags: [编译原理, Linux, CS143, 语义分析]
+tags: [编译原理, Linux, CS143, 语义分析, 自类型, 运行时系统]
 ---
 # Cool 的类型检查
 ## 静态类型与动态类型
@@ -130,3 +130,5 @@ let y : Int <- x + 3
 如果引入 `No_type`，类层次结构就不再是树，而是一个“几乎全连接”的结构（因为 `No_type` 是所有类的子类型），实现起来会比较复杂。  
 
 因此，在我们做玩具编译器的时候，用 `Object` 作为错误恢复类型已经足够。但在“真实”编译器里，更常见的做法是使用类似 `No_type` 的特殊机制来追踪错误。
+
+# 运行时系统
