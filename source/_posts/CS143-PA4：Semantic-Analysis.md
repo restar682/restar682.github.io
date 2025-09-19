@@ -128,7 +128,7 @@ class Environment {
   private:
     SymbolTable<Symbol, method_class> method_table;
     SymbolTable<Symbol, Entry> var_table;
-    ClassTableP class_table;
+    ClassTableP class_table; // 引用类表，方便查找
     ClassNodeP self_class;
 
   public:
