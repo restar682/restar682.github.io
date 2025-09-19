@@ -150,11 +150,32 @@ struct proc
 
         1. 安全访问函数族
 
-        | 函数 | 方向 | 作用 | 底层实现 |
-        | --- | --- | --- | --- |
-        | `copyin(pg, dst, srcva, len)` | 用户 → 内核 | 从用户空间复制数据到内核缓冲区 | 调用 `walkaddr` 验证地址 |
-        | `copyout(pg, dstva, src, len)` | 内核 → 用户 | 从内核复制数据到用户空间 | 同上 |
-        | `fetchstr(addr, buf, max)` | 用户 → 内核 | 从地址addr中安全提取用户空间字符串 | 封装 `copyinstr` |
+        <table style="width: 100%; border-collapse: collapse; text-align: center;">
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">函数</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">方向</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">作用</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">底层实现</th>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><code>copyin(pg, dst, srcva, len)</code></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">用户 → 内核</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">从用户空间复制数据到内核缓冲区</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">调用 <code>walkaddr</code> 验证地址</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><code>copyout(pg, dstva, src, len)</code></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">内核 → 用户</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">从内核复制数据到用户空间</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">同上</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><code>fetchstr(addr, buf, max)</code></td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">用户 → 内核</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">从地址 addr 中安全提取用户空间字符串</td>
+            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">封装 <code>copyinstr</code></td>
+          </tr>
+        </table>
 
         2. 页表遍历验证 (`walkaddr`)
 
@@ -167,6 +188,7 @@ struct proc
             return PTE2PA(*pte);                   // 返回物理地址
         }
         ```
+
         3. 字符串安全提取示例 (copyinstr)
         ```c
         // kernel/vm.c
