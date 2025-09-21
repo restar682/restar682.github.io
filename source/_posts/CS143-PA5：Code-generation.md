@@ -15,7 +15,7 @@ tags: [编译原理, Linux, CS143, 代码生成]
 make cgen
 ```
 
-会生成一个名为 `cgen` 的可执行文件，可以通过运行 `./mycoolc test.cl` 来对指定文件进行词法分析。这里的 `mycoolc` 还是个 `csh` 脚本，如果用的是 `bash` 的话也需要将开头的 `csh` 改成 `bash`，或者直接运行
+会生成一个名为 `cgen` 的可执行文件，可以通过运行 `./mycoolc test.cl` 来对指定文件进行代码生成。这里的 `mycoolc` 还是个 `csh` 脚本，如果用的是 `bash` 的话也需要将开头的 `csh` 改成 `bash`，或者直接运行
 
 ```bash
 ./lexer test.cl | ./parser | ./semant | ./cgen
