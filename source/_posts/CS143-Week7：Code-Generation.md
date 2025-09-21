@@ -200,7 +200,7 @@ NT(id) = 0
 ### 内存表示
 我们自然想到在内存中用连续一块内存区域来储存对象，这样既能保证继承兼容性，也能简化内存管理。根据其类型不同，对象可能在栈上、堆上，也可能在静态存储区，但无论如何都是占用的一块连续内存空间。在 Cool 语言中，对象的基本内存布局如下：
 <figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/CS143-Week6/1.png" alt="对象内存布局" width="65%">
+  <img src="/illustrations/CS143-Week6/1.png" alt="对象内存布局" width="55%">
   <figcaption>对象内存布局</figcaption>
 </figure>
 
