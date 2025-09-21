@@ -33,4 +33,21 @@ make cgen
 
 那么接下来，我们将面对的就是最后一个 Assignment，也是最复杂的一个 Assignment，祝你，也祝我自己好运~
 ## 实现
-> 在开始之前，建议先阅读 `handouts/cool-manual` 的第十三节，详细介绍了 Cool 语言的操作语义。也推荐仔细阅读所有用到的文件，这可能会让你的编码工作简单不少。已经提供的代码或许写法比较奇怪，不过还是建议耐心阅读。
+> 在开始之前，建议先阅读 `handouts/cool-manual` 的第十三节和 `handouts/cool-tour` 的第七节，详细介绍了 Cool 语言的操作语义和运行时系统。也推荐仔细阅读所有用到的文件，这可能会让你的编码工作简单不少。已经提供的代码或许写法比较奇怪，不过还是建议耐心阅读。
+
+### 输出全局常量
+这里我们对原有的代码进行一些小的修补即可，参考标准编译器得到的代码我们可以很容易地补全调度指针的信息，比如 Int 的调度指针只需修改 `code_def` 为以下代码：
+```
+void IntEntry::code_def(ostream &s, int intclasstag)
+{
+  // Add -1 eye catcher
+  s << WORD << "-1" << endl;
+
+  code_ref(s);
+  s   << LABEL                                            // label
+      << WORD << intclasstag << endl                      // class tag
+      << WORD << (DEFAULT_OBJFIELDS + INT_SLOTS) << endl  // object size
+      << WORD << INTNAME << DISPTAB_SUFFIX << endl;       // dispatch table
+      << WORD << str << endl;                             // integer value
+}
+```
