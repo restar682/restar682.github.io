@@ -112,14 +112,14 @@ PyTorch 的 `autograd` 能自动计算模型参数的梯度，不需要手动推
 
 ## 设备管理
 
-控制模型和数据在 CPU 或 GPU 上运行。
+Pytorch 可以控制模型和数据在 CPU 或 GPU 上运行。
 
 - `torch.device("cuda")` 或 `torch.device("cpu")`：指定设备
 - `x.to(device)`：将张量移动到指定设备
 - `torch.cuda.is_available()`：检查 GPU 是否可用
 
 ## 模型保存与加载
-可以保存和加载训练好的模型
+Pytorch 同样支持保存和加载训练好的模型。
 
 - `torch.save(model.state_dict(), path)`：保存模型参数
 - `model.load_state_dict(torch.load(path))`：加载模型参数
