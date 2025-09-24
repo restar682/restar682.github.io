@@ -15,28 +15,33 @@ Python 的模块分为标准库的模块、第三方模块和自定义模块，�
 - `import 模块名1 [as 别名1], 模块名2 [as 别名2]`  
 - `from 模块名 import 成员名1 [as 别名1], 成员名2 [as 别名2]`
 
+<div style="display: flex; justify-content: center; gap: 1em;">
 <figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/UCAS-nlp-Week1/1.png" alt="test_module.py 作为模块" width="55%">
+  <img src="/illustrations/UCAS-nlp-Week1/1.png" alt="test_module.py 作为模块" width="100%">
   <figcaption>`test_module.py` 作为模块</figcaption>
 </figure>
 
 <figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/UCAS-nlp-Week1/1.png" alt="test_module_main.py 能够导入并使用" width="55%">
+  <img src="/illustrations/UCAS-nlp-Week1/2.png" alt="test_module_main.py 能够导入并使用" width="100%">
   <figcaption>`test_module_main.py` 能够导入并使用</figcaption>
 </figure>
+</div>
 
 ## Python 包（Package）
 包其实就是一个**文件夹**，但该文件夹下必须存在 `__init__.py` 文件，用于标识当前文件夹是一个Python包，这个文件的内容可以为空。
 
-<figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/UCAS-nlp-Week1/3.png" alt="test-package 作为包" width="55%">
-  <figcaption>`test-package` 作为包</figcaption>
-</figure>
+<div style="display: flex; justify-content: center; gap: 1em;">
+  <figure style="text-align: center; width: 45%;">
+    <img src="/illustrations/UCAS-nlp-Week1/3.png" alt="test-package 作为包" style="width: 74%;">
+    <figcaption><code>test-package</code> 作为包</figcaption>
+  </figure>
 
-<figure style="text-align: center; margin-top: 1em;">
-  <img src="/illustrations/UCAS-nlp-Week1/3.png" alt="test_module_main.py 能够导入包内的模块并使用" width="55%">
-  <figcaption>`test_module_main.py` 能够导入包内的模块并使用</figcaption>
-</figure>
+  <figure style="text-align: center; width: 45%;">
+    <img src="/illustrations/UCAS-nlp-Week1/4.png" alt="test_module_main.py 能够导入包内的模块并使用" style="width: 100%;">
+    <figcaption><code>test_module_main.py</code> 能够导入包内的模块并使用</figcaption>
+  </figure>
+</div>
+
 
 # Pytorch 简介
 好的，这个我是真没用过（笑

@@ -33,11 +33,11 @@ make cgen
 
 那么接下来，我们将面对的就是最后一个 Assignment，也是最复杂的一个 Assignment，祝你，也祝我自己好运~
 ## 实现
-> 在开始之前，建议先阅读 `handouts/cool-manual` 的第十三节和 `handouts/cool-tour` 的第七节，详细介绍了 Cool 语言的操作语义和运行时系统。也推荐仔细阅读所有用到的文件，这可能会让你的编码工作简单不少。已经提供的代码或许写法比较奇怪，不过还是建议耐心阅读。
+> 在开始之前，建议先阅读 `handouts/cool-tour` 的第七节，详细介绍了 Cool 语言的操作语义和运行时系统。也推荐仔细阅读所有用到的文件，这可能会让你的编码工作简单不少。已经提供的代码或许写法比较奇怪，不过还是建议耐心阅读。
 
 ### 输出全局常量
-这里我们对原有的代码进行一些小的修补即可，参考标准编译器得到的代码我们可以很容易地补全调度指针的信息，比如 Int 的调度指针只需修改 `code_def` 为以下代码：
-```
+输出常量只需要我们对原有的代码进行一些小的修补即可，参考标准编译器得到的代码我们可以很容易地补全调度指针的信息，比如 Int 的调度指针只需修改 `code_def` 为以下代码：
+```cpp
 void IntEntry::code_def(ostream &s, int intclasstag)
 {
   // Add -1 eye catcher
@@ -49,5 +49,56 @@ void IntEntry::code_def(ostream &s, int intclasstag)
       << WORD << (DEFAULT_OBJFIELDS + INT_SLOTS) << endl  // object size
       << WORD << INTNAME << DISPTAB_SUFFIX << endl;       // dispatch table
       << WORD << str << endl;                             // integer value
+}
+```
+
+我们还需要生成原型对象，跟常量的生成没有太大差别，属性的个数遍历一遍自己的成员表即可：
+```cpp
+void CgenNode::code_prototype_table(ostream &str)
+{
+  str << WORD << "-1" << endl
+      << name->get_string() << PROTOBJ_SUFFIX << LABEL
+      << WORD << class_tag << endl
+      << WORD << (DEFAULT_OBJFIELDS + get_attr_num()) << endl
+      << WORD << name->get_string() << DISPTAB_SUFFIX << endl;
+  for(LCgenNodeP l = children; l; l = l->tl())
+    l->hd()->code_prototype_table(str);
+}
+```
+
+### 输出全局表
+我们需要输出 `class_nameTab`、`class_objTab`和调度表（dispatch tables），前两个差别不大，关键在于调度表。为此，我们需要整理出每个类的方法，然后拼凑出调度表。我们按照继承树进行前序遍历，那么每个类构建调度表前其父类已构建完，我们可以复制过来，然后进行修改即可。
+
+我们用 `method_table` 来记录当前类能够使用的所有方法，`pa_method_table` 来记录方法具体来自于哪个类。如果该方法在父类中已经存在则覆写以实现多态，只需修改方法来源即可，否则需要添加进方法表，并且记录方法来源。
+```cpp
+void CgenNode::build_method_table(int flag)
+{
+  if(name != Object)
+  {
+    method_symbol_table = parentnd->get_method_symtab();
+    LEntryP pa_method_table = parentnd->get_method_table();
+    for(LEntryP l = pa_method_table; l; l = l->tl())
+    {
+      method_table = new_lnode(method_table, l->hd());
+      method_num++;
+    }
+  }
+  for(int i = features->first(); features->more(i); i = features->next(i))
+  {
+    Feature curr_feature = features->nth(i);
+    if (curr_feature->attr_flag() == flag) // 这里还是 attr_flag,差点全改了）
+    {
+      if(method_symbol_table.count(curr_feature->get_name()))
+      {
+        method_symbol_table[curr_feature->get_name()] = name; // 只要改调度表名字
+      }
+      else
+      {
+        method_table = new_lnode(method_table, curr_feature->get_name());
+        method_symbol_table[curr_feature->get_name()] = name;
+        method_num++;
+      }
+    }
+  }
 }
 ```
