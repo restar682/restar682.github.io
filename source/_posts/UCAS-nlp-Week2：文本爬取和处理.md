@@ -3,7 +3,7 @@ title: UCAS-nlp-Week2：文本爬取和处理
 date: 2025-09-30 15:35:36
 categories: UCAS-nlp
 description: 文本爬取和处理的基本介绍。
-tags: [自然语言处理, Python, Pytorch]
+tags: [自然语言处理, 爬虫, 分词]
 ---
 # 文本爬取和处理
 网络爬虫是一种按照一定的规则，自动地抓取网络中信息的程序，其基本流程为：
