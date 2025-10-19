@@ -1139,4 +1139,6 @@ categoryBar:
       cover: /images/8.jpg
     - descr: '绘画'
       cover: /images/9.jpg
+    - descr: '计网'
+      cover: /images/11.jpeg
   custom_css: /css/categorybar.css
