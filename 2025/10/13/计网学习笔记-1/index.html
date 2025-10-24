@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计网学习笔记-1 | restar682's blog</title><meta name="author" content="restar682"><meta name="copyright" content="restar682"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《计算机网络——自顶向下方法》第一章学习笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计网学习笔记-1">
+<meta property="og:url" content="http://restar682.github.io/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/index.html">
+<meta property="og:site_name" content="restar682's blog">
+<meta property="og:description" content="《计算机网络——自顶向下方法》第一章学习笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://restar682.github.io/img/head-sculpture.jpg">
+<meta property="article:published_time" content="2025-10-13T07:51:30.000Z">
+<meta property="article:modified_time" content="2025-10-18T16:14:59.100Z">
+<meta property="article:author" content="restar682">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="因特网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://restar682.github.io/img/head-sculpture.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计网学习笔记-1",
+  "url": "http://restar682.github.io/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/",
+  "image": "http://restar682.github.io/img/head-sculpture.jpg",
+  "datePublished": "2025-10-13T07:51:30.000Z",
+  "dateModified": "2025-10-18T16:14:59.100Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "restar682",
+      "url": "http://restar682.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://restar682.github.io/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计网学习笔记-1',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/XMx86jzlQw0brz3/latest/iconfont.css"><link rel="stylesheet" href="/css/corgi.css"><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="/css/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/" title="回到主页"><span class="site-name">restar682's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">计网学习笔记-1</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计网学习笔记-1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-10-13T07:51:30.000Z" title="发表于 2025-10-13 15:51:30">2025-10-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-18T16:14:59.100Z" title="更新于 2025-10-19 00:14:59">2025-10-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%BD%91/">计网</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="因特网"><a href="#因特网" class="headerlink" title="因特网"></a>因特网</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>因特网是一个互联了全世界数十亿计算设备的网络，这些设备包括个人计算机、平板电脑、智能手机、服务器等，他们被称作主机（host）或端系统（end system）。</p>
+<p>主机通过通信链路（communication link）和分组交换机（packet switch）互联。通信链路由不同类型的物理介质（如光纤、铜缆或无线信道）构成，各类链路的数据传输速率各不相同，单位是比特/秒（bps）。当一台主机向另一台主机发送数据时，发送主机会将数据分段并加上首字节，形成一个个分组。分组交换机主要有两种：路由器（router）和链路层交换机（link-layer switch），路由器连接不同的网络，而交换机连接同一网络内的设备。</p>
+<p>主机通过因特网服务提供商（Internet Service Provider, ISP）连接到因特网。每个 ISP 自身就是一个由多台分组交换机和多段通信链路构成的网络，他们为主机提供了各种不同类型的网络接入。ISP 有不同的层级：接入 ISP（如家庭宽带提供商）、区域 ISP（连接多个接入 ISP）和主干 ISP（连接多个区域 ISP）。但无论层级如何，所有 ISP 都是独立管理的，运行着 IP 协议，遵从一定的命名和地址规则。</p>
+<p>主机、分组交换机和其他因特网部件都要运行一系列的协议，这些协议定义了设备间通信的规则。TCP（Transmission Control Protocol, 传输控制协议）和 IP（Internet Protocol, 网际协议）是因特网的核心协议，IP 定义在路由器和主机之间发送和接收的分组格式，而 TCP 则为应用程序提供可靠的端到端通信服务。因特网的主要协议统称为 TCP/IP。</p>
+<h2 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h2><p>如前所述，我们把与因特网相连的计算机和其他设备称作端系统，因为他们位于因特网的边缘。端系统也称主机，因为他们容纳（运行）应用程序。主机有时候被进一步分为两类：客户和服务器。客户通常是桌面 PC、移动 PC 和智能手机等，而服务器通常更加强大，运行着 Web 服务器、文件服务器、电子邮件服务器等。</p>
+<h3 id="接入网"><a href="#接入网" class="headerlink" title="接入网"></a>接入网</h3><p><strong>接入网</strong>是指将终端主机物理连接到其边缘路由器的网络，常见的接入网类型包括：</p>
+<ul>
+<li><strong>数字用户线</strong>（DSL, Digital Subscriber Line）：<br>利用现有电话线提供高速互联网接入，由本地电话公司作为 ISP。DSL 通过频分复用技术，在同一对电话线上同时传输语音（低频）和数据（高频）。其典型特征是<strong>下行速率高于上行速率</strong>。</li>
+<li><strong>电缆调制解调器</strong>（Cable Modem）：<br>基于有线电视同轴电缆网络提供互联网接入。调制解调器将数字信号调制为适合电缆传输的射频信号。与 DSL 类似，<strong>下行带宽通常远大于上行带宽</strong>，且带宽在用户间共享。</li>
+<li><strong>光纤到户</strong>（FTTH, Fiber to the Home）：<br>通过光纤直接连接用户家庭，可以提供极高的上下行速率，延迟低、稳定性好，但初期部署成本较高。</li>
+<li><strong>无线接入</strong>：<br>无线接入主要包括局域范围的 Wi-Fi 和广域覆盖的蜂窝网络（如 4G、5G、LTE）。无线接入具有部署灵活、移动性强的优点，但其速率、延迟和可靠性易受距离、障碍物和干扰等因素影响。</li>
+</ul>
+<h3 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h3><p>物理媒体是指用于传输信号的物理介质，分为导引型媒体和非导引型媒体两大类，导引型媒体包括双绞铜线、同轴电缆和光纤，非导引型媒体主要是无线信道（包括陆地无线电和卫星无线电）。</p>
+<h2 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h2><h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p>在各类网络应用中，主机之间需要相互交换<strong>报文</strong>，报文其实是一种特殊的位于应用层的信息分组。在多种通信方式中，<strong>分组交换</strong>是实现报文传输的主要方式之一。报文既可以携带数据，也可以用于执行控制功能。当发送主机传输报文时，会将其划分为若干较小的数据单元，称为<strong>分组</strong>。每个分组通过通信链路和分组交换机，从源主机逐跳转发至目的主机。因此，若一个长度为 $L$ 比特的分组在速率为 $R$ 比特/秒（bps）的链路上传输，则其发送时延为 $\frac{L}{R}$ 秒。</p>
+<h4 id="储存转发"><a href="#储存转发" class="headerlink" title="储存转发"></a>储存转发</h4><p>多数分组交换机采用<strong>储存转发</strong>机制，即在转发分组之前，交换机必须先将整个分组接收完毕并存储在缓冲区中。</p>
+<p>这种方式可确保分组完整性并支持差错检测，但会引入额外的处理时延——每个分组至少需经历一次完整的接收过程后才能被转发。</p>
+<h4 id="排队时延和分组丢失"><a href="#排队时延和分组丢失" class="headerlink" title="排队时延和分组丢失"></a>排队时延和分组丢失</h4><p>当分组到达交换机时，若输出链路正被其他分组占用，该分组便需在缓冲区中排队等待。</p>
+<p>排队时延取决于当前队列长度、分组到达速率及链路处理能力，具有高度动态性，可能在毫秒到秒级之间波动，是网络时延中最不可预测的部分。</p>
+<p>若分组到达速率持续超过链路处理能力，缓冲区可能会溢出，导致新到达的分组被丢弃，这种现象称为<strong>分组丢失</strong>。分组丢失会引发重传机制，进而影响整体网络性能。</p>
+<h4 id="转发表和路由选择协议"><a href="#转发表和路由选择协议" class="headerlink" title="转发表和路由选择协议"></a>转发表和路由选择协议</h4><p>路由器会通过<strong>转发表</strong>决定如何转发每个到达的分组。转发表通常基于分组的目的地的 IP 地址，指示分组应通过哪个输出链路转发。转发表依赖于<strong>路由选择协议</strong>来自动设置和维护，这些协议允许路由器动态地交换信息，更新其转发表以反映网络拓扑的变化。</p>
+<h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><p><strong>电路交换</strong>是与分组交换相对应的另一种通信方式。它通过在通信双方之间建立一条专用的通信路径来实现数据传输。所有通信所需的资源（如缓存、带宽）都会在连接建立时被预留，该路径在整个通信过程中保持不变。这种方式适用于需要持续、稳定连接的应用，如传统电话通信。然而，由于资源在连接期间被独占，电路交换在资源利用率和灵活性方面不如分组交换。</p>
+<p>链路中的电路是通过频分复用（FDM）或时分复用（TDM）技术实现的。FDM 将链路的频谱划分为多个频段，每个频段用于不同的通信会话，该频段的宽度被称作带宽；TDM 则将时间划分为固定时长的帧，每个帧又被划分为固定数量的时隙，网络会在每个帧中为连接指定一个时隙。</p>
+<figure style="text-align: center;">
+  <img src="/illustrations/计网笔记1/1.png" alt="FDM 和 TDM" width="60%">
+  <figcaption>FDM 和 TDM</figcaption>
+</figure>
+
+<p>对比来看，电路交换在通信前需建立专用的物理连接，通信期间独占链路资源，因此传输时延稳定，适合实时业务（如传统电话通信），但其资源利用率低、连接建立耗时且灵活性较差。相较之下，分组交换将数据拆分为分组，动态共享网络资源，无需预先建立连接，因而具有更高的资源利用率、更好的突发流量适应性和更强的扩展性。然而，分组交换存在排队时延和时延抖动，不适用于对时延敏感的实时应用。尽管如此，分组交换在总体性能上明显优于电路交换，也成为当今网络通信的主流发展方向。</p>
+<h3 id="网络的网络"><a href="#网络的网络" class="headerlink" title="网络的网络"></a>网络的网络</h3><p>当今的互联网是一个由众多网络互联而成的“网络的网络”，其结构庞大且层次分明。除最底层外，各级 ISP（互联网服务提供商）通常都设有<strong>存在点（PoP）</strong>作为接入节点，并可与不同层次的网络建立连接。任何 ISP 都可以选择<strong>多宿（multihoming）</strong>，即同时连接两个或多个上级 ISP 以提高可靠性和冗余性。处于相同层级的 ISP 之间还可以建立<strong>对等连接</strong>，直接交换彼此的流量。基于此机制形成了<strong>互联网交换点（IXP）</strong>，作为多个 ISP 的汇聚节点，使其能够高效地实现对等互联。除网络运营商外，互联网还包括<strong>内容提供商（CDN）</strong>和<strong>数据中心（Data Center）</strong>，它们通过部署服务器和缓存节点，为用户提供高效的数据访问与内容分发服务。</p>
+<p>大致的网络结构图如下：</p>
+<figure style="text-align: center;">
+  <img src="/illustrations/计网笔记1/2.png" alt="网络结构图" width="100%">
+  <figcaption>网络结构图</figcaption>
+</figure>
+
+<h2 id="时延、丢包、吞吐量"><a href="#时延、丢包、吞吐量" class="headerlink" title="时延、丢包、吞吐量"></a>时延、丢包、吞吐量</h2><h3 id="时延概述"><a href="#时延概述" class="headerlink" title="时延概述"></a>时延概述</h3><p>一个路由器的节点时延大致包含四部分：处理时延、排队时延、传输时延、传播时延。首先，路由器需要检查一个分组的首部并且据此决定将该分组导向何处，这导致了处理时延；其次，分组在链路上等待传输时，会有排队时延；再然后，将分组的每个比特推向链路也需要耗时，因此有微小的传输时延；最后，每个比特传到另一个路由器毫无疑问需要耗时，从而还要考虑传播时延。</p>
+<h3 id="排队时延和丢包"><a href="#排队时延和丢包" class="headerlink" title="排队时延和丢包"></a>排队时延和丢包</h3><p>之所以我们反复强调排队时延，是因为它是节点时延中最为复杂的一部分。我们不难注意到排队时延与分组有关，因此我们往往会采用统计量来度量它。一个很重要的指标是<strong>流量强度</strong>，通常用符号 $\rho$ 表示，被用来衡量网络中<strong>业务负载程度</strong>。其定义公式为：</p>
+<script type="math/tex; mode=display">
+\rho = \frac{L \cdot a}{R}</script><p>其中 $L$ 为平均分组长度，$a$ 是平均分组到达率（分组/秒），$R$ 则是链路传输速率（bit/秒）。$\rho$ 表示链路在平均意义下被占用的比例，即<strong>平均到达速率与服务速率的比值</strong>。当 $\rho &lt; 1$ 时，系统能稳定运行；当 $\rho \ge 1$ 时，链路将趋于过载，队列长度会不断增长。因此实际设计系统时一定会保证流量强度不大于1。</p>
+<p>下面来考虑流量强度不大于1的情况，此时到达流量的性质将决定排队时延。比如如果分组按 $\frac{L}{R}$ 的速度周期性到达，那么就不会有排队时延；但如果所有分组同一时刻到来，那么排队时延毫无疑问将会非常大。</p>
+<p>通常来说，分组到达队列的过程是随机的。此时无法定量计算，但毋庸置疑的一点是，随着流量强度接近1，平均排队长度会越来越长，平均排队时延也会迅速增加。在实际情况中，因为队列是有限的，所以时延会有上限，但会出现丢包的问题。</p>
+<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p><strong>吞吐量</strong>用于衡量数据在网络中传输的速率，是评估网络性能的重要指标。<strong>瞬时吞吐量</strong>表示主机在某一时刻接收数据的速率，而<strong>平均吞吐量</strong>则是指在较长时间内的平均接收速率。吞吐量受到多种因素影响，包括链路带宽、网络拥塞程度、协议开销以及端到端路径中的瓶颈带宽等。在端到端通信中，实际吞吐量通常受限于路径中<strong>最小带宽的链路</strong>，因此常用“瓶颈链路”来描述整个传输速率的上限。</p>
+<h2 id="协议层次"><a href="#协议层次" class="headerlink" title="协议层次"></a>协议层次</h2><h3 id="因特网协议栈"><a href="#因特网协议栈" class="headerlink" title="因特网协议栈"></a>因特网协议栈</h3><p>因特网的协议栈由五个层次组成：物理层、链路层、网络层、运输层、应用层。这本书就是自顶向下进行讲解的，从应用层开始，一步步向下处理。</p>
+<ol>
+<li><p><strong>应用层</strong><br>应用层是用户直接交互的层面，运行各种网络应用程序及其协议（如 HTTP 用于 Web 访问、SMTP 用于电子邮件、FTP 用于文件传输、DNS 用于域名解析）。这些协议定义了端系统之间交换<strong>应用层报文</strong>的格式与规则，所有通信最终都源于或服务于应用层需求。</p>
+</li>
+<li><p><strong>运输层</strong><br>运输层为运行在不同主机上的应用进程提供端到端通信服务。因特网提供两种主要协议：<strong>TCP</strong>（传输控制协议）提供可靠的、面向连接的服务，包括顺序交付、流量控制和拥塞控制；<strong>UDP</strong>（用户数据报协议）则提供轻量级、无连接、不可靠但低开销的传输。运输层将应用层报文封装成<strong>报文段</strong>，并添加端口号等信息，以实现多应用复用与分发。</p>
+</li>
+<li><p><strong>网络层</strong><br>网络层负责将<strong>数据报</strong>从源主机跨越多个网络传送到目的主机，核心协议是<strong>IP</strong>（网际协议），它定义了统一的地址格式和数据报结构，使异构网络能够互联。网络层依赖各种<strong>路由选择协议</strong>（如 OSPF、BGP）动态计算路径，是实现“网络的网络”——即因特网——互联互通的关键。</p>
+</li>
+<li><p><strong>链路层</strong><br>链路层在<strong>相邻网络节点</strong>（如主机与路由器、路由器之间）之间可靠或尽力而为地传输数据。它将网络层数据报封装成<strong>帧</strong>，并根据底层技术（如以太网、Wi-Fi、DOCSIS）添加链路首部（和尾部），处理物理地址（如 MAC 地址）、差错检测甚至重传。值得注意的是，一个端到端的数据报在穿越网络时，可能被不同链路上的不同链路层协议依次封装与解封装。</p>
+</li>
+<li><p><strong>物理层</strong><br>物理层负责在实际传输介质（如双绞线、同轴电缆、光纤或无线电波）上逐比特地传送帧的内容。它定义了信号的电气、时序、速率和物理接口等特性。虽然对上层透明，但物理层的性能（如带宽、误码率）直接影响整个网络的效率与可靠性。</p>
+</li>
+</ol>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>如图所示，路由器实现了协议栈的下三层（物理层、链路层和网络层），因此能够处理并转发 IP 数据报，是 IP 协议的核心执行者；而链路层交换机仅实现最底层的两层（物理层和链路层），负责在局域网内基于 MAC 地址转发帧，不参与 IP 路由，因而不实现 IP 协议。相比之下，主机（如个人电脑、服务器）完整实现了全部五层协议，既能生成和解析应用层报文，也能处理端到端传输、IP 寻址、链路帧封装及物理信号收发。这种设计体现了“<strong>智能在边缘、简单在网络核心</strong>”的因特网架构原则——复杂的功能（如应用逻辑、可靠传输）由终端主机承担，而网络内部设备（如路由器、交换机）则专注于高效转发，从而提升整体可扩展性与灵活性。</p>
+<figure style="text-align: center;">
+  <img src="/illustrations/计网笔记1/4.png" alt="物理路径" width="80%">
+  <figcaption>物理路径</figcaption>
+</figure>
+
+<p>这张图也清晰地展示了网络通信中的核心机制——<strong>封装</strong>。在发送端，应用层生成的报文（M）首先被传递给运输层，运输层为其添加首部（$H_t$），形成<strong>报文段</strong>，其中包含端口号、差错检测等信息，用于在接收端正确交付给目标应用。该报文段作为有效载荷被交给网络层，网络层加上包含源和目的 IP 地址的<strong>网络层首部</strong>（$H_n$），封装成<strong>数据报</strong>。随后，链路层再添加自己的首部（可能还有尾部，如帧校验序列），构成<strong>帧</strong>，以便在物理链路上传输。每一层都将上层的整个分组作为本层的有效载荷，并附加上本层所需的控制信息（首部），从而实现逐层封装。接收端则执行相反的<strong>解封装</strong>过程，逐层剥离首部，最终将原始应用层报文交付给目标应用程序。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://restar682.github.io">restar682</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://restar682.github.io/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">http://restar682.github.io/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客文章版权归 restar682 所有，采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明原作者！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a><a class="post-meta__tags" href="/tags/%E5%9B%A0%E7%89%B9%E7%BD%91/">因特网</a></div><div class="post-share"><div class="social-share" data-image="/img/head-sculpture.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结"><img class="cover" src="/images/r2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">CS143总结</div></div><div class="info-2"><div class="info-item-1">CS143完结撒花(*^_^*)！</div></div></div></a><a class="pagination-related" href="/2025/10/14/UCAS-nlp-Week3%EF%BC%9A%E8%AF%8D%E5%90%91%E9%87%8F/" title="UCAS-nlp-Week3：词向量"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">UCAS-nlp-Week3：词向量</div></div><div class="info-2"><div class="info-item-1">词向量的基本概念和实现。</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/10/19/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" title="计网学习笔记-2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-19</div><div class="info-item-2">计网学习笔记-2</div></div><div class="info-2"><div class="info-item-1">《计算机网络——自顶向下方法》第二章学习笔记。</div></div></div></a><a class="pagination-related" href="/2025/10/22/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" title="计网学习笔记-3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-22</div><div class="info-item-2">计网学习笔记-3</div></div><div class="info-2"><div class="info-item-1">《计算机网络——自顶向下方法》第三章学习笔记。</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info-name">restar682</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/restar682"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">this is my blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91"><span class="toc-number">1.</span> <span class="toc-text">因特网</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-number">1.2.</span> <span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91"><span class="toc-number">1.2.1.</span> <span class="toc-text">接入网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%AA%92%E4%BD%93"><span class="toc-number">1.2.2.</span> <span class="toc-text">物理媒体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-number">1.3.</span> <span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">分组交换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%82%A8%E5%AD%98%E8%BD%AC%E5%8F%91"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">储存转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E9%98%9F%E6%97%B6%E5%BB%B6%E5%92%8C%E5%88%86%E7%BB%84%E4%B8%A2%E5%A4%B1"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">排队时延和分组丢失</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E5%8F%91%E8%A1%A8%E5%92%8C%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">转发表和路由选择协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.3.</span> <span class="toc-text">网络的网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BB%B6%E3%80%81%E4%B8%A2%E5%8C%85%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">时延、丢包、吞吐量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%BB%B6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.4.1.</span> <span class="toc-text">时延概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E9%98%9F%E6%97%B6%E5%BB%B6%E5%92%8C%E4%B8%A2%E5%8C%85"><span class="toc-number">1.4.2.</span> <span class="toc-text">排队时延和丢包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.4.3.</span> <span class="toc-text">吞吐量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%B1%82%E6%AC%A1"><span class="toc-number">1.5.</span> <span class="toc-text">协议层次</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E5%8D%8F%E8%AE%AE%E6%A0%88"><span class="toc-number">1.5.1.</span> <span class="toc-text">因特网协议栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">1.5.2.</span> <span class="toc-text">封装</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/22/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" title="计网学习笔记-3">计网学习笔记-3</a><time datetime="2025-10-22T08:37:41.000Z" title="发表于 2025-10-22 16:37:41">2025-10-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/19/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" title="计网学习笔记-2">计网学习笔记-2</a><time datetime="2025-10-19T02:51:16.000Z" title="发表于 2025-10-19 10:51:16">2025-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/14/UCAS-nlp-Week3%EF%BC%9A%E8%AF%8D%E5%90%91%E9%87%8F/" title="UCAS-nlp-Week3：词向量">UCAS-nlp-Week3：词向量</a><time datetime="2025-10-14T07:28:35.000Z" title="发表于 2025-10-14 15:28:35">2025-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" title="计网学习笔记-1">计网学习笔记-1</a><time datetime="2025-10-13T07:51:30.000Z" title="发表于 2025-10-13 15:51:30">2025-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结"><img src="/images/r2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS143总结"></a><div class="content"><a class="title" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结">CS143总结</a><time datetime="2025-10-01T13:18:12.000Z" title="发表于 2025-10-01 21:18:12">2025-10-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">©2019 - 2025 By restar682</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(/images/4.jpg);"> <a class="categoryBar-list-link" href="categories/6-s081/">6.s081</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr">6.s081</span></li><li class="categoryBar-list-item" style="background:url(/images/5.jpg);"> <a class="categoryBar-list-link" href="categories/DEBUG/">DEBUG</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">CS143</span></li><li class="categoryBar-list-item" style="background:url(/images/6.jpg);"> <a class="categoryBar-list-link" href="categories/工具/">工具</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">DEBUG</span></li><li class="categoryBar-list-item" style="background:url(/images/7.jpg);"> <a class="categoryBar-list-link" href="categories/绘画/">绘画</a><span class="categoryBar-list-count">11</span><span class="categoryBar-list-descr">UCAS-nlp</span></li><li class="categoryBar-list-item" style="background:url(/images/8.jpg);"> <a class="categoryBar-list-link" href="categories/CS143/">CS143</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr">工具</span></li><li class="categoryBar-list-item" style="background:url(/images/9.jpg);"> <a class="categoryBar-list-link" href="categories/UCAS-nlp/">UCAS-nlp</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">绘画</span></li><li class="categoryBar-list-item" style="background:url(/images/11.jpeg);"> <a class="categoryBar-list-link" href="categories/计网/">计网</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">计网</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><!-- hexo injector body_end end --></body></html>

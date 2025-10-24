@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CS143-Week1：Introduction | restar682's blog</title><meta name="author" content="restar682"><meta name="copyright" content="restar682"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="编译器的简单介绍和 Cool 语言。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS143-Week1：Introduction">
+<meta property="og:url" content="http://restar682.github.io/2025/07/27/CS143-Week1%EF%BC%9AIntroduction/index.html">
+<meta property="og:site_name" content="restar682's blog">
+<meta property="og:description" content="编译器的简单介绍和 Cool 语言。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://restar682.github.io/img/head-sculpture.jpg">
+<meta property="article:published_time" content="2025-07-27T11:53:51.000Z">
+<meta property="article:modified_time" content="2025-08-04T12:42:56.002Z">
+<meta property="article:author" content="restar682">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="编译原理">
+<meta property="article:tag" content="CS143">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://restar682.github.io/img/head-sculpture.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CS143-Week1：Introduction",
+  "url": "http://restar682.github.io/2025/07/27/CS143-Week1%EF%BC%9AIntroduction/",
+  "image": "http://restar682.github.io/img/head-sculpture.jpg",
+  "datePublished": "2025-07-27T11:53:51.000Z",
+  "dateModified": "2025-08-04T12:42:56.002Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "restar682",
+      "url": "http://restar682.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://restar682.github.io/2025/07/27/CS143-Week1%EF%BC%9AIntroduction/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CS143-Week1：Introduction',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/XMx86jzlQw0brz3/latest/iconfont.css"><link rel="stylesheet" href="/css/corgi.css"><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="/css/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/" title="回到主页"><span class="site-name">restar682's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">CS143-Week1：Introduction</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS143-Week1：Introduction</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-27T11:53:51.000Z" title="发表于 2025-07-27 19:53:51">2025-07-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-04T12:42:56.002Z" title="更新于 2025-08-04 20:42:56">2025-08-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS143/">CS143</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="编程语言与编译器：结构、演进与成本权衡"><a href="#编程语言与编译器：结构、演进与成本权衡" class="headerlink" title="编程语言与编译器：结构、演进与成本权衡"></a>编程语言与编译器：结构、演进与成本权衡</h1><h2 id="解释器与编码器"><a href="#解释器与编码器" class="headerlink" title="解释器与编码器"></a>解释器与编码器</h2><p>解释器是实时运行的：它在程序执行过程中逐行读取输入、进行处理，所有操作都是程序运行的一部分。而编译器则不同，它在程序运行前将源代码转换为可执行文件，程序运行时由这个可执行文件读取数据并处理得到结果。某种意义上来说，编译器在这个流程中是离线的。</p>
+<p>最早出现的解释器是一种“快速编码器”，它能够显著提高程序员的编写效率。然而，这种方式会降低程序的运行速度，并占用一定的内存资源——在当时看来，这种开销是相当可观的。随后，人们提出了“公式翻译”的思路，即将数学公式翻译成机器能够处理的形式，从而解决效率与资源占用之间的矛盾。由此诞生了著名的“公式翻译计划”，也就是后来的 Fortran 计划，Fortran 计划大获成功。</p>
+<h2 id="Compiler-5-个部分的简单介绍"><a href="#Compiler-5-个部分的简单介绍" class="headerlink" title="Compiler 5 个部分的简单介绍"></a>Compiler 5 个部分的简单介绍</h2><table>
+  <thead>
+    <tr>
+        <th width="20%">编译阶段</th>
+        <th width="13%">输入<br>（Input）</th>
+        <th width="25%">输出<br>（Output）</th>
+        <th width="42%">备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">词法分析<br>（Lexical Analysis）</td>
+      <td align="center">源代码文本</td>
+      <td align="center">词法单元<br>（tokens）</td>
+      <td align="center">将源代码切分为 tokens，并标注其类别。</td>
+    </tr>
+    <tr>
+      <td align="center">语法分析<br>（Parsing）</td>
+      <td align="center">token 序列</td>
+      <td align="center">抽象语法树<br>（AST，Abstract Syntax Tree）</td>
+      <td align="center">用树结构表示程序的语法结构。</td>
+    </tr>
+    <tr>
+      <td align="center">语义分析<br>（Semantic Analysis）</td>
+      <td align="center">AST</td>
+      <td align="center">带注解的语法树</td>
+      <td align="center">由于完整的语义理解过于困难，编译器通常只在 AST 上进行有限的语义检查，如检查类型不一致等错误。</td>
+    </tr>
+    <tr>
+      <td align="center">优化<br>（Optimization）</td>
+      <td align="center">中间表示<br>（IR）</td>
+      <td align="center">优化后的 IR</td>
+      <td align="center">如常量折叠、死代码删除等，提升程序效率。</td>
+    </tr>
+    <tr>
+      <td align="center">代码生成<br>（Code Generation）</td>
+      <td align="center">IR</td>
+      <td align="center">汇编代码或其他目标代码</td>
+      <td align="center">也可以生成高级语言或自然语言，视编译器设计而定。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>如表中所言，语义分析可能非常困难。比如在下面 “even worse” 的例子中，最多可能存在三个不同的 <code>Jack</code>。这也同样是编译器在分析 <code>for</code> 循环中的变量绑定（variable binding）时常见的语义难题之一 —— 同名变量最多可能对应多个不同的实体，给准确理解程序含义带来了巨大挑战。因此，编程语言一般会设定非常严格的规则来避免这个问题。</p>
+<figure style="text-align: center;">
+  <img src="/illustrations/CS143-Week1/1.png" alt="语义分析很困难的例子" width="80%">
+  <figcaption>语义分析很困难的例子</figcaption>
+</figure>
+
+<p>优化也是一个相当棘手的问题。为了提升性能或减少内存使用，我们通常会尝试对中间表示进行优化。但这件事远没有看起来那么简单。例如，我们可能认为 <code>X = Y * 0</code> 可以简单地优化为 <code>X = 0</code>。这在 <code>X</code> 和 <code>Y</code> 都是整数的情况下确实成立，但如果是浮点数，且 <code>Y = NaN</code>，根据浮点数运算标准，<code>X</code> 的值应为 <code>NaN</code>，此时这种优化就会引入错误。</p>
+<p>其他部分与人类对翻译的理解大致一致，但对编译器而言，实现这些部分依然并非易事。</p>
+<p>在 Fortran 时代，词法分析、语法分析、优化和代码生成都被视为较为复杂的任务，而语义分析相对简单。如今，得益于自动化工具的支持，词法分析和语法分析已变得相当成熟；相比之下，语义分析的复杂度显著上升，优化过程则日益庞大且精细，而代码生成反而成为编译流程中相对较小的一部分。不难看出，随着时代的发展，编译器各阶段的复杂性发生了显著变化。</p>
+<h2 id="编程语言设计与使用中的资源权衡问题"><a href="#编程语言设计与使用中的资源权衡问题" class="headerlink" title="编程语言设计与使用中的资源权衡问题"></a>编程语言设计与使用中的资源权衡问题</h2><h3 id="1-为什么存在如此多的编程语言？"><a href="#1-为什么存在如此多的编程语言？" class="headerlink" title="1. 为什么存在如此多的编程语言？"></a>1. 为什么存在如此多的编程语言？</h3><ul>
+<li>不同应用领域对语言的需求不同。</li>
+<li>语言设计目标之间可能存在冲突（如性能 vs. 可读性）。</li>
+</ul>
+<h3 id="2-为什么还不断有新语言诞生？"><a href="#2-为什么还不断有新语言诞生？" class="headerlink" title="2. 为什么还不断有新语言诞生？"></a>2. 为什么还不断有新语言诞生？</h3><ul>
+<li><strong>程序员培训（Programmer Training）</strong> 是编程语言的主要成本，因此在已有语言上演进功能的代价很高。</li>
+<li>创建新语言往往比改造旧语言更具可控性与创新空间。</li>
+</ul>
+<h3 id="3-什么是好的编程语言？"><a href="#3-什么是好的编程语言？" class="headerlink" title="3. 什么是好的编程语言？"></a>3. 什么是好的编程语言？</h3><ul>
+<li>没有统一标准，不同背景下定义不同。</li>
+<li>常见考量包括：可读性、可维护性、性能、安全性、工具链支持等。</li>
+</ul>
+<blockquote>
+<p>相比之下，<strong>改进编译器</strong> 反而相对更容易一些：可以在不改变语言表面语法的前提下，提升性能或添加工具支持。</p>
+</blockquote>
+<h1 id="Cool-语言：为课程设计的语言"><a href="#Cool-语言：为课程设计的语言" class="headerlink" title="Cool 语言：为课程设计的语言"></a>Cool 语言：为课程设计的语言</h1><p>我们的课程项目是构建一个完整的编译器，具体来说，将把 Cool 语言翻译成 MIPS 汇编语言。</p>
+<p>课程的代码作业主要涵盖编译器的五个模块，其中四个为核心作业内容，第五个模块（编译器优化）为附加部分。除此之外，作业还包括 Cool 语言的基础程序设计。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://restar682.github.io">restar682</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://restar682.github.io/2025/07/27/CS143-Week1%EF%BC%9AIntroduction/">http://restar682.github.io/2025/07/27/CS143-Week1%EF%BC%9AIntroduction/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客文章版权归 restar682 所有，采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明原作者！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a><a class="post-meta__tags" href="/tags/CS143/">CS143</a></div><div class="post-share"><div class="social-share" data-image="/img/head-sculpture.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/07/26/CS143-Week0%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="CS143-Week0：实验环境配置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">CS143-Week0：实验环境配置</div></div><div class="info-2"><div class="info-item-1">CS143 环境配置。</div></div></div></a><a class="pagination-related" href="/2025/07/30/CS143-PA1%EF%BC%9ACool-Language/" title="CS143-PA1：Cool-Language"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">CS143-PA1：Cool-Language</div></div><div class="info-2"><div class="info-item-1">CS143 PA1：实现 Cool 语言的一个栈机器</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/26/CS143-Week0%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="CS143-Week0：实验环境配置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-26</div><div class="info-item-2">CS143-Week0：实验环境配置</div></div><div class="info-2"><div class="info-item-1">CS143 环境配置。</div></div></div></a><a class="pagination-related" href="/2025/07/30/CS143-PA1%EF%BC%9ACool-Language/" title="CS143-PA1：Cool-Language"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-30</div><div class="info-item-2">CS143-PA1：Cool-Language</div></div><div class="info-2"><div class="info-item-1">CS143 PA1：实现 Cool 语言的一个栈机器</div></div></div></a><a class="pagination-related" href="/2025/07/30/CS143-Week2%EF%BC%9ALexical-Analysis-Finite-Automata/" title="CS143-Week2：Lexical Analysis &amp; Finite Automata"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-30</div><div class="info-item-2">CS143-Week2：Lexical Analysis &amp; Finite Automata</div></div><div class="info-2"><div class="info-item-1">词法分析的原理与实现。</div></div></div></a><a class="pagination-related" href="/2025/08/04/CS143-Week3%EF%BC%9AParsing-Top-Down-Parsing/" title="CS143-Week3：Parsing &amp; Top-Down Parsing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-04</div><div class="info-item-2">CS143-Week3：Parsing &amp; Top-Down Parsing</div></div><div class="info-2"><div class="info-item-1">语法分析的目标、文法基础与递归下降解析技术。</div></div></div></a><a class="pagination-related" href="/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/" title="CS143-Week4：Bottom-Up Parsing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-06</div><div class="info-item-2">CS143-Week4：Bottom-Up Parsing</div></div><div class="info-2"><div class="info-item-1">预测解析与自底向上解析。</div></div></div></a><a class="pagination-related" href="/2025/08/10/CS143-PA3%EF%BC%9AParsing/" title="CS143-PA3：Parsing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-10</div><div class="info-item-2">CS143-PA3：Parsing</div></div><div class="info-2"><div class="info-item-1">CS143 PA3：实现 Cool 语言的语法分析器。</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info-name">restar682</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/restar682"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">this is my blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E4%B8%8E%E7%BC%96%E8%AF%91%E5%99%A8%EF%BC%9A%E7%BB%93%E6%9E%84%E3%80%81%E6%BC%94%E8%BF%9B%E4%B8%8E%E6%88%90%E6%9C%AC%E6%9D%83%E8%A1%A1"><span class="toc-number">1.</span> <span class="toc-text">编程语言与编译器：结构、演进与成本权衡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E4%B8%8E%E7%BC%96%E7%A0%81%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">解释器与编码器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler-5-%E4%B8%AA%E9%83%A8%E5%88%86%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.</span> <span class="toc-text">Compiler 5 个部分的简单介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%9D%83%E8%A1%A1%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">编程语言设计与使用中的资源权衡问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%98%E5%9C%A8%E5%A6%82%E6%AD%A4%E5%A4%9A%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 为什么存在如此多的编程语言？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E4%B8%8D%E6%96%AD%E6%9C%89%E6%96%B0%E8%AF%AD%E8%A8%80%E8%AF%9E%E7%94%9F%EF%BC%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 为什么还不断有新语言诞生？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A5%BD%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 什么是好的编程语言？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cool-%E8%AF%AD%E8%A8%80%EF%BC%9A%E4%B8%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">Cool 语言：为课程设计的语言</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/22/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" title="计网学习笔记-3">计网学习笔记-3</a><time datetime="2025-10-22T08:37:41.000Z" title="发表于 2025-10-22 16:37:41">2025-10-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/19/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" title="计网学习笔记-2">计网学习笔记-2</a><time datetime="2025-10-19T02:51:16.000Z" title="发表于 2025-10-19 10:51:16">2025-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/14/UCAS-nlp-Week3%EF%BC%9A%E8%AF%8D%E5%90%91%E9%87%8F/" title="UCAS-nlp-Week3：词向量">UCAS-nlp-Week3：词向量</a><time datetime="2025-10-14T07:28:35.000Z" title="发表于 2025-10-14 15:28:35">2025-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" title="计网学习笔记-1">计网学习笔记-1</a><time datetime="2025-10-13T07:51:30.000Z" title="发表于 2025-10-13 15:51:30">2025-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结"><img src="/images/r2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS143总结"></a><div class="content"><a class="title" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结">CS143总结</a><time datetime="2025-10-01T13:18:12.000Z" title="发表于 2025-10-01 21:18:12">2025-10-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">©2019 - 2025 By restar682</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(/images/4.jpg);"> <a class="categoryBar-list-link" href="categories/6-s081/">6.s081</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr">6.s081</span></li><li class="categoryBar-list-item" style="background:url(/images/5.jpg);"> <a class="categoryBar-list-link" href="categories/DEBUG/">DEBUG</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">CS143</span></li><li class="categoryBar-list-item" style="background:url(/images/6.jpg);"> <a class="categoryBar-list-link" href="categories/工具/">工具</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">DEBUG</span></li><li class="categoryBar-list-item" style="background:url(/images/7.jpg);"> <a class="categoryBar-list-link" href="categories/绘画/">绘画</a><span class="categoryBar-list-count">11</span><span class="categoryBar-list-descr">UCAS-nlp</span></li><li class="categoryBar-list-item" style="background:url(/images/8.jpg);"> <a class="categoryBar-list-link" href="categories/CS143/">CS143</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr">工具</span></li><li class="categoryBar-list-item" style="background:url(/images/9.jpg);"> <a class="categoryBar-list-link" href="categories/UCAS-nlp/">UCAS-nlp</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">绘画</span></li><li class="categoryBar-list-item" style="background:url(/images/11.jpeg);"> <a class="categoryBar-list-link" href="categories/计网/">计网</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">计网</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><!-- hexo injector body_end end --></body></html>

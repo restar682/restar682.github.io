@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CS143-Week4：Bottom-Up Parsing | restar682's blog</title><meta name="author" content="restar682"><meta name="copyright" content="restar682"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="预测解析与自底向上解析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS143-Week4：Bottom-Up Parsing">
+<meta property="og:url" content="http://restar682.github.io/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/index.html">
+<meta property="og:site_name" content="restar682's blog">
+<meta property="og:description" content="预测解析与自底向上解析。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://restar682.github.io/img/head-sculpture.jpg">
+<meta property="article:published_time" content="2025-08-06T01:19:37.000Z">
+<meta property="article:modified_time" content="2025-08-12T11:03:40.495Z">
+<meta property="article:author" content="restar682">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="编译原理">
+<meta property="article:tag" content="CS143">
+<meta property="article:tag" content="语法分析">
+<meta property="article:tag" content="预测解析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://restar682.github.io/img/head-sculpture.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CS143-Week4：Bottom-Up Parsing",
+  "url": "http://restar682.github.io/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/",
+  "image": "http://restar682.github.io/img/head-sculpture.jpg",
+  "datePublished": "2025-08-06T01:19:37.000Z",
+  "dateModified": "2025-08-12T11:03:40.495Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "restar682",
+      "url": "http://restar682.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://restar682.github.io/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CS143-Week4：Bottom-Up Parsing',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/XMx86jzlQw0brz3/latest/iconfont.css"><link rel="stylesheet" href="/css/corgi.css"><link rel="stylesheet" href="/css/modify.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="/css/categorybar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/" title="回到主页"><span class="site-name">restar682's blog</span></a><a class="nav-page-title" href="/"><span class="site-name">CS143-Week4：Bottom-Up Parsing</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-image"></i><span> 图库</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/images/"><i class="fa-fw fas fa-images"></i><span> 存图</span></a></li><li><a class="site-page child" href="/my-images/"><i class="fa-fw fas fa-bolt"></i><span> 私图</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CS143-Week4：Bottom-Up Parsing</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-06T01:19:37.000Z" title="发表于 2025-08-06 09:19:37">2025-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-12T11:03:40.495Z" title="更新于 2025-08-12 19:03:40">2025-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS143/">CS143</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="预测解析"><a href="#预测解析" class="headerlink" title="预测解析"></a>预测解析</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>预测解析</strong>是一种无需回溯的自顶向下的语法分析算法。</p>
+<ul>
+<li><strong>核心思想</strong>：为文法的每个非终结符设计一个确定的解析过程，根据当前输入的 Token <strong>预测</strong>应使用的产生式规则，从而直接选择正确的分支进行匹配，避免回溯。</li>
+<li><strong>解析过程</strong>：<ul>
+<li>构建预测分析表<ul>
+<li>对每个非终结符，预先计算其 <strong>FIRST</strong> 集（所有产生式右部能推导出的第一个终结符的集合）和 <strong>FOLLOW</strong> 集（在某些句型中可能紧跟该非终结符的终结符集合）。</li>
+<li>对于每个产生式 $S \to \alpha$：<ul>
+<li>对每一个 $a \in \text{FIRST}(\alpha)$ 且 $a \neq \varepsilon$，将产生式 $S \to \alpha$ 填入分析表的 $M[S, a]$ 位置。</li>
+<li>如果 $\varepsilon \in \text{FIRST}(\alpha)$，则对每一个 $b \in \text{FOLLOW}(S)$，将产生式 $S \to \alpha$ 填入分析表的 $M[S, b]$ 位置。<figure style="text-align: center; margin-top: 1em;">
+<img src="/illustrations/CS143-Week4/1.png" alt="预测分析表的例子" width="80%">
+<figcaption>预测分析表的例子</figcaption>
+</figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解析输入串<ul>
+<li>初始化分析栈，栈底为 $ {$} $，其上为文法起始符号；</li>
+<li>每次查看栈顶符号 $X$ 和当前输入符号 $a$：<ul>
+<li>若 $X$ 是终结符且 $X = a$，则弹出栈顶，读取下一个输入符号；</li>
+<li>若 $X$ 是非终结符，查找分析表 $M[X, a]$：<ul>
+<li>若存在对应产生式 $X \to \alpha$，则弹出 $X$，并将 $\alpha$ 的符号从右到左依次压入栈；</li>
+<li>若查表为空或无定义，则报错（语法错误）；</li>
+</ul>
+</li>
+<li>重复上述过程，直到栈为空且输入符号流结束（即均到达 $ {$} $），表示解析成功。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>构建结果</strong>：成功时构建出一棵<strong>语法分析树</strong>，所有 Token 位于叶节点，且解析过程是线性的，无回溯开销。</li>
+<li><strong>要求</strong>：文法必须是 <strong>LL(1)</strong> 文法。</li>
+</ul>
+<h2 id="LL-1-文法"><a href="#LL-1-文法" class="headerlink" title="LL(1)文法"></a>LL(1)文法</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>LL(1) 文法是一种适用于自顶向下语法分析的 CFG，其名称中的“LL”表示从左到右扫描输入并构造最左推导，“1”表示分析时只需查看一个输入符号即可确定使用哪个产生式。这类文法要求无左递归、无二义性，并且每个非终结符的所有候选产生式的 FIRST 集互不相交，若某产生式可推出空串，则其 FIRST 集与 FOLLOW 集也不相交。</p>
+<p>由于 LL(1) 文法具有确定性，可以构造无冲突的预测分析表，使得语法分析过程高效且无需回溯，因此广泛被应用于编译器设计中，尤其适合处理结构清晰的语言构造。但并非所有文法都能转化为 LL(1) 文法，复杂语言可能需要更强的分析方法。</p>
+<h3 id="左因子分解"><a href="#左因子分解" class="headerlink" title="左因子分解"></a>左因子分解</h3><p>若 $S \to \alpha\beta_1 \mid \alpha\beta_2$，且 $\alpha$ 是非空终结符串，则 $\text{FIRST}(\alpha\beta_1) \cap \text{FIRST}(\alpha\beta_2) \neq \emptyset$，无法通过下一个输入符号唯一确定使用哪个产生式。我们可以通过提取公共左因子来解决这个问题。</p>
+<p>设公共左因子为 $\alpha$，引入新非终结符 $S’$：</p>
+<ul>
+<li>原式：$ S \to \alpha\beta_1 \mid \alpha\beta_2 \mid \cdots \mid \alpha\beta_n $</li>
+<li>改写为：<br>  $ S \to \alpha S’ $<br>  $ S’ \to \beta_1 \mid \beta_2 \mid \cdots \mid \beta_n $</li>
+</ul>
+<p>改写后的形式消除了原非终结符 $S$ 所带来的预测冲突。此时，$\text{FIRST}(\beta_1), \text{FIRST}(\beta_2), \dots$ 应两两不相交；如果某个 $\beta_i$ 可导出空串（即 $\beta_i \Rightarrow^* \varepsilon$），则还必须确保 $\text{FOLLOW}(S’)$ 与其他各 $\text{FIRST}(\beta_j)$ 也无交集，从而满足 LL(1) 文法的判定条件。</p>
+<h2 id="FIRST-amp-FOLLOW-集"><a href="#FIRST-amp-FOLLOW-集" class="headerlink" title="FIRST &amp; FOLLOW 集"></a>FIRST &amp; FOLLOW 集</h2><h3 id="FIRST-集的确定"><a href="#FIRST-集的确定" class="headerlink" title="FIRST 集的确定"></a>FIRST 集的确定</h3><ul>
+<li><strong>定义</strong>：对于一个符号串 $\alpha$（可以是非终结符、终结符或它们的组合），$FIRST(\alpha)$ 是所有可以从 $\alpha$ 开始推导出的字符串的第一个终结符的集合。如果 $\alpha$ 能够推导出空串 $\varepsilon$，则 $\varepsilon$ 也属于 $FIRST(\alpha)$。</li>
+<li><p><strong>算法步骤</strong>：</p>
+<ol>
+<li>如果 $x$ 是终结符，则 $FIRST(x) = {x}$。</li>
+<li>对于非终结符 $A$ 的每个产生式 $A \to \alpha_1 \alpha_2 \dots \alpha_n$：<ul>
+<li>将 $FIRST(\alpha_1)$ 中除去 $\varepsilon$ 的元素加入 $FIRST(A)$；</li>
+<li>如果 $\varepsilon \in FIRST(\alpha_1)$，则继续将 $FIRST(\alpha_2)$ 中除 $\varepsilon$ 的元素加入 $FIRST(A)$，依此类推；</li>
+<li>如果所有 $\alpha_i\ (i=1,2,\dots,n)$ 都满足 $\varepsilon \in FIRST(\alpha_i)$，则将 $\varepsilon$ 加入 $FIRST(A)$。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="FOLLOW-集的确定"><a href="#FOLLOW-集的确定" class="headerlink" title="FOLLOW 集的确定"></a>FOLLOW 集的确定</h3><ul>
+<li><strong>定义</strong>：$FOLLOW(A)$ 是所有在某个句型中紧跟在非终结符 $A$ 后面的终结符的集合。如果 $A$ 可以出现在句子的末尾，则输入结束符号 ${$}$（表示输入结束）也属于 $FOLLOW(A)$。</li>
+<li><p><strong>算法步骤</strong>：</p>
+<ol>
+<li>初始化： $ FOLLOW(S) = \{ \$ \} $ ，其中 $S$ 是文法的开始符号。</li>
+<li>对于每个产生式 $A \to \alpha B \beta$：<ul>
+<li>将 $FIRST(\beta)$ 中除 $\varepsilon$ 的元素加入 $FOLLOW(B)$；</li>
+<li>如果 $\varepsilon \in FIRST(\beta)$ 或 $\beta \Rightarrow^* \varepsilon$，则将 $FOLLOW(A)$ 中的所有元素加入 $FOLLOW(B)$。</li>
+</ul>
+</li>
+<li>如果存在产生式 $A \to \alpha B$ 或 $A \to \alpha B \beta$ 且 $\beta \Rightarrow^* \varepsilon$，重复步骤 2，直到所有 $FOLLOW$ 集稳定为止。</li>
+</ol>
+</li>
+</ul>
+<h1 id="自底向上解析"><a href="#自底向上解析" class="headerlink" title="自底向上解析"></a>自底向上解析</h1><h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p><strong>自底向上解析</strong> 是一种常见的语法分析方法，广泛用于现代编译器中，适合处理复杂语言的语法结构。</p>
+<p>它的基本思路是从输入的 Token 序列开始，一步步把它们组合成更大的语法单位，比如表达式、语句，最终还原出整个程序的结构。整个解析过程主要靠两个动作来推进：</p>
+<ul>
+<li><strong>移进（Shift）</strong>：把当前输入的一个单词读进来，放到一个临时的存储区域（叫分析栈），等待后续处理。</li>
+<li><strong>归约（Reduce）</strong>：当发现栈顶的一些符号正好符合某个语法规则的右边部分，就用这个规则的左边非终结符来代替它们。比如发现“表达式 + 项”可以归约为“表达式”，这就是一次归约。</li>
+</ul>
+<figure style="text-align: center; margin-top: 1em;">
+  <img src="/illustrations/CS143-Week4/2.png" alt="自底向上解析示例" width="65%">
+  <figcaption>自底向上解析示例</figcaption>
+</figure>
+
+<p>自底向上分析是语法推导的逆过程，具体对应最右推导的反向执行。也就是说，归约的顺序与最右推导的展开步骤相反，因此在归约过程中，被归约部分的右侧总是由尚未处理的终结符构成。</p>
+<p>在自底向上解析过程中，最关键的是找到当前可以归约的部分，这个部分称为“句柄”。句柄代表了下一步应当应用的语法规则。</p>
+<p>一个重要事实是：<strong>句柄总是位于分析栈的顶部，而不会隐藏在栈的中间或底部</strong>。或者说，句柄的右端位置是不减的。这是因为自底向上分析对应的是最右推导的逆过程，若句柄的右端位置回退，将与最右推导的顺序相冲突。但这并不意味着一旦在栈顶出现了可归约的结构就需要归约，由于上下文的限制，有些符号串虽然形式上匹配某个产生式的右部，但并不是此时应归约的句柄，贸然归约可能导致分析错误。</p>
+<p>还有一个重要的性质是：在分析过程中可能出现的所有合法前缀构成的集合是一个正则语言。进一步地，每一个合法前缀都唯一对应一组可能的语法位置，我们用 <strong>LR 项</strong>（如 <code>E → .(T)</code>、<code>E → (.T)</code>）来表示这些位置，其中“点”表示当前正在尝试匹配的语法规则已经识别到了哪一步。</p>
+<p>之所以构成正则语言，是因为：</p>
+<ul>
+<li>文法的产生式是有限的；</li>
+<li>每个产生式可以扩展为一组 LR 项（如 <code>E → .(T)</code>、<code>E → (.T)</code>、<code>E → (T.)</code>、<code>E → (T).</code>）；</li>
+<li>所有这些项的集合是有限的，而“移进”和“归约”操作对应于项之间基于输入符号的转移。</li>
+</ul>
+<p>于是，我们可以构造一个<strong>有限状态自动机</strong>，每个状态是一个项集，表示当前可能所处的所有语法位置；每条边由一个文法符号标记，表示在读入该符号后，自动机将转移到另一个状态。以文法 $ E \to (T) $ 为例，状态转移如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态</th>
+<th style="text-align:center">输入符号</th>
+<th style="text-align:center">动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\{ E \to \cdot(T) \}$</td>
+<td style="text-align:center">(</td>
+<td style="text-align:center">移进，进入状态 $\{ E \to ( \cdot T) \}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\{ E \to ( \cdot T) \}$</td>
+<td style="text-align:center">id</td>
+<td style="text-align:center">移进，进入状态 $\{ E \to (T \cdot ) \}$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\{ E \to (T \cdot ) \}$</td>
+<td style="text-align:center">)</td>
+<td style="text-align:center">归约，使用产生式 $ E \to (T) $</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>从而我们能提前构造出这个自动机（也就是生成 LR 分析表），用查表的方式快速决定每一步该做什么。这使得解析过程从可能的 $O(n^2)$ 甚至更慢，变成<strong>确定性的 $O(n)$</strong>，大大提高了效率。</p>
+<p>在实现上，自底向上解析通常使用一个栈来保存已经处理的符号和状态，再配合一张分析表来决定每一步该做什么。分析表告诉解析器：在某个状态下，看到某个输入符号时，应该移进、归约、接受还是报错。整个过程是自动推进的，不需要回溯。</p>
+<p>相比自顶向下的方法，自底向上解析更强大。它可以处理左递归文法，不需要对文法做额外的变换，比如消除左递归或提取左因子。这使得它可以更自然地描述编程语言中的常见结构，比如连续的加减乘除表达式。正因为这些优点，自底向上解析成为工业级编译器的主流选择。许多语法生成工具，比如 Yacc 和 Bison，都是基于这种思想实现的。</p>
+<blockquote>
+<p>递归下降解析就像普通的递归版线段树，直观自然但依赖系统调用栈，控制不够灵活；而自底向上解析则类似于 zkw 线段树，利用文法的结构性质（如最右推导、句柄总在栈顶），将原本隐式的递归过程转化为显式的迭代操作，通过手动维护分析栈和查表驱动的方式，把复杂的递归逻辑“展平”，不仅避免了函数调用开销，还提升了效率与表达能力。所以，当问题具有良好的结构规律时，我们或许总能够将递归转化为迭代，用数据结构模拟控制流，从而提升性能或化简算法。</p>
+</blockquote>
+<h2 id="解析冲突"><a href="#解析冲突" class="headerlink" title="解析冲突"></a>解析冲突</h2><p>在构造自底向上解析器时，可能会遇到某些状态中存在多个合法动作的情况。我们将其称为<strong>解析冲突</strong>，根据动作类型的不同，冲突分为两类：</p>
+<h3 id="1-移进-归约冲突（Shift-Reduce-Conflict）"><a href="#1-移进-归约冲突（Shift-Reduce-Conflict）" class="headerlink" title="1. 移进-归约冲突（Shift-Reduce Conflict）"></a>1. <strong>移进-归约冲突（Shift-Reduce Conflict）</strong></h3><ul>
+<li><strong>定义</strong>：在某个分析状态中，<strong>既可以移进（shift）下一个输入符号，也可以对栈顶内容进行归约（reduce）</strong>，且两种操作都可能导向一个合法的最终解析结果。</li>
+<li><strong>是否严重</strong>：<strong>相对不那么严重</strong>，有时是语言设计中的自然歧义，可以通过<strong>优先级规则</strong>或<strong>编译器提示</strong>解决。</li>
+<li><p><strong>常见例子</strong>：</p>
+<ul>
+<li><strong>悬空 else</strong>：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (cond1) if (cond2) S1; else S2;</span><br></pre></td></tr></tbody></table></figure>
+这个 <code>else</code> 应该属于外层 <code>if</code> 还是内层 <code>if</code>？<br>移进：继续看是否还有后续结构<br>归约：把内层 <code>if</code> 语句归约为完整语句<br>→ 出现冲突。</li>
+<li><strong>表达式中的运算符优先级</strong>：如 <code>id + id * id</code>，若文法未明确优先级，可能在 <code>+</code> 后不确定是移进 <code>*</code> 还是先归约左侧。</li>
+</ul>
+</li>
+<li><p><strong>解决方法</strong>：</p>
+<ul>
+<li>在解析器生成器（如 Yacc/Bison）中<strong>声明运算符优先级和结合性</strong>。</li>
+<li>默认策略：通常“移进”优先于“归约”，这能解决大多数实际问题。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-归约-归约冲突（Reduce-Reduce-Conflict）"><a href="#2-归约-归约冲突（Reduce-Reduce-Conflict）" class="headerlink" title="2. 归约-归约冲突（Reduce-Reduce Conflict）"></a>2. <strong>归约-归约冲突（Reduce-Reduce Conflict）</strong></h3><ul>
+<li><strong>定义</strong>：在某个分析状态中，<strong>栈顶内容可以被归约为两个或多个不同的非终结符</strong>，即存在多个归约动作都合法。</li>
+<li><strong>是否严重</strong>：<strong>非常严重</strong>，通常表明<strong>文法设计存在问题</strong>，如歧义、结构混乱或命名冲突。</li>
+<li><p><strong>常见例子</strong>：</p>
+<ul>
+<li>两个不同非终结符有相同的右部：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Func → id '(' ArgList ')'</span><br><span class="line">FuncCall → id '(' ArgList ')'</span><br></pre></td></tr></tbody></table></figure>
+当解析器看到 <code>id(...)</code> 时，无法判断是归约为 <code>Func</code> 还是 <code>FuncCall</code>。</li>
+<li>类型系统或作用域相关的歧义文法。</li>
+</ul>
+</li>
+<li><p><strong>解决方法</strong>：</p>
+<ul>
+<li><strong>重构文法</strong>，消除歧义，确保每个句柄唯一对应一个产生式。</li>
+<li>归约-归约冲突通常不能靠优先级解决，必须修改文法。</li>
+</ul>
+</li>
+</ul>
+<h2 id="句柄识别"><a href="#句柄识别" class="headerlink" title="句柄识别"></a>句柄识别</h2><p>在自底向上语法分析中，句柄的识别是整个过程的核心。然而，一个严峻的事实是：目前并不存在适用于所有 CFG 的高效算法来直接识别句柄。句柄的正确选择依赖于全局归约路径，而盲目尝试所有可能的归约会带来指数级开销，显然不可行。</p>
+<p>但幸运的是，存在一系列有效的启发式方法来“猜测”当前栈顶是否为句柄。这些方法基于语法规则的局部特征和输入符号进行判断，能够在许多实际场景中快速做出正确决策。更进一步，对于一大类精心设计的上下文无关文法（如 LL、LR 文法），这些启发式策略总是能准确识别句柄。因此，虽然通用句柄识别是困难的，但在实际编程语言的文法约束下，我们依然能够构建出强大而高效的解析器。</p>
+<figure style="text-align: center; margin-top: 1em;">
+  <img src="/illustrations/CS143-Week4/3.png" alt="各种 CFG 文法的关系" width="65%">
+  <figcaption>各种 CFG 文法的关系</figcaption>
+</figure>
+
+<p>在 LR 分析中，分析栈中的内容是由产生式右部的前缀构成的<strong>合法前缀</strong>。这些前缀虽然尚未完整匹配，但结构是语法允许的，并且最终都会归约为相应的非终结符。<strong>句柄识别</strong>的目标，就是在这些合法前缀中找到<strong>已经完整匹配</strong>的某个产生式右部。</p>
+<p>关键在于：这些部分右部是<strong>以嵌套方式</strong>组织的。当前归约出的非终结符，恰好作为上一层产生式右部中“尚未匹配部分”的开头，从而填补其结构的“缺失后缀”。因此，合法前缀本身就隐含了语法的层次嵌套关系。</p>
+<p><strong>句柄</strong>，就是分析栈顶<strong>刚刚完成匹配</strong>的那个产生式右部，在 LR 项中对应形如 <code>A → α ·</code> 的项。一旦识别出这样的项，且当前输入符号允许归约，就可以将其归约为左部非终结符，从而自底向上逐步构建出语法树，具体算法如下：</p>
+<ol>
+<li><p><strong>扩展文法（添加起始标记）</strong><br>为原始文法 $ G $ 添加一个新的开始产生式：$ S’ \to S $<br>其中 $ S $ 是原开始符号，$ S’ $ 是新引入的起始符号。<br>➤ 目的：唯一标识整个输入已被接受（当归约到 $ S’ \to S $ 时，分析成功）。</p>
+</li>
+<li><p><strong>构造项作为 NFA 状态</strong><br>如前所述，我们定义项表示一个产生式的分析进度，形式为：$ A \to \alpha \cdot \beta $<br>其中点 $ \cdot $ 表示当前已识别到哪一部分。<br>➤ 所有项的集合构成 NFA 的状态，包括新增产生式 $ S’ \to S $ 对应的项。</p>
+</li>
+<li><p><strong>构建移进转移</strong><br>对于当前项 $ E \to \alpha \cdot X \beta\,$，其中 $ X $ 是一个<strong>终结符</strong>：<br>➤ 添加一条按 $ X $ 标记的转移：  </p>
+<script type="math/tex; mode=display">
+E \to \alpha \cdot X\beta \xrightarrow{X} E \to \alpha X \cdot \beta</script><p>➤ 这表示当输入符号为 $ X $ 时，执行“移进”操作：  </p>
+<ol>
+<li><strong>压栈</strong>：将终结符 $ X $ 压入<strong>符号栈</strong>，同时将新状态（对应 $ E \to \alpha X \cdot \beta \,$ 所在的项集）压入<strong>状态栈</strong>；  </li>
+<li><strong>继续分析</strong>：推进分析进度。</li>
+</ol>
+</li>
+<li><p><strong>构建 ε-转移</strong><br>对于当前项 $ E \to \alpha \cdot X\beta \,$，表示我们已经识别了 $ \alpha $，现在需要构造一个非终结符 $ X $，以便继续完成 $ E $ 的推导。  </p>
+<p>因此，对于每个产生式 $ X \to \gamma $，添加一条 ε-转移：</p>
+<script type="math/tex; mode=display">
+E \to \alpha \cdot X\beta \xrightarrow{\varepsilon} X \to \cdot \gamma</script><p>➤ 这表示：为了完成 $ E $，接下来需要生成一个 $ X $，因此必须提前准备 $ X $ 的所有可能推导方式。<br>➤ 这里不会压入状态栈或符号栈，因为没有输入符号。</p>
+</li>
+<li><p><strong>识别句柄</strong><br>当某个项的形式为：$ A \to \alpha \cdot $（点在右部末尾）<br>➤ 表示栈中已完整匹配 $ \alpha $，它就是<strong>当前可归约的句柄</strong>。<br>➤ 若当前输入符号属于 $ A $ 的合法展望符（如 $FOLLOW(A)$），则执行归约。</p>
+</li>
+<li><p><strong>执行归约</strong><br>当识别出句柄 $ \alpha $ 并决定归约时：</p>
+<ol>
+<li><strong>弹出分析栈</strong>：将栈顶对应 $ \alpha $ 的所有符号和状态对依次弹出（每个符号对应一个状态）；</li>
+<li><p><strong>确定新状态</strong>：此时栈顶状态为 $ s$，查表获取</p>
+<script type="math/tex; mode=display">
+\text{goto}[s, A] = s'</script><p>表示当前状态 $s$ 接受非终结符 $A$ 后应跳转至的新状态 $s’$；</p>
+</li>
+<li><strong>压栈</strong>：将归约得到的非终结符 $A$ 与状态 $s’$ 一起压入栈；</li>
+<li><strong>继续分析</strong>：进入下一轮移进或归约判断。</li>
+</ol>
+</li>
+</ol>
+<h2 id="SLR"><a href="#SLR" class="headerlink" title="SLR"></a>SLR</h2><p>咕咕咕</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://restar682.github.io">restar682</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://restar682.github.io/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/">http://restar682.github.io/2025/08/06/CS143-Week4%EF%BC%9ABottom-Up-Parsing/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客文章版权归 restar682 所有，采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明原作者！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a><a class="post-meta__tags" href="/tags/CS143/">CS143</a><a class="post-meta__tags" href="/tags/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/">语法分析</a><a class="post-meta__tags" href="/tags/%E9%A2%84%E6%B5%8B%E8%A7%A3%E6%9E%90/">预测解析</a></div><div class="post-share"><div class="social-share" data-image="/img/head-sculpture.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer=""></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/08/04/CS143-Week3%EF%BC%9AParsing-Top-Down-Parsing/" title="CS143-Week3：Parsing &amp; Top-Down Parsing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">CS143-Week3：Parsing &amp; Top-Down Parsing</div></div><div class="info-2"><div class="info-item-1">语法分析的目标、文法基础与递归下降解析技术。</div></div></div></a><a class="pagination-related" href="/2025/08/06/Hexo-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E8%BD%AC%E4%B9%89-BUG/" title="Hexo 数学公式的转义 BUG"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hexo 数学公式的转义 BUG</div></div><div class="info-2"><div class="info-item-1">我的评价是：二次转义导致的。</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/08/04/CS143-Week3%EF%BC%9AParsing-Top-Down-Parsing/" title="CS143-Week3：Parsing &amp; Top-Down Parsing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-04</div><div class="info-item-2">CS143-Week3：Parsing &amp; Top-Down Parsing</div></div><div class="info-2"><div class="info-item-1">语法分析的目标、文法基础与递归下降解析技术。</div></div></div></a><a class="pagination-related" href="/2025/08/10/CS143-PA3%EF%BC%9AParsing/" title="CS143-PA3：Parsing"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-10</div><div class="info-item-2">CS143-PA3：Parsing</div></div><div class="info-2"><div class="info-item-1">CS143 PA3：实现 Cool 语言的语法分析器。</div></div></div></a><a class="pagination-related" href="/2025/07/27/CS143-Week1%EF%BC%9AIntroduction/" title="CS143-Week1：Introduction"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-27</div><div class="info-item-2">CS143-Week1：Introduction</div></div><div class="info-2"><div class="info-item-1">编译器的简单介绍和 Cool 语言。</div></div></div></a><a class="pagination-related" href="/2025/07/26/CS143-Week0%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="CS143-Week0：实验环境配置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-26</div><div class="info-item-2">CS143-Week0：实验环境配置</div></div><div class="info-2"><div class="info-item-1">CS143 环境配置。</div></div></div></a><a class="pagination-related" href="/2025/07/30/CS143-PA1%EF%BC%9ACool-Language/" title="CS143-PA1：Cool-Language"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-30</div><div class="info-item-2">CS143-PA1：Cool-Language</div></div><div class="info-2"><div class="info-item-1">CS143 PA1：实现 Cool 语言的一个栈机器</div></div></div></a><a class="pagination-related" href="/2025/07/30/CS143-Week2%EF%BC%9ALexical-Analysis-Finite-Automata/" title="CS143-Week2：Lexical Analysis &amp; Finite Automata"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-30</div><div class="info-item-2">CS143-Week2：Lexical Analysis &amp; Finite Automata</div></div><div class="info-2"><div class="info-item-1">词法分析的原理与实现。</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/head-sculpture.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info-name">restar682</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/restar682"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">this is my blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B%E8%A7%A3%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">预测解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LL-1-%E6%96%87%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%9B%A0%E5%AD%90%E5%88%86%E8%A7%A3"><span class="toc-number">1.2.2.</span> <span class="toc-text">左因子分解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FIRST-amp-FOLLOW-%E9%9B%86"><span class="toc-number">1.3.</span> <span class="toc-text">FIRST &amp; FOLLOW 集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FIRST-%E9%9B%86%E7%9A%84%E7%A1%AE%E5%AE%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">FIRST 集的确定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FOLLOW-%E9%9B%86%E7%9A%84%E7%A1%AE%E5%AE%9A"><span class="toc-number">1.3.2.</span> <span class="toc-text">FOLLOW 集的确定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E8%A7%A3%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">自底向上解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%86%B2%E7%AA%81"><span class="toc-number">2.2.</span> <span class="toc-text">解析冲突</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%A7%BB%E8%BF%9B-%E5%BD%92%E7%BA%A6%E5%86%B2%E7%AA%81%EF%BC%88Shift-Reduce-Conflict%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">1. 移进-归约冲突（Shift-Reduce Conflict）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BD%92%E7%BA%A6-%E5%BD%92%E7%BA%A6%E5%86%B2%E7%AA%81%EF%BC%88Reduce-Reduce-Conflict%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">2. 归约-归约冲突（Reduce-Reduce Conflict）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A5%E6%9F%84%E8%AF%86%E5%88%AB"><span class="toc-number">2.3.</span> <span class="toc-text">句柄识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLR"><span class="toc-number">2.4.</span> <span class="toc-text">SLR</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/22/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" title="计网学习笔记-3">计网学习笔记-3</a><time datetime="2025-10-22T08:37:41.000Z" title="发表于 2025-10-22 16:37:41">2025-10-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/19/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" title="计网学习笔记-2">计网学习笔记-2</a><time datetime="2025-10-19T02:51:16.000Z" title="发表于 2025-10-19 10:51:16">2025-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/14/UCAS-nlp-Week3%EF%BC%9A%E8%AF%8D%E5%90%91%E9%87%8F/" title="UCAS-nlp-Week3：词向量">UCAS-nlp-Week3：词向量</a><time datetime="2025-10-14T07:28:35.000Z" title="发表于 2025-10-14 15:28:35">2025-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/13/%E8%AE%A1%E7%BD%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" title="计网学习笔记-1">计网学习笔记-1</a><time datetime="2025-10-13T07:51:30.000Z" title="发表于 2025-10-13 15:51:30">2025-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结"><img src="/images/r2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CS143总结"></a><div class="content"><a class="title" href="/2025/10/01/CS143%E6%80%BB%E7%BB%93/" title="CS143总结">CS143总结</a><time datetime="2025-10-01T13:18:12.000Z" title="发表于 2025-10-01 21:18:12">2025-10-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">©2019 - 2025 By restar682</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async="" data-pjax="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div><hr><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax="">
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(/images/4.jpg);"> <a class="categoryBar-list-link" href="categories/6-s081/">6.s081</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr">6.s081</span></li><li class="categoryBar-list-item" style="background:url(/images/5.jpg);"> <a class="categoryBar-list-link" href="categories/DEBUG/">DEBUG</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">CS143</span></li><li class="categoryBar-list-item" style="background:url(/images/6.jpg);"> <a class="categoryBar-list-link" href="categories/工具/">工具</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr">DEBUG</span></li><li class="categoryBar-list-item" style="background:url(/images/7.jpg);"> <a class="categoryBar-list-link" href="categories/绘画/">绘画</a><span class="categoryBar-list-count">11</span><span class="categoryBar-list-descr">UCAS-nlp</span></li><li class="categoryBar-list-item" style="background:url(/images/8.jpg);"> <a class="categoryBar-list-link" href="categories/CS143/">CS143</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr">工具</span></li><li class="categoryBar-list-item" style="background:url(/images/9.jpg);"> <a class="categoryBar-list-link" href="categories/UCAS-nlp/">UCAS-nlp</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">绘画</span></li><li class="categoryBar-list-item" style="background:url(/images/11.jpeg);"> <a class="categoryBar-list-link" href="categories/计网/">计网</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">计网</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><!-- hexo injector body_end end --></body></html>
