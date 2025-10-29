@@ -50,10 +50,22 @@ PyTorch 是由 Facebook 开发的开源深度学习框架，可以自动并行�
 
 ## Tensor
 **Tensor（张量）** 是一个多维数组，可以表示标量、向量、矩阵等，其创建方式有：
-- `torch.tensor(data)`：由已有数据创建
+- `torch.tensor(data, dtype, device)`：由已有数据创建，`dtype`用于选择数据类型，`device`用于选择设备
 - `torch.zeros(size)`：全 0 张量  
 - `torch.ones(size)`：全 1 张量  
 - `torch.randn(size)`：随机正态分布  
+- `torch.rand(size)`：生成 均匀分布 $[0,1)$ 的随机张量
+- `torch.randint(low, high, size)`：生成 整数随机张量，元素在 $[low, high)$ 之间
+
+Tensor 支持多种 PyTorch 的数据类型：
+
+| PyTorch 类型      | 含义             | NumPy 对应     |
+| ---------------- | ---------------- | -------------- |
+| `torch.float32`  | 32 位浮点数       | `np.float32`  |
+| `torch.float64`  | 64 位浮点数（双精度） | `np.float64`  |
+| `torch.int32`    | 32 位整数         | `np.int32`    |
+| `torch.int64`    | 64 位整数（常用于索引） | `np.int64`    |
+| `torch.bool`     | 布尔类型          | `np.bool_`    |
 
 Tensor 作为张量，可以轻松地改变形状，常用函数包括：
 - `x.shape`：查看形状  
@@ -70,6 +82,7 @@ Tensor 可以通过索引与切片来查看其中一部分数据，常用方式�
 Tensor 可以进行数学运算，常用方式包括：
 - `x + y`，`x - y`，`x * y`，`x / y`：逐元素数学运算  
 - `torch.matmul(x, y)` 或 `x @ y`：矩阵乘法  
+- `torch.mul(x, y)`：逐元素乘法
 - `x.T`：转置  
 
 Tensor 也可以进行统计运算，常用函数包括：
@@ -77,6 +90,13 @@ Tensor 也可以进行统计运算，常用函数包括：
 - `x.mean()`：均值  
 - `x.max()` / `x.min()`：最大/最小值  
 - `x.argmax()` / `x.argmin()`：最大/最小值索引  
+
+Tensor 也提供了设备转换方法，常用的函数包括：
+
+- `x.cpu()`：将张量从 GPU 移动到 CPU。
+- `x.cuda()`：将张量从 CPU 移动到 GPU（如果有可用的 GPU）。
+- `x.numpy()`：将张量转换为 NumPy 数组（只支持 CPU 张量）。
+- `x.to(device)`：将张量移动到指定的设备（如 'cuda' 或 'cpu'）。
 
 ## 自动求导（Autograd）
 PyTorch 的 `autograd` 能自动计算模型参数的梯度，不需要手动推导。
@@ -129,4 +149,4 @@ Pytorch 同样支持保存和加载训练好的模型。
 - `torch.save(model.state_dict(), path)`：保存模型参数
 - `model.load_state_dict(torch.load(path))`：加载模型参数
 - `model.train()`：切换为训练模式
-- `model.eval()`：切换为评估模式，停止训练
+- `model.eval()`：切换为评估模式，停止训练，不再更新参数，并且会关闭诸如 Dropout 和 Batch Normalization 动态更新等训练特有的操作。

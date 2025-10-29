@@ -80,3 +80,39 @@ CBOW 是一种典型的词向量学习方法。该模型忽略词序，只关注
 当词汇表非常大时，计算 Softmax 函数的分母会变得非常复杂，因为它需要对整个词汇表进行归一化。为了解决这个问题，我们可以使用负采样技术。负采样通过只更新一小部分负样本来简化计算，从而提高训练效率。具体来说，对于每个正样本（即目标词），我们随机选择一些负样本（即非目标词）进行训练。这样，模型只需要计算这些样本的概率，而不是整个词汇表的概率，从而大大减少了计算量。
 
 负样本通常是从词汇表中随机选择的，我们毫无疑问的可能会选择到正样本。无论是忽略这些样本还是重新采样，都是可以的，大概结果差别不大吧。
+
+# torch.linalg
+`torch.linalg` 是 PyTorch 中专门用于 **线性代数运算** 的子模块，功能类似于 NumPy 的 `numpy.linalg`，提供了矩阵分解、求逆、求特征值、范数、解线性方程组等高级线性代数功能。
+
+### 1. 基本矩阵运算
+| 函数 | 作用 | 示例 |
+|------|------|------|
+| `torch.linalg.inv(A)` | 求矩阵 $A$ 的逆 | `inv_A = torch.linalg.inv(A)` |
+| `torch.linalg.det(A)` | 求行列式 | `d = torch.linalg.det(A)` |
+| `torch.linalg.matrix_rank(A)` | 求矩阵秩 | `r = torch.linalg.matrix_rank(A)` |
+| `torch.linalg.norm(A, ord)` | 求向量或矩阵的范数 | `n = torch.linalg.norm(A, ord=2)` |
+
+### 2. 特征值与特征向量
+| 函数 | 作用 | 示例 |
+|------|------|------|
+| `torch.linalg.eig(A)` | 计算一般方阵的特征值和特征向量 | `eigvals, eigvecs = torch.linalg.eig(A)` |
+| `torch.linalg.eigvals(A)` | 仅返回特征值 | `eigvals = torch.linalg.eigvals(A)` |
+
+### 3. 矩阵分解
+| 函数 | 作用 | 示例 |
+|------|------|------|
+| `torch.linalg.qr(A)` | QR 分解（正交分解） | `Q, R = torch.linalg.qr(A)` |
+| `torch.linalg.svd(A)` | 奇异值分解 | `U, S, Vh = torch.linalg.svd(A)` |
+| `torch.linalg.lu_factor(A)` / `torch.linalg.lu(A)` | LU 分解 | `P, L, U = torch.linalg.lu(A)` |
+
+### 4. 解线性方程组
+| 函数 | 作用 | 示例 |
+|------|------|------|
+| `torch.linalg.solve(A, B)` | 解线性方程 $A X = B$ | `X = torch.linalg.solve(A, B)` |
+| `torch.linalg.lstsq(A, B)` | 最小二乘解（当方程组无精确解时） | `X = torch.linalg.lstsq(A, B).solution` |
+
+### 5. 高级运算
+| 函数 | 作用 | 示例 |
+|------|------|------|
+| `torch.linalg.pinv(A)` | 求广义逆（Moore–Penrose 伪逆） | `A_pinv = torch.linalg.pinv(A)` |
+| `torch.linalg.cross(a, b)` | 计算向量叉积 | `torch.linalg.cross(a, b)` |
