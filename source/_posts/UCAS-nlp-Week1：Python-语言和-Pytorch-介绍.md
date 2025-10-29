@@ -56,6 +56,7 @@ PyTorch 是由 Facebook 开发的开源深度学习框架，可以自动并行�
 - `torch.randn(size)`：随机正态分布  
 - `torch.rand(size)`：生成 均匀分布 $[0,1)$ 的随机张量
 - `torch.randint(low, high, size)`：生成 整数随机张量，元素在 $[low, high)$ 之间
+- `torch.stack(tensors, dim=0)`：沿指定维度将多个张量**拼接成一个新张量**（要求每个张量形状相同）
 
 Tensor 支持多种 PyTorch 的数据类型：
 
@@ -110,6 +111,15 @@ PyTorch 的 `autograd` 能自动计算模型参数的梯度，不需要手动推
 ## 神经网络（torch.nn）
 
 `torch.nn` 是用来构建神经网络模型的模块，提供了常用层和损失函数。
+
+### 嵌入层
+- `nn.Embedding(num_embeddings, embedding_dim, padding_idx=None)`：  
+  将离散的整数索引（如词 ID 或类别标签）映射为稠密的连续向量。
+  - `num_embeddings`：词表大小；  
+  - `embedding_dim`：嵌入向量的维度；  
+  - `padding_idx`（可选）：指定一个索引（如 `0`），其对应的嵌入向量在训练中**始终保持为全零**，常用于填充（padding）。
+- `embedded = embedding(indices)`：批量获取对应索引的嵌入向量
+- `vec = embedding.weight[i]`：获取索引 $i$ 对应的嵌入向量 
 
 ### 常用层
 - `nn.Linear(in_features, out_features)`：全连接层

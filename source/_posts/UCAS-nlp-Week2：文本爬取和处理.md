@@ -77,3 +77,20 @@ def getHTML(url):
 4. **Paddle 模式**  
    - 基于 **PaddlePaddle 深度学习框架**，利用大规模语料训练，分词准确率更高。
 
+## `re` 模块（正则表达式）
+`re` 是 Python 的标准库模块，用于字符串的模式匹配与文本处理，支持搜索、替换、分割等操作。其核心方法包括：
+
+- `re.match(pattern, string)`：从字符串**开头**尝试匹配，成功返回 `Match` 对象，否则返回 `None`。
+- `re.search(pattern, string)`：扫描整个字符串，返回**第一个匹配**的 `Match` 对象（无匹配则返回 `None`）。
+- `re.findall(pattern, string)`：返回**所有非重叠匹配**的字符串列表。
+- `re.finditer(pattern, string)`：返回一个迭代器，每个元素为匹配的 `Match` 对象。
+- `re.sub(pattern, repl, string)`：将所有匹配项替换为 `repl`，并返回新字符串。
+- `re.split(pattern, string)`：根据匹配的模式将字符串分割为列表。
+
+### `Match` 对象
+匹配成功时返回的 `Match` 对象包含详细的匹配信息，常用方法如下：
+
+- `.group()`：获取匹配的文本内容；
+- `.start()`：获取匹配的起始索引；
+- `.end()`：获取匹配的结束索引；
+- `.span()`：返回 `(start, end)` 元组，表示匹配范围。
