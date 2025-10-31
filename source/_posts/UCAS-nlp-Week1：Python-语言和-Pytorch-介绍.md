@@ -28,7 +28,7 @@ Python 的模块分为标准库的模块、第三方模块和自定义模块，�
 </div>
 
 ## Python 包（Package）
-包其实就是一个**文件夹**，但该文件夹下必须存在 `__init__.py` 文件，用于标识当前文件夹是一个Python包，这个文件的内容可以为空。
+包其实就是一个**文件夹**，但该文件夹下必须存在 `__init__.py` 文件，用于标识当前文件夹是一个 Python 包，这个文件的内容可以为空。
 
 <div style="display: flex; justify-content: center; gap: 1em;">
   <figure style="text-align: center; width: 45%;">
