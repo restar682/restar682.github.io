@@ -26,13 +26,13 @@ Python 支持在函数定义中接收任意数量的位置或关键字参数，�
 - `arg = parser.parse_args()`：解析运行脚本时实际传入的命令行参数，将每个参数的值按名称存入一个 `Namespace` 对象（通常命名为 `args`）。可以通过 `args.参数名` 的方式访问各参数的值。
 
 # 数据加载
-在 PyTorch 中，常用 `Dataset` 和 `DataLoader` 来处理数据，其中 `Dataset` 用于封装数据及其标签，定义“如何获取单个样本”，而 `DataLoader` 负责批量加载、打乱顺序、并行预取等，定义“如何高效地将数据送入模型”。
+在 PyTorch 中，常用 `torch.utils.data` 中的 `Dataset` 和 `DataLoader` 来处理数据，其中 `Dataset` 用于封装数据及其标签，定义“如何获取单个样本”，而 `DataLoader` 负责批量加载、打乱顺序、并行预取等，定义“如何高效地将数据送入模型”。
 - `torch.utils.data.Dataset`类：
-  自定义数据集需继承此类并实现两个方法：  
+  自定义数据集必须继承此类并实现两个方法：  
   - `__len__(self)`：返回数据集总样本数；  
   - `__getitem__(self, idx)`：根据索引 `idx` 返回一个样本（通常为 `(data, label)` 元组）。  
   PyTorch 也提供了内置数据集（如 `torchvision.datasets.MNIST`），可直接使用。
-- `torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False, num_workers=0, ...)`：  
+- `dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False, num_workers=0, ...)`：  
   将 `Dataset` 对象包装为可迭代的批量数据加载器。常用参数包括：  
   - `batch_size`：每个 batch 的样本数量；  
   - `shuffle`：是否在每个 epoch 开始时打乱数据顺序；  
