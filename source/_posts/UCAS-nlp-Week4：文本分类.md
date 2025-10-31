@@ -38,4 +38,5 @@ Python 支持在函数定义中接收任意数量的位置或关键字参数，�
   - `shuffle`：是否在每个 epoch 开始时打乱数据顺序；  
   - `num_workers`：用于数据加载的子进程数（设为 `0` 表示主进程加载）；  
   - `drop_last`：若最后一批样本数不足 `batch_size`，是否丢弃。  
+  - `collate_fn`：自定义批处理函数，用于定义如何将单个样本列表组合成一个 batch（例如对变长序列做动态 padding、对图像做堆叠或数据增强）。
   使用时，可通过 `for batch in dataloader:` 直接遍历批量数据。
