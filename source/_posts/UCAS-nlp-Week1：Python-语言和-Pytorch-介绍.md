@@ -125,7 +125,7 @@ PyTorch 的 `autograd` 能自动计算模型参数的梯度，不需要手动推
 
 ### 常用层
 - `nn.Linear(in_features, out_features)`：全连接层
-- `nn.Conv2d(in_channels, out_channels, kernel_size)`：二维卷积层
+- `nn.Conv2d(in_channels, out_channels, kernel_size, padding)`：二维卷积层
 - `nn.BatchNorm2d(num_features)`：批归一化层
 - `nn.MaxPool2d(kernel_size, stride)`：二维最大池化层
 - `nn.Dropout(p)`：Dropout 层，防止过拟合，`p` 是随机丢弃的概率
