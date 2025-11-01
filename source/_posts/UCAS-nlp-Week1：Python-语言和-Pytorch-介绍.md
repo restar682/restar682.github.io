@@ -57,6 +57,8 @@ PyTorch 是由 Facebook 开发的开源深度学习框架，可以自动并行�
 - `torch.rand(size)`：生成 均匀分布 $[0,1)$ 的随机张量
 - `torch.randint(low, high, size)`：生成 整数随机张量，元素在 $[low, high)$ 之间
 - `torch.stack(tensors, dim=0)`：沿指定维度将多个张量**拼接成一个新张量**（要求每个张量形状相同）
+- `torch.cat(tensors, dim=0)`：沿指定维度将多个张量**拼接成一个新张量**（要求除拼接维度外其他维度相同）  
+- `torch.flatten(x, start_dim=1)`：将多维张量展平成一维向量（保留 `start_dim` 之前的维度，如 batch 维）
 
 Tensor 支持多种 PyTorch 的数据类型：
 
@@ -118,19 +120,20 @@ PyTorch 的 `autograd` 能自动计算模型参数的梯度，不需要手动推
   - `num_embeddings`：词表大小；  
   - `embedding_dim`：嵌入向量的维度；  
   - `padding_idx`（可选）：指定一个索引（如 `0`），其对应的嵌入向量在训练中**始终保持为全零**，常用于填充（padding）。
-- `embedded = embedding(indices)`：批量获取对应索引的嵌入向量
 - `vec = embedding.weight[i]`：获取索引 $i$ 对应的嵌入向量 
+- `embedded = embedding(indices)`：批量获取对应索引的嵌入向量
 
 ### 常用层
 - `nn.Linear(in_features, out_features)`：全连接层
 - `nn.Conv2d(in_channels, out_channels, kernel_size)`：二维卷积层
 - `nn.BatchNorm2d(num_features)`：批归一化层
-- `nn.Dropout(p)`：Dropout 层，防止过拟合
+- `nn.Dropout(p)`：Dropout 层，防止过拟合，`p` 是随机丢弃的概率
+- `nn.Sequential(...)`：顺序容器，将多个层按定义顺序组合
 
 ### 激活函数
-- `nn.ReLU()`：ReLU 函数
-- `nn.Sigmoid()`：Sigmoid 函数
-- `nn.Softmax(dim)`：Softmax 函数
+- `nn.ReLU(inplace=True)`：ReLU 函数，`inplace=True` 表示直接在原张量上修改，节省显存
+- `nn.Sigmoid()`：Sigmoid 函数，不支持直接修改
+- `nn.Softmax(dim)`：Softmax 函数，同样不支持直接修改
 
 ### 损失函数
 - `nn.MSELoss()`：均方误差，用于回归
