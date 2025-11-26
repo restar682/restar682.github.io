@@ -44,16 +44,14 @@ $SELF\\_TYPE$ 是一种特殊的类型标记，表示方法或属性的返回类
 设 $T, T'$ 是除 SELF_TYPE 外的任意类型。
 
 1. **同类 SELF_TYPE 比较**
-   - $$SELF\_TYPE_C \leq SELF\_TYPE\_C$$
+   $$SELF\_TYPE_C \leq SELF\_TYPE\_C$$
    - 注意：不同类的 $$SELF\_TYPE$$ 不能比较，例如 $$SELF\_TYPE_A$$ 和 $$SELF\_TYPE_B$$ 没有可比关系。
 
 2. **SELF_TYPE 和普通类型比较**
-   - $SELF\\_TYPE_C \leq T$ 当且仅当 $C \leq T$
-     换句话说，$$SELF\_TYPE_C$$ 可以被看作是 $C$ 的任意子类型，所以它在子类型规则里表现得和 $C$ 一样。
+   $SELF\\_TYPE_C \leq T$ 当且仅当 $C \leq T$，换句话说，$$SELF\_TYPE_C$$ 可以被看作是 $C$ 的任意子类型，所以它在子类型规则里表现得和 $C$ 一样。
 
 3. **普通类型与 SELF_TYPE 比较**
-   - $$T \leq SELF\_TYPE_C$$ 永远为假。  
-    因为 $$SELF\_TYPE_C$$ 可能是 $C$ 的任意子类，$T$ 不一定能涵盖所有可能性。
+   $T \leq SELF\_TYPE_C$ 永远为假，因为 $$SELF\_TYPE_C$$ 可能是 $C$ 的任意子类，$T$ 不一定能涵盖所有可能性。
 
 #### 3. 最小上界
 当我们在条件表达式 (`if`/`case`) 中需要合并不同分支的类型时，就会用到最小上界。
@@ -68,6 +66,7 @@ $SELF\\_TYPE$ 是一种特殊的类型标记，表示方法或属性的返回类
 
 3. $lub(T, T')$  
    - 如果没有 SELF_TYPE，照普通的 lub 规则。
+   
 ### 使用限制
 虽然 SELF_TYPE 很有用，但并非所有位置都可以使用。规则如下：
 
