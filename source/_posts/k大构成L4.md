@@ -1,7 +1,7 @@
 ---
 title: k大构成L4
 date: 2025-12-07 09:45:23
-description: 
+description: 深入讲解了我之前一直某种程度上忽略了的画面平衡，还说明了特效的画法，最后再次剖析了精二立绘的全流程。
 tags: [绘画, 构成]
 categories: 绘画
 ---
@@ -57,3 +57,5 @@ categories: 绘画
 <img src="/illustrations/k大构成L4/5.jpg" alt="精二立绘" width="60%">
 <figcaption>精二立绘</figcaption>
 </figure>
+
+需要注意的是，无论什么时候都有必要找一些能够表现出动态的元素加上去，画面才会显得有张力。或许为角色设计一些方便用来做动态线的锚点，不仅容易出效果，也可以增加角色的魅力。
