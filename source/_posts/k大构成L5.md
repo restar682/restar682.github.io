@@ -26,6 +26,8 @@ categories: 绘画
 
 对树木来说，一般先要把树木整体整理成圆、方、三角等大外型。其中，树干会被视为高低错落的直线排列，同时也可以看作一些纵轴，寻找动态平衡。
 
+对于树枝，可以套用特效的思路，同样是大趋势加上一些小趋势，大趋势画的比较粗，小趋势比较细。然后再在上面添加树叶什么的，要注意高低错落。用描边功能会有奇效。
+
 小型植被多半扮演线条角色，利用叶片或茎制造长线段，再以重点花朵作为小点景，其余花朵整合成 R 字型的大块状；像紫藤花就是从顶部垂下的直线，而温室花棚里垂吊的盆栽与藤蔓类植物，则可视为方形加直线飞行道具。
 
 若是花海，反而会比较简单，将所有花整理成 R 字的大色块，并用之字形堆积法来处理即可。
@@ -39,49 +41,54 @@ categories: 绘画
 
 <div style="display: flex;">
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/1.jpg" alt="圆形构图+之字形趋势" width="80%">
+<img src="/illustrations/k大构成L5/1.jpg" alt="圆形构图+之字形趋势" width="120%">
 <figcaption>圆形构图+之字形趋势</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/2.jpg" alt="方形构图" width="80%">
+<img src="/illustrations/k大构成L5/2.jpg" alt="方形构图" width="120%">
 <figcaption>方形构图</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/3.jpg" alt="之字形趋势" width="80%">
+<img src="/illustrations/k大构成L5/3.jpg" alt="之字形趋势" width="120%">
 <figcaption>之字形趋势</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/4.jpg" alt="斜线趋势" width="120%">
+<figcaption>斜线趋势</figcaption>
 </figure>
 </div>
 
 下面是两个方形构图的例子
 <div style="display: flex;">
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/4.jpg" alt="方形构图1" width="80%">
+<img src="/illustrations/k大构成L5/5.jpg" alt="方形构图1" width="70%">
 <figcaption>方形构图1</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/5.jpg" alt="方形构图2" width="80%">
+<img src="/illustrations/k大构成L5/6.jpg" alt="方形构图2" width="70%">
 <figcaption>方形构图2</figcaption>
 </figure>
 </div>
 
 还要注意的一点是，之字形是趋势，不是图形。很多好看的图都有之字形趋势，但这跟构图没有关系。
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/6.jpg" alt="之字形趋势" width="40%">
+<img src="/illustrations/k大构成L5/7.jpg" alt="之字形趋势" width="40%">
 <figcaption>之字形趋势</figcaption>
 </figure>
 
-另一种比较常见的是斜线趋势，或者说是扭转。事实上，交错的斜线会产生跃动感，同方向的斜线有动势，但很“秩序”：
+另一种比较常见的是斜线趋势，或者说往同一个方向，但又有穿插。事实上，交错的斜线会产生跃动感，同方向的斜线有动势，但很“秩序”：
 
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/7.jpg" alt="斜线趋势1" width="70%">
+<img src="/illustrations/k大构成L5/8.jpg" alt="斜线趋势1" width="60%">
 <figcaption>斜线趋势1</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/k大构成L5/8.jpg" alt="斜线趋势2" width="70%">
+<img src="/illustrations/k大构成L5/9.jpg" alt="斜线趋势2" width="60%">
 <figcaption>斜线趋势2</figcaption>
 </figure>
 
