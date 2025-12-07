@@ -29,3 +29,60 @@ categories: 绘画
 小型植被多半扮演线条角色，利用叶片或茎制造长线段，再以重点花朵作为小点景，其余花朵整合成 R 字型的大块状；像紫藤花就是从顶部垂下的直线，而温室花棚里垂吊的盆栽与藤蔓类植物，则可视为方形加直线飞行道具。
 
 若是花海，反而会比较简单，将所有花整理成 R 字的大色块，并用之字形堆积法来处理即可。
+
+## 背景的布置
+一种常用的布置背景的方法是根据一个特定的主题置景。通常来说，会先根据想要的主题，找出需要摆放在背景里的具象物件，例如雨伞、钟表、汉堡等等等等。接着要研究物体的造型，包括这些物件的轮廓特征与零件组合方式，也包括抽象类型，比如圆、方、三角哪种大外型，或者直线、横线、斜线或曲线。考虑轮廓特征是为了方便画出物件，而抽象类型是可以通用的，同一个抽象布景可以套用在许多具体物件上。
+
+接着可以尝试把单一物件变成复数的排列组合，例如用两三栋大楼的剪影组合，或将车子的轮廓做堆叠。最后，还可以再加上另一个物件到组合中，比如可以加入行人的剪影。组合里比较常见的一种是原本的物件是横向趋势，后加入的却呈现直向，从而形成直横对比（或反之）。
+
+同一张人物可以用各种你想用的构图：
+
+<div style="display: flex;">
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/1.jpg" alt="圆形构图+之字形趋势" width="80%">
+<figcaption>圆形构图+之字形趋势</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/2.jpg" alt="方形构图" width="80%">
+<figcaption>方形构图</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/3.jpg" alt="之字形趋势" width="80%">
+<figcaption>之字形趋势</figcaption>
+</figure>
+</div>
+
+下面是两个方形构图的例子
+<div style="display: flex;">
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/4.jpg" alt="方形构图1" width="80%">
+<figcaption>方形构图1</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/5.jpg" alt="方形构图2" width="80%">
+<figcaption>方形构图2</figcaption>
+</figure>
+</div>
+
+还要注意的一点是，之字形是趋势，不是图形。很多好看的图都有之字形趋势，但这跟构图没有关系。
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/6.jpg" alt="之字形趋势" width="40%">
+<figcaption>之字形趋势</figcaption>
+</figure>
+
+另一种比较常见的是斜线趋势，或者说是扭转。事实上，交错的斜线会产生跃动感，同方向的斜线有动势，但很“秩序”：
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/7.jpg" alt="斜线趋势1" width="70%">
+<figcaption>斜线趋势1</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大构成L5/8.jpg" alt="斜线趋势2" width="70%">
+<figcaption>斜线趋势2</figcaption>
+</figure>
+
+此外，这种方法更适用于重形式感与构成感的画面；若是强调叙事与内容，直接套用反而容易偏离重点。
