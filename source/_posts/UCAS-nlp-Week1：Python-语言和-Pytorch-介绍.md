@@ -130,6 +130,7 @@ PyTorch 的 `autograd` 能自动计算模型参数的梯度，不需要手动推
 - `nn.MaxPool2d(kernel_size, stride)`：二维最大池化层
 - `nn.Dropout(p)`：Dropout 层，防止过拟合，`p` 是随机丢弃的概率
 - `nn.Sequential(...)`：顺序容器，将多个层按定义顺序组合
+- `nn.ModuleList(modules)`：用于存放多个子层的列表，这些子层会被自动注册为模型参数，适合在网络结构中动态组合多个卷积层或全连接层（例如多尺度卷积核）。
 
 ### 激活函数
 - `nn.ReLU(inplace=True)`：ReLU 函数，`inplace=True` 表示直接在原张量上修改，节省显存
