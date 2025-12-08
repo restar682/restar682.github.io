@@ -163,5 +163,6 @@ Pytorch 同样支持保存和加载训练好的模型。
 
 - `torch.save(model.state_dict(), path)`：保存模型参数
 - `model.load_state_dict(torch.load(path))`：加载模型参数
+- `model.register_buffer(name, tensor)`：将张量登记为模型的缓冲区变量，会随模型保存与加载，但不会作为可训练参数更新，常用于固定的位置编码或掩码矩阵等。
 - `model.train()`：切换为训练模式
 - `model.eval()`：切换为评估模式，停止训练，不再更新参数，并且会关闭诸如 Dropout 和 Batch Normalization 动态更新等训练特有的操作。
