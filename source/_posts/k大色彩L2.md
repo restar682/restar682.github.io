@@ -34,3 +34,5 @@ categories: 绘画
 <img src="/illustrations/k大色彩L2/4.png" alt="合格的伪厚涂" width="18%">
 <figcaption>合格的伪厚涂</figcaption>
 </figure>
+
+这也是我们塑造的根本目的，就是在光滑的调子里找小结构和小形状，增加笔触，达到调子和形状平衡的状态。包括高光、反光、透光等等，都是为了增加形状讯息和调子讯息。
