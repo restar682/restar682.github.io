@@ -7,9 +7,30 @@ categories: 绘画
 # 形状讯息与调子讯息
 要让画面好看，需要达到**形状讯息**与**调子讯息**的**平衡**。形状讯息就是画面上色块的形状，要整而丰富；调子讯息则是画面上黑白明度的层次变化，做出区分即可。相较而言，形状讯息反而是更重要但容易被忽略的。
 
-比如传统素描，如果直接搬到电绘，就会因为没有笔触变得太光滑，丢失了绝大多数形状讯息，导致画面看起来很油：
+比如传统素描，如果直接搬到电绘，就会因为没有笔触变得太光滑，丢失了绝大多数形状讯息，导致画面看起来很油。对着真人照片硬画也是同样的问题，因为不理解结构，只能用比较糊的笔触来掩盖。如果要继续深入，需要更明确地把更细节的结构交代给读者：
+
+<div style="display: flex; justify-content: center;">
+<figure style="text-align: center;">
+<img src="/illustrations/k大色彩L2/1.png" alt="形状完全丢失" style="height: 200px; width: auto;">
+<figcaption>形状完全丢失</figcaption>
+</figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/k大色彩L2/1.png" alt="形状完全丢失" width="40%">
-<figcaption>形状完全丢失</figcaption>
+<img src="/illustrations/k大色彩L2/2.png" alt="硬画的产物" style="height: 200px; width: auto;">
+<figcaption>硬画的产物</figcaption>
+</figure>
+</div>
+
+而有经验的厚涂画师就会在调子依旧丰富的情况下添加许多的形状讯息：
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大色彩L2/3.png" alt="合格的厚涂" width="15%">
+<figcaption>合格的厚涂</figcaption>
+</figure>
+
+对于伪厚涂而言，调子相对而言就没有那么丰富，与此同时形状讯息更为明确了：
+
+<figure style="text-align: center;">
+<img src="/illustrations/k大色彩L2/4.png" alt="合格的伪厚涂" width="18%">
+<figcaption>合格的伪厚涂</figcaption>
 </figure>
