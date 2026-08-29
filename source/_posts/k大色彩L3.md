@@ -1,7 +1,7 @@
 ---
 title: k大色彩L3
 date: 2026-07-13 14:59:57
-description: 
+description: 重点讲了塑造需要注意的几条常见规则，以及如何控制级边。
 tags: [绘画, 色彩]
 categories: 绘画
 ---
