@@ -11,7 +11,8 @@
 
     .nav-site-title
       position: relative !important
-      left: 0
+      // Keep the desktop offset proportional to the viewport, capped at the tuned value.
+      left: clamp(0px, 4.7vw, 68px)
       display: inline-flex !important
       align-items: center !important
       justify-content: center !important
@@ -133,6 +134,9 @@
     margin: 0
 
   #search-button
+    position: relative
+    // Mirror the home-button offset so the two sides track the viewport edges.
+    left: clamp(-88px, -6vw, 0px)
     display: flex
     padding: 0
 
@@ -169,6 +173,7 @@
       padding-left: 0
 
     #blog-info .nav-site-title
+      left: 0
       padding: 0 6px !important
 
       &:hover

@@ -1,12 +1,11 @@
 import os
+import re
+import shutil
 import subprocess
 import sys
 
 # Git 仓库的根目录
 gitRoot = r"F:\myBlog\restar682.github.io"
-
-# Hexo 的源文件目录
-hexoPostDir = os.path.join(gitRoot, "source", "_posts")
 
 # 获取 commit 信息（支持命令行传入）
 commitMsg = "update"
@@ -16,39 +15,58 @@ if len(sys.argv) > 1:
 # 在 Git 根目录下执行 Git 操作
 os.chdir(gitRoot)
 
-commands = [
-    ["git", "add", "."],
-    ["git", "commit", "-m", commitMsg],
-    ["git", "push"]
-]
-
-for cmd in commands:
-    print(f"\n>> 正在执行: {' '.join(cmd)}")
-    result = subprocess.run(cmd, capture_output=True, text=True)
-
-    # 打印命令输出（可选）
-    print(result.stdout)
-    print(result.stderr)
-
-    # 检查 commit 是否没有内容
-    if cmd[1] == "commit" and "nothing to commit" in result.stdout:
-        print("没有要提交的内容，停止执行。")
-        sys.exit(0)
-
+def run(cmd):
+    print(f"\n>> 正在执行: {' '.join(cmd)}", flush=True)
+    result = subprocess.run(cmd)
     if result.returncode != 0:
-        print("出错，停止执行。")
-        break
+        print(f"\n执行失败（退出码 {result.returncode}），已停止。", flush=True)
+        sys.exit(result.returncode)
 
-# 切换到 Hexo 文章目录，并执行 Hexo 命令
-os.chdir(hexoPostDir)
-# print(os.getcwd())
 
-hexoCommands = [
-    ["hexo", "g", "-d"]
-]
+def run_hexo(npx, command):
+    cmd = [npx, "hexo", command]
+    print(f"\n>> 正在执行: {' '.join(cmd)}", flush=True)
+    process = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        encoding="utf-8",
+        errors="replace"
+    )
+    saw_error = False
+    for line in process.stdout:
+        print(line, end="", flush=True)
+        if re.match(r"^\s*ERROR(?:\s|$)", line):
+            saw_error = True
 
-for cmd in hexoCommands:
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True, encoding='utf-8')
-    print(f"\n>> 正在执行: {' '.join(cmd)}")
+    returncode = process.wait()
+    if returncode != 0 or saw_error:
+        reason = f"退出码 {returncode}" if returncode != 0 else "Hexo 输出了 ERROR"
+        print(f"\n执行失败（{reason}），已停止，未部署半成品。", flush=True)
+        sys.exit(returncode or 1)
 
-print("\n✅ 全部完成！")
+
+run(["git", "add", "--all"])
+
+# git commit 在没有改动时会返回 1，这不是部署失败。
+staged = subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode
+if staged == 1:
+    run(["git", "commit", "-m", commitMsg])
+    run(["git", "push"])
+elif staged == 0:
+    print("\n>> 没有新的源码改动，继续重新生成并部署。", flush=True)
+else:
+    print("\n检查 Git 改动失败，已停止。", flush=True)
+    sys.exit(staged)
+
+npx = shutil.which("npx.cmd") or shutil.which("npx")
+if not npx:
+    print("\n找不到 npx，请确认 Node.js 已安装并已加入 PATH。", flush=True)
+    sys.exit(1)
+
+run_hexo(npx, "clean")
+run_hexo(npx, "generate")
+run_hexo(npx, "deploy")
+
+print("\n全部完成！", flush=True)
