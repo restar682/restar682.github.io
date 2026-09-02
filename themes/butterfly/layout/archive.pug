@@ -2,7 +2,19 @@ extends includes/layout.pug
 
 block content
   include ./includes/mixins/article-sort.pug
+  - var archiveYearCount = new Set(site.posts.data.map(post => date(post.date, 'YYYY'))).size
   #archive
-    .article-sort-title= `${_p('page.articles')} - ${getArchiveLength()}`
-    +articleSort(page.posts)
-    include includes/pagination.pug
+    .taxonomy-index.taxonomy-archives
+      .taxonomy-overview
+        .taxonomy-stats
+          .taxonomy-stat
+            strong= site.posts.length
+            span 文章
+          .taxonomy-stat
+            strong= archiveYearCount
+            span 年份
+
+        include ./includes/page/content-index-nav.pug
+      .article-sort-title.taxonomy-section-title= `${_p('page.articles')} - ${getArchiveLength()}`
+      +articleSort(page.posts)
+      include includes/pagination.pug

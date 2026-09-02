@@ -1,0 +1,456 @@
+.taxonomy-index
+  --taxonomy-border: rgba(120, 130, 140, .22)
+  --taxonomy-muted: var(--card-meta)
+  width: 100%
+
+  .taxonomy-overview
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 28px
+    margin-bottom: 32px
+    padding-bottom: 28px
+    border-bottom: 1px solid var(--taxonomy-border)
+
+  .taxonomy-stats
+    display: flex
+    align-items: stretch
+    gap: 34px
+
+  .taxonomy-stat
+    display: flex
+    flex-direction: column
+    min-width: 56px
+
+    strong
+      color: var(--font-color)
+      font-size: 2rem
+      line-height: 1.1
+
+    span
+      margin-top: 7px
+      color: var(--taxonomy-muted)
+      font-size: .95rem
+
+  .taxonomy-switch
+    display: inline-flex
+    flex: 0 0 auto
+    gap: 5px
+    padding: 5px
+    border: 1px solid var(--taxonomy-border)
+    border-radius: 7px
+    background: rgba(120, 130, 140, .08)
+
+  .taxonomy-switch-item
+    display: inline-flex
+    align-items: center
+    gap: 8px
+    min-height: 44px
+    padding: 0 16px
+    border-radius: 5px
+    color: var(--taxonomy-muted)
+    font-size: 1rem
+    line-height: 1
+    transition: background-color .2s ease, color .2s ease
+
+    &:hover
+      color: var(--font-color)
+
+    &.is-active
+      background: var(--card-bg)
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .12)
+      color: var(--font-color)
+      font-weight: 600
+
+  .taxonomy-switch-count
+    color: var(--taxonomy-muted)
+    font-size: .84rem
+
+  .taxonomy-grid
+    display: grid
+    gap: 0 24px
+
+  .taxonomy-item
+    display: grid
+    align-items: center
+    min-width: 0
+    border-bottom: 1px solid var(--taxonomy-border)
+    color: var(--font-color)
+    transition: background-color .2s ease, color .2s ease, padding .2s ease
+
+    &:hover
+      padding-right: 10px
+      padding-left: 10px
+      background: rgba(73, 177, 245, .1)
+      color: var(--font-color)
+
+      .taxonomy-item-icon
+        color: var(--btn-bg)
+
+  .taxonomy-item-icon
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    color: #73808c
+    transition: color .2s ease
+
+  .taxonomy-item-main,
+  .taxonomy-item-name
+    min-width: 0
+
+  .taxonomy-item-name
+    overflow-wrap: anywhere
+    font-size: 1rem
+    font-weight: 500
+    line-height: 1.4
+
+  .taxonomy-item-count
+    display: inline-flex
+    align-items: baseline
+    justify-content: flex-end
+    gap: 4px
+    color: var(--taxonomy-muted)
+    white-space: nowrap
+
+    strong
+      color: var(--font-color)
+      font-size: 1.02rem
+
+    span
+      font-size: .82rem
+
+  .taxonomy-empty
+    padding: 56px 0
+    color: var(--taxonomy-muted)
+    text-align: center
+
+  +maxWidth768()
+    .taxonomy-overview
+      align-items: flex-start
+      flex-direction: column
+      gap: 18px
+      margin-bottom: 18px
+      padding-bottom: 18px
+
+    .taxonomy-switch
+      width: 100%
+
+    .taxonomy-switch-item
+      justify-content: center
+      flex: 1 1 0
+      padding: 0 7px
+
+.archive-index-nav
+  --taxonomy-border: rgba(120, 130, 140, .22)
+  --taxonomy-muted: var(--card-meta)
+  display: flex
+  justify-content: flex-end
+  margin-bottom: 34px
+  padding-bottom: 26px
+  border-bottom: 1px solid rgba(120, 130, 140, .22)
+
+  .taxonomy-switch
+    display: inline-flex
+    flex: 0 0 auto
+    gap: 5px
+    padding: 5px
+    border: 1px solid var(--taxonomy-border)
+    border-radius: 7px
+    background: rgba(120, 130, 140, .08)
+
+  .taxonomy-switch-item
+    display: inline-flex
+    align-items: center
+    gap: 8px
+    min-height: 44px
+    padding: 0 16px
+    border-radius: 5px
+    color: var(--taxonomy-muted)
+    font-size: 1rem
+    line-height: 1
+    transition: background-color .2s ease, color .2s ease
+
+    &:hover
+      color: var(--font-color)
+
+    &.is-active
+      background: var(--card-bg)
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .12)
+      color: var(--font-color)
+      font-weight: 600
+
+  .taxonomy-switch-count
+    color: var(--taxonomy-muted)
+    font-size: .84rem
+
+  +maxWidth768()
+    margin-bottom: 28px
+    padding-bottom: 20px
+
+    .content-index-switch
+      width: 100%
+
+    .taxonomy-switch-item
+      justify-content: center
+      flex: 1 1 0
+      min-width: 0
+      padding: 0 7px
+
+.taxonomy-section-heading
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  gap: 20px
+  margin-bottom: 16px
+
+.taxonomy-section-title
+  margin: 0
+  color: var(--font-color)
+  font-size: 1.35rem
+  letter-spacing: 0
+
+.taxonomy-archives
+  .article-sort-title
+    margin-top: 0
+    margin-bottom: 18px
+    padding-bottom: 16px
+    font-size: 1.35rem
+
+  .article-sort
+    margin-top: 0
+
+.taxonomy-section-meta
+  color: var(--taxonomy-muted)
+  font-size: .9rem
+
+.tag-featured
+  margin-bottom: 34px
+
+.popular-tag-grid
+  display: grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+  border-top: 1px solid var(--taxonomy-border)
+  border-bottom: 1px solid var(--taxonomy-border)
+
+.popular-tag-item
+  display: grid
+  grid-template-columns: 32px minmax(0, 1fr) auto
+  align-items: center
+  gap: 10px
+  min-height: 62px
+  padding: 0 16px
+  border-bottom: 1px solid var(--taxonomy-border)
+  color: var(--font-color)
+  transition: background-color .2s ease, color .2s ease
+
+  &:not(:nth-child(3n))
+    border-right: 1px solid var(--taxonomy-border)
+
+  &:nth-last-child(-n + 3)
+    border-bottom: 0
+
+  &:hover
+    background: rgba(73, 177, 245, .1)
+    color: var(--font-color)
+
+    .popular-tag-rank
+      color: var(--btn-bg)
+
+.popular-tag-rank
+  color: #81909c
+  font-weight: 700
+  font-size: .85rem
+
+.popular-tag-name
+  overflow-wrap: anywhere
+  font-size: 1.05rem
+  font-weight: 600
+
+.popular-tag-count
+  color: var(--taxonomy-muted)
+  font-size: .86rem
+  white-space: nowrap
+
+.tag-directory
+  border-top: 1px solid var(--taxonomy-border)
+  border-bottom: 1px solid var(--taxonomy-border)
+
+  &[open]
+    .tag-directory-summary
+      border-bottom-color: var(--taxonomy-border)
+
+    .tag-directory-action i
+      transform: rotate(180deg)
+
+.tag-directory-summary
+  display: flex
+  align-items: center
+  justify-content: space-between
+  min-height: 62px
+  padding: 0 16px
+  border-bottom: 1px solid transparent
+  color: var(--font-color)
+  cursor: pointer
+  font-size: 1.06rem
+  list-style: none
+  transition: background-color .2s ease
+
+  &::-webkit-details-marker
+    display: none
+
+  &:hover
+    background: rgba(120, 130, 140, .08)
+
+  > span:first-child
+    display: inline-flex
+    align-items: center
+    gap: 10px
+
+    i
+      color: #73808c
+
+.tag-directory-action
+  display: inline-flex
+  align-items: center
+  gap: 14px
+  color: var(--taxonomy-muted)
+  font-size: .9rem
+
+  i
+    transition: transform .2s ease
+
+.tag-directory-body
+  padding: 24px 16px 12px
+
+.tag-filter
+  display: flex
+  align-items: center
+  gap: 10px
+  margin-bottom: 18px
+  padding: 0 14px
+  min-height: 48px
+  border: 1px solid var(--taxonomy-border)
+  border-radius: 6px
+  background: rgba(120, 130, 140, .05)
+  color: var(--taxonomy-muted)
+
+  &:focus-within
+    border-color: var(--btn-bg)
+    box-shadow: 0 0 0 3px rgba(73, 177, 245, .12)
+
+  input
+    flex: 1
+    min-width: 0
+    border: 0
+    outline: 0
+    background: transparent
+    color: var(--font-color)
+    font: inherit
+
+.tag-filter-result
+  font-size: .88rem
+  white-space: nowrap
+
+.tag-index-grid
+  grid-template-columns: repeat(4, minmax(0, 1fr))
+
+  .taxonomy-item
+    grid-template-columns: 34px minmax(0, 1fr) auto
+    min-height: 58px
+
+  +maxWidth1024()
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+
+  +maxWidth768()
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+
+  @media screen and (max-width: 480px)
+    grid-template-columns: minmax(0, 1fr)
+
+  [hidden]
+    display: none
+
+.category-index-grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  column-gap: 34px
+
+  .taxonomy-item
+    --category-accent: #287da8
+    grid-template-columns: 42px minmax(0, 1fr) auto
+    min-height: 76px
+
+    &:nth-child(3n + 2)
+      --category-accent: #d0644e
+
+    &:nth-child(3n)
+      --category-accent: #318568
+
+    &:hover .taxonomy-item-icon
+      color: var(--category-accent)
+
+  .taxonomy-item-icon
+    color: var(--category-accent)
+    font-size: 1.08rem
+
+  .taxonomy-item-main
+    display: flex
+    flex-direction: column
+    gap: 9px
+
+  .category-index-progress
+    overflow: hidden
+    width: 100%
+    height: 3px
+    background: rgba(120, 130, 140, .16)
+
+    span
+      display: block
+      height: 100%
+      background: var(--category-accent)
+
+  +maxWidth768()
+    grid-template-columns: minmax(0, 1fr)
+
+@media screen and (max-width: 768px)
+  .popular-tag-grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+
+  .popular-tag-item
+    &:not(:nth-child(3n))
+      border-right: 0
+
+    &:not(:nth-child(2n))
+      border-right: 1px solid var(--taxonomy-border)
+
+    &:nth-last-child(-n + 3)
+      border-bottom: 1px solid var(--taxonomy-border)
+
+    &:nth-last-child(-n + 2)
+      border-bottom: 0
+
+  .taxonomy-section-heading
+    align-items: flex-start
+    flex-direction: column
+    gap: 5px
+
+  .tag-directory-body
+    padding-right: 10px
+    padding-left: 10px
+
+@media screen and (max-width: 480px)
+  .popular-tag-grid
+    grid-template-columns: minmax(0, 1fr)
+
+  .popular-tag-item
+    border-right: 0 !important
+
+    &:nth-last-child(-n + 2)
+      border-bottom: 1px solid var(--taxonomy-border)
+
+    &:last-child
+      border-bottom: 0
+
+  .content-index-switch .taxonomy-switch-count
+    display: none

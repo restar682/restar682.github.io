@@ -17,8 +17,10 @@ nav:
   fixed: false
 
 menu:
-  标签: /tags/ || fas fa-tags
-  分类: /categories/ || fas fa-folder-open
+  文章||fas fa-book-open:
+    归档: /archives/ || fas fa-archive
+    分类: /categories/ || fas fa-folder-open
+    标签: /tags/ || fas fa-tags
   图库||fas fa-image:
     存图: /images/ || fas fa-images
     私图: /my-images/ || fas fa-bolt
@@ -806,7 +808,7 @@ beautify:
 # global font settings
 # don't modify the following settings unless you know how they work
 font:
-  global_font_size:
+  global_font_size: 16px
   code_font_size:
   font_family:
   code_font_family:

@@ -7,6 +7,8 @@ block content
   else
     include ./includes/mixins/article-sort.pug
     #tag
+      .archive-index-nav
+        include ./includes/page/content-index-nav.pug
       .article-sort-title= _p('page.tag') + ' - ' + page.tag
       +articleSort(page.posts)
       include includes/pagination.pug

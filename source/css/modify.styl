@@ -26,46 +26,6 @@
     #page-site-info
       top: 100px !important
 
-// 鼠标悬停效果
-#blog-info
-  display: inline-block 
-
-  .nav-page-title
-    opacity: 0
-  .nav-site-title
-    box-sizing: border-box !important  // 用 border-box 改变高度计算逻辑，限制高度
-    height: 36.4px !important
-    line-height: 36.4px !important
-    padding: 0 !important
-    position: relative 
-    left: 180px
-    display: inline-block
-    transition: all .3s ease
-    
-    &:hover
-      background: #80c6f3
-      border-radius: 8px
-      width: auto !important
-      
-      .site-name
-        opacity: 0 // 文字消失
-        visibility: hidden
-        transition: opacity .3s, visibility .3s
-      
-      &::after
-        content: "\f015"
-        font-family: "Font Awesome 6 Free" !important
-        font-weight: 900
-        position: absolute
-        left: 50%
-        top: 50%
-        transform: translate(-50%, -50%)
-        color: white
-        font-size: 22px
-        opacity: 1
-        visibility: visible
-
-
 .top-img
   height: 300px
   margin: -50px -40px 50px

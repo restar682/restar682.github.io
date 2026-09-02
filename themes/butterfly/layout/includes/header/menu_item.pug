@@ -7,7 +7,7 @@ if theme.menu
           a.site-page(href=url_for(link))
             if icon
               i.fa-fw(class=icon)
-            span= ' ' + label
+            span= label
       else
         .menus_item
           - const [groupLabel, groupIcon, groupClass] = label.split('||').map(part => trim(part))
@@ -15,7 +15,7 @@ if theme.menu
           span.site-page.group(class=hideClass)
             if groupIcon
               i.fa-fw(class=groupIcon)
-            span= ' ' + groupLabel
+            span= groupLabel
             i.fas.fa-chevron-down
           ul.menus_item_child
             each val, lab in value
@@ -24,4 +24,4 @@ if theme.menu
                 a.site-page.child(href=url_for(childLink))
                   if childIcon
                     i.fa-fw(class=childIcon)
-                  span= ' ' + lab
+                  span= lab

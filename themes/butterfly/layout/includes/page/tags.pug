@@ -1,2 +1,53 @@
-.tag-cloud-list.text-center
-  !=cloudTags({source: site.tags, orderby: page.orderby || 'random', order: page.order || 1, minfontsize: 1.2, maxfontsize: 1.5, limit: 0, unit: 'em'})
+- const sortedTags = site.tags.sort(page.orderby || 'name', page.order || 1)
+- const popularTags = site.tags.sort('length', -1).data.filter(tag => tag.length > 1).slice(0, 12)
+
+.taxonomy-index.taxonomy-tags
+  .taxonomy-overview
+    .taxonomy-stats
+      .taxonomy-stat
+        strong= site.tags.length
+        span 标签
+      .taxonomy-stat
+        strong= site.posts.length
+        span 文章
+
+    include content-index-nav.pug
+
+  if popularTags.length
+    section.tag-featured(aria-labelledby='popular-tag-title')
+      .taxonomy-section-heading
+        h2#popular-tag-title.taxonomy-section-title 常用标签
+        span.taxonomy-section-meta 按文章数量排序
+      .popular-tag-grid
+        each tag, index in popularTags
+          a.popular-tag-item(href=url_for(tag.path) title=`${tag.name}：${tag.length} 篇文章`)
+            span.popular-tag-rank= String(index + 1).padStart(2, '0')
+            span.popular-tag-name= tag.name
+            span.popular-tag-count= `${tag.length} 篇`
+
+  if sortedTags.length
+    details.tag-directory
+      summary.tag-directory-summary
+        span
+          i.fas.fa-list-ul
+          strong 全部标签
+        span.tag-directory-action
+          span= `${site.tags.length} 个`
+          i.fas.fa-chevron-down
+      .tag-directory-body
+        label.tag-filter(for='tag-filter-input')
+          i.fas.fa-search
+          input#tag-filter-input(type='search' placeholder='搜索标签' autocomplete='off')
+          span.tag-filter-result= `${site.tags.length} 个`
+        .taxonomy-grid.tag-index-grid
+          each tag in sortedTags.data
+            a.taxonomy-item.tag-index-item(href=url_for(tag.path) title=`${tag.name}：${tag.length} 篇文章` data-tag-name=tag.name.toLowerCase())
+              span.taxonomy-item-icon
+                i.fas.fa-tag
+              span.taxonomy-item-name= tag.name
+              span.taxonomy-item-count
+                strong= tag.length
+                span 篇
+        .taxonomy-empty.tag-filter-empty(hidden) 没有匹配的标签
+  else
+    .taxonomy-empty 暂无标签

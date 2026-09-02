@@ -1,0 +1,14 @@
+- var activeContentIndex = page.type === 'categories' || globalPageType === 'category' ? 'categories' : page.type === 'tags' || globalPageType === 'tag' ? 'tags' : 'archives'
+
+nav.taxonomy-switch.content-index-switch(aria-label='文章索引')
+  a.taxonomy-switch-item(class=activeContentIndex === 'archives' ? 'is-active' : '' href=url_for('/archives/') aria-current=activeContentIndex === 'archives' ? 'page' : false)
+    i.fas.fa-archive
+    span 归档
+  a.taxonomy-switch-item(class=activeContentIndex === 'categories' ? 'is-active' : '' href=url_for('/categories/') aria-current=activeContentIndex === 'categories' ? 'page' : false)
+    i.fas.fa-folder-open
+    span 分类
+    span.taxonomy-switch-count= site.categories.length
+  a.taxonomy-switch-item(class=activeContentIndex === 'tags' ? 'is-active' : '' href=url_for('/tags/') aria-current=activeContentIndex === 'tags' ? 'page' : false)
+    i.fas.fa-tags
+    span 标签
+    span.taxonomy-switch-count= site.tags.length

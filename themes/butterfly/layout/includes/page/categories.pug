@@ -1,1 +1,30 @@
-.category-lists!= list_categories()
+- const sortedCategories = site.categories.sort(page.orderby || 'length', page.order || -1)
+
+.taxonomy-index.taxonomy-categories
+  .taxonomy-overview
+    .taxonomy-stats
+      .taxonomy-stat
+        strong= site.categories.length
+        span 分类
+      .taxonomy-stat
+        strong= site.posts.length
+        span 文章
+
+    include content-index-nav.pug
+
+  if sortedCategories.length
+    .taxonomy-grid.category-index-grid
+      each category in sortedCategories.data
+        - const categoryShare = site.posts.length ? Math.max(4, Math.round(category.length / site.posts.length * 100)) : 0
+        a.taxonomy-item.category-index-item(href=url_for(category.path) title=`${category.name}：${category.length} 篇文章`)
+          span.taxonomy-item-icon
+            i.fas.fa-folder-open
+          span.taxonomy-item-main
+            span.taxonomy-item-name= category.name
+            span.category-index-progress(aria-hidden='true')
+              span(style=`width: ${categoryShare}%`)
+          span.taxonomy-item-count
+            strong= category.length
+            span 篇
+  else
+    .taxonomy-empty 暂无分类

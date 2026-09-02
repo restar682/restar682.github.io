@@ -813,6 +813,30 @@ document.addEventListener('DOMContentLoaded', () => {
     btf.addEventListenerPjax(cardCategory, 'click', handleToggleBtn, true)
   }
 
+  const initTagFilter = () => {
+    const input = document.getElementById('tag-filter-input')
+    if (!input) return
+
+    const items = [...document.querySelectorAll('.tag-index-item')]
+    const result = document.querySelector('.tag-filter-result')
+    const empty = document.querySelector('.tag-filter-empty')
+    const filterTags = () => {
+      const query = input.value.trim().toLocaleLowerCase()
+      let visibleCount = 0
+
+      items.forEach(item => {
+        const isVisible = item.dataset.tagName.includes(query)
+        item.hidden = !isVisible
+        if (isVisible) visibleCount += 1
+      })
+
+      result.textContent = `${visibleCount} 个`
+      empty.hidden = visibleCount !== 0
+    }
+
+    btf.addEventListenerPjax(input, 'input', filterTags)
+  }
+
   const addPostOutdateNotice = () => {
     const ele = document.getElementById('post-outdate-notice')
     if (!ele) return
@@ -905,6 +929,7 @@ document.addEventListener('DOMContentLoaded', () => {
       GLOBAL_CONFIG.runtime && addRuntime()
       addLastPushDate()
       toggleCardCategory()
+      initTagFilter()
     }
 
     GLOBAL_CONFIG_SITE.pageType === 'home' && scrollDownInIndex()
