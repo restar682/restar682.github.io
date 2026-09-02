@@ -12,7 +12,7 @@
     .nav-site-title
       position: relative !important
       // Keep the desktop offset proportional to the viewport, capped at the tuned value.
-      left: clamp(0px, 4.7vw, 68px)
+      left: 150px
       display: inline-flex !important
       align-items: center !important
       justify-content: center !important
@@ -136,7 +136,7 @@
   #search-button
     position: relative
     // Mirror the home-button offset so the two sides track the viewport edges.
-    left: clamp(-88px, -6vw, 0px)
+    left: -180px
     display: flex
     padding: 0
 
@@ -167,6 +167,14 @@
       min-height: 44px
       padding: 0
 
+// Single-column layout is 100px wider than the two-column layout,
+// so keep each edge button 50px farther out in that state.
+html.hide-aside #nav #blog-info .nav-site-title
+  left: 200px !important
+
+html.hide-aside #nav #search-button
+  left: -230px !important
+
 @media screen and (max-width: 768px)
   #nav
     #blog-info
@@ -193,9 +201,27 @@
 
   > div:first-child
     width: 100%
+    box-sizing: border-box
+
+  // Keep the visible content frame consistent across archive, tag and category pages.
+  > div:first-child:not(.nc)
+    width: 100%
+    box-sizing: border-box
+
+  #archive,
+  #tag,
+  #category
+    width: 100%
+    box-sizing: border-box
 
   &.hide-aside
     max-width: 1400px
+
+// Taxonomy pages should use the same visible frame as the two-column layout.
+.layout.hide-aside:has(#archive),
+.layout.hide-aside:has(#tag),
+.layout.hide-aside:has(#category)
+  max-width: 1300px
 
 #post
   width: 78%

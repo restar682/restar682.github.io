@@ -26,7 +26,7 @@ def run(cmd):
 def run_hexo(npx, command):
     cmd = [npx, "hexo", command]
     print(f"\n>> 正在执行: {' '.join(cmd)}", flush=True)
-    process = subprocess.Popen(
+    result = subprocess.run(
         cmd,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
@@ -34,14 +34,10 @@ def run_hexo(npx, command):
         encoding="utf-8",
         errors="replace"
     )
-    saw_error = False
-    for line in process.stdout:
-        print(line, end="", flush=True)
-        if re.match(r"^\s*ERROR(?:\s|$)", line):
-            saw_error = True
-
-    returncode = process.wait()
+    saw_error = any(re.match(r"^\s*ERROR(?:\s|$)", line) for line in result.stdout.splitlines())
+    returncode = result.returncode
     if returncode != 0 or saw_error:
+        print(result.stdout, end="", flush=True)
         reason = f"退出码 {returncode}" if returncode != 0 else "Hexo 输出了 ERROR"
         print(f"\n执行失败（{reason}），已停止，未部署半成品。", flush=True)
         sys.exit(returncode or 1)
