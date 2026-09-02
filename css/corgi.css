@@ -19,7 +19,7 @@
 }
 #nav #blog-info .nav-site-title {
   position: relative !important;
-  left: 0;
+  left: clamp(0px, 4.7vw, 68px);
   display: -webkit-inline-box !important;
   display: -moz-inline-box !important;
   display: -webkit-inline-flex !important;
@@ -260,6 +260,8 @@
   margin: 0;
 }
 #nav #search-button {
+  position: relative;
+  left: clamp(-88px, -6vw, 0px);
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -330,6 +332,7 @@
     padding-left: 0;
   }
   #nav #blog-info .nav-site-title {
+    left: 0;
     padding: 0 6px !important;
   }
   #nav #blog-info .nav-site-title:hover {
