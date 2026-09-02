@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://restar682.github.io
+url: https://restar682.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -105,11 +105,11 @@ deploy:
   repository: git@github.com:restar682/restar682.github.io.git
   branch: main
 
-kramed:
+marked:
   gfm: true
   pedantic: false
-  sanitize: false
-  tables: true
   breaks: true
   smartLists: true
   smartypants: true
+  sanitizeUrl: true
+  dompurify: true
