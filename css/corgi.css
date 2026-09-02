@@ -19,7 +19,7 @@
 }
 #nav #blog-info .nav-site-title {
   position: relative !important;
-  left: clamp(0px, 4.7vw, 68px);
+  left: 150px;
   display: -webkit-inline-box !important;
   display: -moz-inline-box !important;
   display: -webkit-inline-flex !important;
@@ -261,7 +261,7 @@
 }
 #nav #search-button {
   position: relative;
-  left: clamp(-88px, -6vw, 0px);
+  left: -180px;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -327,6 +327,12 @@
   min-height: 44px;
   padding: 0;
 }
+html.hide-aside #nav #blog-info .nav-site-title {
+  left: 200px !important;
+}
+html.hide-aside #nav #search-button {
+  left: -230px !important;
+}
 @media screen and (max-width: 768px) {
   #nav #blog-info {
     padding-left: 0;
@@ -354,9 +360,31 @@
 }
 .layout > div:first-child {
   width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.layout > div:first-child:not(.nc) {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.layout #archive,
+.layout #tag,
+.layout #category {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .layout.hide-aside {
   max-width: 1400px;
+}
+.layout.hide-aside:has(#archive),
+.layout.hide-aside:has(#tag),
+.layout.hide-aside:has(#category) {
+  max-width: 1300px;
 }
 #post {
   width: 78%;
