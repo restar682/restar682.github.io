@@ -56,6 +56,9 @@ mixin rightsideItem(array)
     if showArray
       +rightsideItem(showArray)
 
+    button#background-preview(type="button" title="背景预览" aria-label="背景预览")
+      i.fas.fa-expand
+
     button#go-up(type="button" title=_p("rightside.back_to_top"))
       span.scroll-percent
       i.fas.fa-arrow-up
