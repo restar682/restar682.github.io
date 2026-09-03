@@ -22,9 +22,9 @@ menu:
     分类: /categories/ || fas fa-folder-open
     标签: /tags/ || fas fa-tags
   图库||fas fa-image:
-    存图: /images/ || fas fa-images
+    存图: /other-images/ || fas fa-images
     私图: /my-images/ || fas fa-bolt
-  友链: /link/ || fas fa-link
+  推荐游戏: /link/ || fas fa-gamepad
   关于: /about/ || fas fa-heart
 # --------------------------------------
 # Code Blocks Settings
@@ -282,8 +282,8 @@ aside:
   position: right
   display:
     archive: false
-    tag: true
-    category: true
+    tag: false
+    category: false
   card_author:
     enable: true
     description:
@@ -319,7 +319,7 @@ aside:
   card_tags:
     enable: true
     # if set 0 will show all
-    limit: 40
+    limit: 34
     color: false
     # order of tags, random/name/length
     orderby: random
@@ -1039,7 +1039,7 @@ inject:
     - <link rel="stylesheet" href="/css/corgi.css">
     - <link rel="stylesheet" href="/css/modify.css">
   bottom:
-    
+    - <script defer data-pjax src="/js/personal-gallery.js"></script>
 
 # cdn settings
 # don't modify the following settings unless you know how they work
@@ -1129,17 +1129,17 @@ categoryBar:
   row: 1 #显示行数，超过行数切换为滚动显示
   message:
     - descr: '6.s081'
-      cover: /images/4.jpg
+      cover: /images/1.jpg
     - descr: 'CS143'
-      cover: /images/5.jpg
+      cover: /images/2.jpg
     - descr: 'DEBUG'
-      cover: /images/6.jpg
+      cover: /images/3.jpg
     - descr: 'UCAS-nlp'
-      cover: /images/7.jpg
+      cover: /images/4.jpg
     - descr: '工具'
-      cover: /images/8.jpg
+      cover: /images/5.jpg
     - descr: '绘画'
-      cover: /images/9.jpg
+      cover: /images/6.jpg
     - descr: '计网'
-      cover: /images/11.jpeg
+      cover: /images/7.jpeg
   custom_css: /css/categorybar.css

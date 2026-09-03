@@ -64,6 +64,7 @@
 
           each j in i.link_list
             -
+              const description = j.descr || ''
               listResult += `
                 <div class="flink-list-item">
                   <a href="${j.link}" title="${j.name}" target="_blank">
@@ -71,7 +72,7 @@
                       <img class="no-lightbox" src="${j.avatar}" onerror='this.onerror=null;this.src="${url_for(theme.error_img.flink)}"' alt="${j.name}" />
                     </div>
                     <div class="flink-item-name">${j.name}</div>
-                    <div class="flink-item-desc" title="${j.descr}">${j.descr}</div>
+                    <div class="flink-item-desc" title="${description}">${description}</div>
                   </a>
                 </div>`
             -

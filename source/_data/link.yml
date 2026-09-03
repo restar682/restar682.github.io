@@ -1,15 +1,29 @@
-- class_name: 网站
-  class_desc: 值得推荐的网站
+- class_name: 推荐游戏
   link_list:
-    - name: Youtube
-      link: https://www.youtube.com/
-      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-      descr: 視頻網站
-    - name: Weibo
-      link: https://www.weibo.com/
-      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-      descr: 中国最大社交平台
-    - name: Twitter
-      link: https://twitter.com/
-      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-      descr: 社交分享平台
+    - name: 空洞骑士
+      link: https://store.steampowered.com/app/367520/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/367520/library_600x900_2x.jpg
+    - name: 空洞骑士：丝之歌
+      link: https://store.steampowered.com/app/1030300/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/1030300/library_600x900_2x.jpg
+    - name: 蔚蓝
+      link: https://store.steampowered.com/app/504230/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/504230/library_600x900_2x.jpg
+    - name: 杀戮尖塔
+      link: https://store.steampowered.com/app/646570/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/646570/library_600x900_2x.jpg
+    - name: 以撒的结合：重生
+      link: https://store.steampowered.com/app/250900/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/250900/library_600x900_2x.jpg
+    - name: 动物井
+      link: https://store.steampowered.com/app/813230/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/813230/library_600x900_2x.jpg
+    - name: 死亡细胞
+      link: https://store.steampowered.com/app/588650/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/588650/library_600x900_2x.jpg
+    - name: 纪念碑谷
+      link: https://store.steampowered.com/app/1927720/
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/1927720/library_600x900_2x.jpg
+    - name: 锈湖
+      link: https://store.steampowered.com/developer/rustylake
+      avatar: https://cdn.akamai.steamstatic.com/steam/apps/1292940/library_600x900_2x.jpg

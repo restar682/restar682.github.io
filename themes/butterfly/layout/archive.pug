@@ -8,11 +8,11 @@ block content
       .taxonomy-overview
         .taxonomy-stats
           .taxonomy-stat
-            strong= site.posts.length
-            span 文章
-          .taxonomy-stat
             strong= archiveYearCount
             span 年份
+          .taxonomy-stat
+            strong= site.posts.length
+            span 文章
 
         include ./includes/page/content-index-nav.pug
       .article-sort-title.taxonomy-section-title= `${_p('page.articles')} - ${getArchiveLength()}`

@@ -223,7 +223,10 @@ html.hide-aside #nav #search-button
 // Taxonomy pages should use the same visible frame as the two-column layout.
 .layout.hide-aside:has(#archive),
 .layout.hide-aside:has(#tag),
-.layout.hide-aside:has(#category)
+.layout.hide-aside:has(#category),
+.layout.hide-aside:has(.taxonomy-tags),
+.layout.hide-aside:has(.taxonomy-categories),
+.layout.hide-aside:has(.personal-gallery)
   max-width: 1300px
 
 #post
@@ -240,10 +243,136 @@ body.background-preview
     background: transparent !important
 
   #site-info,
+  #page-site-info,
+  #post-info,
   #scroll-down,
   #content-inner,
   #footer
     display: none !important
+
+// Personal image gallery
+.container .flink .flink-list
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 18px
+  overflow: visible
+  padding: 10px
+
+  > .flink-list-item
+    float: none
+    margin: 0
+    width: auto !important
+    height: 150px
+    border: 1px solid rgba(120, 130, 140, .16)
+    background: var(--card-bg)
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .08)
+
+    a
+      display: flex
+      align-items: center
+      height: 100%
+
+      .flink-item-icon
+        flex: 0 0 87px
+        float: none
+        margin: 10px 20px 10px 12px
+        width: 87px
+        height: 130px
+
+        img
+          object-fit: contain
+
+    &:hover .flink-item-icon
+      margin: 10px 20px 10px 12px
+      width: 87px
+
+    .flink-item-name
+      overflow: visible
+      padding: 0 18px 0 0
+      height: auto
+      font-size: 1.65em
+      line-height: 1.35
+      white-space: normal
+      text-align: left
+
+.flink .flink-item-desc:empty
+  display: none
+
+@media screen and (max-width: 600px)
+  .container .flink .flink-list
+    grid-template-columns: minmax(0, 1fr)
+
+.gallery-disclaimer
+  display: flex
+  align-items: center
+  gap: 10px
+  margin: 0 0 24px
+  padding: 0 0 18px
+  border-bottom: 1px solid rgba(120, 130, 140, .22)
+  color: var(--card-meta)
+  font-size: .92rem
+
+  i
+    color: var(--btn-bg)
+
+.personal-gallery
+  columns: 5
+  column-gap: 12px
+
+  &.is-ready
+    display: grid
+    grid-template-columns: repeat(9, minmax(0, 1fr))
+    grid-auto-flow: dense
+    grid-auto-rows: 8px
+    gap: 12px
+    columns: auto
+
+.personal-gallery-item
+  position: relative
+  display: block
+  overflow: hidden
+  break-inside: avoid
+  margin: 0 0 12px
+  width: 100%
+  border-radius: 6px
+  background: rgba(120, 130, 140, .1)
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .12)
+
+  .personal-gallery.is-ready &
+    margin: 0
+    grid-column: span 2
+
+    &.is-wide
+      grid-column: span 3
+
+  img
+    display: block
+    width: 100%
+    height: auto
+
+@media screen and (max-width: 1024px)
+  .personal-gallery
+    columns: 3
+
+    &.is-ready
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+
+      .personal-gallery-item
+        grid-column: span 1
+
+        &.is-wide
+          grid-column: span 2
+
+@media screen and (max-width: 768px)
+  .personal-gallery
+    columns: 2
+    column-gap: 8px
+
+  .personal-gallery-item
+    margin-bottom: 8px
+
+  .personal-gallery.is-ready
+    grid-template-columns: repeat(2, minmax(0, 1fr))
 
 @media screen and (max-width: 768px)
   #recent-posts > .recent-post-item
