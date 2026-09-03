@@ -396,6 +396,16 @@ html.hide-aside #nav #search-button {
   min-width: 300px;
   max-width: 312px;
 }
+body.background-preview #page-header {
+  min-height: 100vh;
+  background: transparent !important;
+}
+body.background-preview #site-info,
+body.background-preview #scroll-down,
+body.background-preview #content-inner,
+body.background-preview #footer {
+  display: none !important;
+}
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item {
     height: auto;

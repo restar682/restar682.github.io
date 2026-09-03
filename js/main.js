@@ -636,6 +636,11 @@ document.addEventListener('DOMContentLoaded', () => {
       btf.saveToLocal.set('aside-status', saveStatus, 2)
       $htmlDom.toggle('hide-aside')
     },
+    'background-preview': (_, item) => {
+      const preview = document.body.classList.toggle('background-preview')
+      item.querySelector('i').className = preview ? 'fas fa-compress' : 'fas fa-expand'
+      item.setAttribute('aria-label', preview ? '恢复页面' : '背景预览')
+    },
     'mobile-toc-button': (p, item) => { // Show mobile toc
       const tocEle = document.getElementById('card-toc')
       tocEle.style.transition = 'transform 0.3s ease-in-out'
