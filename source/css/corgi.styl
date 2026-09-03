@@ -11,8 +11,8 @@
 
     .nav-site-title
       position: relative !important
-      // Keep the desktop offset proportional to the viewport, capped at the tuned value.
-      left: 150px
+      // Align with the left edge of the centered two-column content frame.
+      left: unquote('calc((100vw - 1300px) / 2 - 55px)')
       display: inline-flex !important
       align-items: center !important
       justify-content: center !important
@@ -135,8 +135,8 @@
 
   #search-button
     position: relative
-    // Mirror the home-button offset so the two sides track the viewport edges.
-    left: -180px
+    // Align with the right edge of the centered two-column content frame.
+    left: unquote('calc((1300px - 100vw) / 2 + 31px)')
     display: flex
     padding: 0
 
@@ -167,13 +167,16 @@
       min-height: 44px
       padding: 0
 
-// Single-column layout is 100px wider than the two-column layout,
-// so keep each edge button 50px farther out in that state.
+// The theme centers the visible single-column content at 1016px on desktop.
 html.hide-aside #nav #blog-info .nav-site-title
-  left: 200px !important
+  left: unquote('calc((100vw - 1016px) / 2 - 60px)') !important
 
 html.hide-aside #nav #search-button
-  left: -230px !important
+  left: unquote('calc((1016px - 100vw) / 2 + 46px)') !important
+
+// Keep the site name only when the navigation becomes fixed.
+#page-header.nav-fixed #nav #blog-info .nav-page-title
+  display: none !important
 
 @media screen and (max-width: 768px)
   #nav
