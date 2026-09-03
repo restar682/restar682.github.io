@@ -386,7 +386,10 @@ html.hide-aside #nav #search-button {
 }
 .layout.hide-aside:has(#archive),
 .layout.hide-aside:has(#tag),
-.layout.hide-aside:has(#category) {
+.layout.hide-aside:has(#category),
+.layout.hide-aside:has(.taxonomy-tags),
+.layout.hide-aside:has(.taxonomy-categories),
+.layout.hide-aside:has(.personal-gallery) {
   max-width: 1300px;
 }
 #post {
@@ -401,10 +404,170 @@ body.background-preview #page-header {
   background: transparent !important;
 }
 body.background-preview #site-info,
+body.background-preview #page-site-info,
+body.background-preview #post-info,
 body.background-preview #scroll-down,
 body.background-preview #content-inner,
 body.background-preview #footer {
   display: none !important;
+}
+.container .flink .flink-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  overflow: visible;
+  padding: 10px;
+}
+.container .flink .flink-list > .flink-list-item {
+  float: none;
+  margin: 0;
+  width: auto !important;
+  height: 150px;
+  border: 1px solid rgba(120,130,140,0.16);
+  background: var(--card-bg);
+  -webkit-box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+.container .flink .flink-list > .flink-list-item a {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 100%;
+}
+.container .flink .flink-list > .flink-list-item a .flink-item-icon {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 87px;
+  -ms-flex: 0 0 87px;
+  flex: 0 0 87px;
+  float: none;
+  margin: 10px 20px 10px 12px;
+  width: 87px;
+  height: 130px;
+}
+.container .flink .flink-list > .flink-list-item a .flink-item-icon img {
+  object-fit: contain;
+}
+.container .flink .flink-list > .flink-list-item:hover .flink-item-icon {
+  margin: 10px 20px 10px 12px;
+  width: 87px;
+}
+.container .flink .flink-list > .flink-list-item .flink-item-name {
+  overflow: visible;
+  padding: 0 18px 0 0;
+  height: auto;
+  font-size: 1.65em;
+  line-height: 1.35;
+  white-space: normal;
+  text-align: left;
+}
+.flink .flink-item-desc:empty {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .container .flink .flink-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.gallery-disclaimer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid rgba(120,130,140,0.22);
+  color: var(--card-meta);
+  font-size: 0.92rem;
+}
+.gallery-disclaimer i {
+  color: var(--btn-bg);
+}
+.personal-gallery {
+  columns: 5;
+  -webkit-column-gap: 12px;
+  -moz-column-gap: 12px;
+  column-gap: 12px;
+}
+.personal-gallery.is-ready {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: 8px;
+  gap: 12px;
+  columns: auto;
+}
+.personal-gallery-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  break-inside: avoid;
+  margin: 0 0 12px;
+  width: 100%;
+  border-radius: 6px;
+  background: rgba(120,130,140,0.1);
+  -webkit-box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+.personal-gallery.is-ready .personal-gallery-item {
+  margin: 0;
+  grid-column: span 2;
+}
+.personal-gallery.is-ready .personal-gallery-item.is-wide {
+  grid-column: span 3;
+}
+.personal-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 1024px) {
+  .personal-gallery {
+    columns: 3;
+  }
+  .personal-gallery.is-ready {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .personal-gallery.is-ready .personal-gallery-item {
+    grid-column: span 1;
+  }
+  .personal-gallery.is-ready .personal-gallery-item.is-wide {
+    grid-column: span 2;
+  }
+}
+@media screen and (max-width: 768px) {
+  .personal-gallery {
+    columns: 2;
+    -webkit-column-gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
+  }
+  .personal-gallery-item {
+    margin-bottom: 8px;
+  }
+  .personal-gallery.is-ready {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item {
