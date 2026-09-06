@@ -5,7 +5,8 @@ description: 讲解了从火柴人比例到方块人的多种方法，还理清�
 tags: [绘画, 人体]
 categories: 绘画
 ---
-# 火柴人比例
+# 火柴人
+## 火柴人比例
 标准的火柴人正面比例如图所示，长度上有许多相等的地方。人胯比为 1：1，头部、胸腔、骨盆为 1：1：1，大臂、小臂为 1：1，大腿、小腿也为 1：1。
 
 这里的关节都附属于大的一部分，比如肘关节属于大臂，膝关节属于小臂，此外脚部也被算在小腿的长度中。
@@ -49,3 +50,37 @@ categories: 绘画
 <img src="/illustrations/tenten人体-Week1/5.png" alt="人体美化" width="45%">
 <figcaption>人体美化</figcaption>
 </figure>
+
+## 火柴人空间
+
+## 人体平衡
+有时候我们会遇见比例正确但看上去歪歪扭扭的情况，这种情况可能是因为没有控制住画面的平衡。
+
+伯里曼中提到，从锁骨中点向下画一条垂线，可以判断人物的重心位置。这条线通常应落在两腿之间，或者经过承重脚，以保证姿态的稳定，我们称之为锁足点。
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/7.png" alt="锁足点" width="45%">
+<figcaption>锁足点</figcaption>
+</figure>
+
+但锁足点并不能代表所有重心的平衡，当人物穿着衣服、拿着武器等配饰时，锁足点往往不再适用。
+
+这是因为锁足点针对的只是裸体的情况，如果是插画，我们更常用方块中心点来判断。也就是用方块将人物相关的东西框中，那么方块中心应该在两腿之间或者经过承重脚。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/8.png" alt="方块中心点" width="45%">
+<figcaption>方块中心点</figcaption>
+</figure>
+
+在修改动态时，我们就有两种思路，要么调整脚，要么添加一些配饰来平衡画面：
+
+<div style="display: flex; justify-content: center;">
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/9.png" alt="调整脚的位置" style="height: 300px; width: auto;">
+<figcaption>调整脚的位置</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/10.png" alt="添加配饰" style="height: 300px; width: auto;">
+<figcaption>添加配饰</figcaption>
+</figure>
+</div>
