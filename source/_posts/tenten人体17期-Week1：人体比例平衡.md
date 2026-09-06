@@ -52,13 +52,27 @@ categories: 绘画
 </figure>
 
 ## 火柴人空间
+在空间中画火柴人和对于有透视基础的并没有什么难度，但有一个需要注意的点。当人物两腿不平行时，需要考虑朝向对画面的影响，这种差别比较小的可以想象成一个灯笼，越正对画面夹角越大。
+<div style="display: flex; justify-content: center;">
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/6.png" alt="外八双腿" style="height: 300px; width: auto;">
+<figcaption>外八双腿</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/7.png" alt="灯笼法" style="height: 300px; width: auto;">
+<figcaption>灯笼法</figcaption>
+</figure>
+</div>
+
+> 其实就是透视压缩的影响，和后面圆柱的长度、大小、弧度什么的变化是一个原理，不过老师真的有很多奇妙的针对不同情况的小技巧。
 
 ## 人体平衡
 有时候我们会遇见比例正确但看上去歪歪扭扭的情况，这种情况可能是因为没有控制住画面的平衡。
 
 伯里曼中提到，从锁骨中点向下画一条垂线，可以判断人物的重心位置。这条线通常应落在两腿之间，或者经过承重脚，以保证姿态的稳定，我们称之为锁足点。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/7.png" alt="锁足点" width="45%">
+<img src="/illustrations/tenten人体-Week1/8.png" alt="锁足点" width="45%">
 <figcaption>锁足点</figcaption>
 </figure>
 
@@ -67,7 +81,7 @@ categories: 绘画
 这是因为锁足点针对的只是裸体的情况，如果是插画，我们更常用方块中心点来判断。也就是用方块将人物相关的东西框中，那么方块中心应该在两腿之间或者经过承重脚。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/8.png" alt="方块中心点" width="45%">
+<img src="/illustrations/tenten人体-Week1/9.png" alt="方块中心点" width="45%">
 <figcaption>方块中心点</figcaption>
 </figure>
 
@@ -75,12 +89,12 @@ categories: 绘画
 
 <div style="display: flex; justify-content: center;">
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/9.png" alt="调整脚的位置" style="height: 300px; width: auto;">
+<img src="/illustrations/tenten人体-Week1/10.png" alt="调整脚的位置" style="height: 300px; width: auto;">
 <figcaption>调整脚的位置</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/10.png" alt="添加配饰" style="height: 300px; width: auto;">
+<img src="/illustrations/tenten人体-Week1/11.png" alt="添加配饰" style="height: 300px; width: auto;">
 <figcaption>添加配饰</figcaption>
 </figure>
 </div>
