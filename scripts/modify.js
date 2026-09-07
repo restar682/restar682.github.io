@@ -5,6 +5,19 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
+hexo.extend.generator.register('vendor/fontawesome/css/all.min.css', () => ({
+    path: 'vendor/fontawesome/css/all.min.css',
+    data: fs.readFileSync(path.join(hexo.base_dir, 'node_modules/@fortawesome/fontawesome-free/css/all.min.css'))
+}));
+
+hexo.extend.generator.register('vendor/fontawesome/webfonts', () => {
+    const sourceDir = path.join(hexo.base_dir, 'node_modules/@fortawesome/fontawesome-free/webfonts');
+    return fs.readdirSync(sourceDir).map(name => ({
+        path: `vendor/fontawesome/webfonts/${name}`,
+        data: fs.readFileSync(path.join(sourceDir, name))
+    }));
+});
+
 const styleVersions = new Map();
 
 function versionedStyleUrl(name) {
@@ -50,5 +63,6 @@ filter.register('after_render:html', (str, data) => {
         decodeEntities: false
     });
     insertTopImg($);
+    $('.personal-gallery img').attr('loading', 'lazy');
     return versionCustomStyles($.html());
 });

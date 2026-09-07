@@ -56,7 +56,7 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /img/favicon.ico
 
 avatar:
   img: /img/head-sculpture.jpg
@@ -1083,7 +1083,7 @@ CDN:
     # fancybox:
     # fancybox_css:
     # fireworks:
-    # fontawesome:
+    fontawesome: /vendor/fontawesome/css/all.min.css
     # gitalk:
     # gitalk_css:
     # giscus:

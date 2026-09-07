@@ -35,7 +35,7 @@ categories: 绘画
 <figcaption>男女性比例差异</figcaption>
 </figure>
 
-再来观察侧面，画侧面的重点是：低头、挺胸、收腹，如下图所示。这里要看到裆部和直线有一定距离，带点顶胯的意思，这是因为人类没办法贴到直线上。还有要注意大腿开始的位置，同样是从骨盆下面的大转子开始延申出来。
+再来观察侧面，画侧面的重点是：低头、挺胸、收腹，如下图所示。胸腔和骨盆夹角为 140°。这里要看到裆部和直线有一定距离，带点顶胯的意思，这是因为人类没办法贴到直线上。还有要注意大腿开始的位置，同样是从骨盆下面的大转子开始延申出来。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/4.png" alt="火柴人侧面图" width="45%">
@@ -100,3 +100,54 @@ categories: 绘画
 </div>
 
 # 圆柱体
+## 柱体绘制步骤
+这里以胸腔和骨盆的柱体为例，我们一般会处理成 4：3 的圆柱体，所有首先应该先画 4：3 的长方形面片：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/12.png" alt="长方形面片" width="25%">
+<figcaption>长方形面片</figcaption>
+</figure>
+
+这里容易出现将火柴人肩膀宽度画错的情况，是因为错将 4：3 的比例当成了胸腔线与肩膀线的的比例，但实际上这是圆柱的比例。考虑到肩膀大多数时候并不位于圆柱的长轴上，因此往往会更短。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/13.png" alt="错误的肩膀宽度" width="55%">
+<figcaption>错误的肩膀宽度</figcaption>
+</figure>
+
+然后要在此基础上画圆柱的剖面，具体弧度不太重要，但要保证长轴位于面片上：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/14.png" alt="柱体剖面" width="25%">
+<figcaption>柱体剖面</figcaption>
+</figure>
+
+这里会注意到要让肩膀位于圆柱上会比较困难，因此可以考虑先画圆柱再画肩膀。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/15.png" alt="小技巧" width="45%">
+<figcaption>小技巧</figcaption>
+</figure>
+
+还要考虑近大远小，更远的椭圆应当更小但更圆：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/16.png" alt="柱体剖面" width="25%">
+<figcaption>柱体剖面</figcaption>
+</figure>
+
+衍生出来的一个问题就是如果剖面过大柱子长度的压缩就会很明显，需要在画面中表现出来：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/17.png" alt="柱体长度压缩" width="40%">
+<figcaption>柱体长度压缩</figcaption>
+</figure>
+
+方块的剖面和长度同理：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/18.png" alt="方块长度压缩" width="50%">
+<figcaption>方块长度压缩</figcaption>
+</figure>
+
+> 这些都是透视原理的推论，但意外的实用呢……
