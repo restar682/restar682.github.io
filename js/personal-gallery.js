@@ -14,19 +14,16 @@
 
       items.forEach((item, index) => {
         const image = images[index]
+        if (!image.naturalWidth || !image.naturalHeight) return
         const ratio = image.naturalWidth / image.naturalHeight
         item.classList.toggle('is-wide', ratio >= 1.3)
-      })
-
-      items.forEach((item, index) => {
-        const image = images[index]
         const renderedHeight = item.getBoundingClientRect().width * image.naturalHeight / image.naturalWidth
         item.style.gridRowEnd = `span ${Math.ceil((renderedHeight + rowGap) / (rowHeight + rowGap))}`
       })
     }
 
     Promise.all(images.map(image => {
-      if (image.complete && image.naturalWidth) return Promise.resolve()
+      if (image.complete) return Promise.resolve()
       return new Promise(resolve => {
         image.addEventListener('load', resolve, { once: true })
         image.addEventListener('error', resolve, { once: true })
@@ -37,6 +34,10 @@
 
       items.forEach((item, index) => {
         const image = images[index]
+        if (!image.naturalWidth || !image.naturalHeight) {
+          item.hidden = true
+          return
+        }
         const isWide = image.naturalWidth / image.naturalHeight >= 1.3
         item.classList.toggle('is-wide', isWide)
         ;(isWide ? wideItems : regularItems).push(item)
