@@ -101,7 +101,7 @@ categories: 绘画
 
 # 圆柱体
 ## 柱体绘制步骤
-这里以胸腔和骨盆的柱体为例，我们一般会处理成 4：3 的圆柱体，所有首先应该先画 4：3 的长方形面片：
+这里以胸腔和骨盆的柱体为例，我们一般会处理成 4：3 的圆柱体，所以首先应该先画 4：3 的长方形面片：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/12.png" alt="长方形面片" width="25%">
@@ -115,7 +115,7 @@ categories: 绘画
 <figcaption>错误的肩膀宽度</figcaption>
 </figure>
 
-然后要在此基础上画圆柱的剖面，具体弧度不太重要，但要保证长轴位于面片上：
+然后要在此基础上画圆柱的剖面，俯视还是仰视不重要，具体弧度不也太重要，但要保证长轴位于面片上：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/14.png" alt="柱体剖面" width="25%">
