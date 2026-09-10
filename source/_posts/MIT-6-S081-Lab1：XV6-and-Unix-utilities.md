@@ -584,7 +584,7 @@ main(int argc, char *argv[])
 {
     if(argc < 2)
     {
-        fprintf(2, "Uasge: xargs [command]\n");
+        fprintf(2, "Usage: xargs [command]\n");
         exit(1);
     }
     char *nargv[16];
@@ -592,11 +592,11 @@ main(int argc, char *argv[])
     {
         nargv[i - 1] = argv[i];
     }// original parameter
-    int base_arges = argc - 1;
+    int base_args = argc - 1;
     char buf[100];
     while (readline(buf) == 0)
     {
-        int arg_count = base_arges;
+        int arg_count = base_args;
         char * src = buf;
         while (src && arg_count < 15)
         {

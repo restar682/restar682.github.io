@@ -338,7 +338,7 @@ vmprint(pagetable_t pagetable, int level)
   }
 }
 ```
-观察输出，我们可以注意到仅仅有5个界面被分配：代码页、保护页、用户栈、`trapframe`、`trampoline`。`trampoline` 的页表从255开始，因为我们有1个bit位不使用。
+观察输出，我们可以注意到仅仅有5个页面被分配：代码页、保护页、用户栈、`trapframe`、`trampoline`。`trampoline` 的页表从255开始，因为我们有1个bit位不使用。
 
 ## A kernel page table per process (hard)
 通过第二个实验和第三个实验，我们要允许内核直接解引用用户提供的指针而不需要先转成物理地址。在第二个实验中，我们要修改内核来为每个进程分配一个独立的内核页表，而不是使用全局的内核页表。
@@ -385,7 +385,7 @@ if(p->pagetable == 0){
   return 0;
 }
 
-// Init the kernal page table
+// Init the kernel page table
 p->kpagetable = proc_kpagetable();
 if(p->kpagetable == 0){
     freeproc(p);

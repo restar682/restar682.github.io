@@ -55,3 +55,67 @@
 
   [data-theme='dark'] &
     color: var(--light-grey)
+
+// Sidebar cards collapse to their title row.
+#aside-content .card-widget.aside-collapsible
+  > .item-headline
+    display: flex
+    align-items: center
+    margin: -6px -8px
+    padding: 6px 8px
+    line-height: 24px
+    user-select: none
+
+    .aside-collapse-button
+      display: inline-flex
+      flex: 0 0 28px
+      align-items: center
+      justify-content: center
+      margin-left: auto
+      width: 28px
+      height: 28px
+      border-radius: 4px
+      color: var(--font-color)
+      transition: background-color .2s ease, color .2s ease
+
+      &:hover,
+      &:focus-visible
+        outline: none
+        background: var(--text-bg-hover)
+        color: var(--text-highlight-color)
+
+    .aside-collapse-icon
+      font-size: .8em
+      transition: transform .2s ease
+
+  &.is-collapsed
+    padding: 10px 14px
+
+    > .item-headline
+      padding-bottom: 6px
+
+      .aside-collapse-icon
+        transform: rotate(-90deg)
+
+    > :not(.item-headline)
+      display: none !important
+
+  &:not(.is-collapsed)
+    > .item-headline + *
+      margin-top: 10px
+
+#aside-content
+  #card-toc > .toc-content,
+  .card-post-series > .aside-list,
+  .card-recent-post > .aside-list,
+  .card-tags > .card-tag-cloud,
+  .card-categories > .card-category-list,
+  .card-archives > .card-archive-list
+    overflow-y: auto
+    overscroll-behavior: contain
+    max-height: unquote('min(52vh, 520px)')
+    padding-right: 4px
+    scrollbar-gutter: stable
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 999px

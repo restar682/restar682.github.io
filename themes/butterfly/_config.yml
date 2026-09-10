@@ -340,11 +340,11 @@ aside:
   card_post_series:
     enable: true
     # the title shows the series name
-    series_title: false
+    series_title: true
     # order by title or date
-    orderby: 'date'
+    orderBy: 'date'
     # sort of order. 1, asc for ascending; -1, desc for descending
-    order: -1
+    order: 1
   card_webinfo:
     enable: true
     post_count: true
@@ -905,9 +905,9 @@ lightbox:
 
 # series
 series:
-  enable: false
+  enable: true
   # order by title or date
-  orderby: 'title'
+  orderBy: 'date'
   # sort of order. 1, asc for ascending; -1, desc for descending
   order: 1
   number: true
@@ -1040,6 +1040,7 @@ inject:
     - <link rel="stylesheet" href="/css/modify.css">
   bottom:
     - <script defer data-pjax src="/js/personal-gallery.js"></script>
+    - <script defer data-pjax src="/js/aside-collapse.js"></script>
 
 # cdn settings
 # don't modify the following settings unless you know how they work

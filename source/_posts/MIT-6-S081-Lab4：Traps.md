@@ -198,7 +198,7 @@ struct proc {
   int killed;                  // If non-zero, have been killed
   int xstate;                  // Exit status to be returned to parent's wait
   int pid;                     // Process ID
-  int duaration;               // Alarm duartion
+  int duration;                // Alarm duration
   int alarm_num;               // Times of alarm
   int is_alarming;             // If non-zero, the process is alarming
   uint64 handler;              // Function need to handle
@@ -229,7 +229,7 @@ sys_sigalarm(void)
   if((argaddr(1, &handler)) < 0)
     return -1;
   struct proc * p = myproc();
-  p->duaration = ticks;
+  p->duration = ticks;
   p->handler = handler;
   p->alarm_num = 0;
   p->is_alarming = 0;
@@ -242,10 +242,10 @@ sys_sigalarm(void)
 ...
   // give up the CPU if this is a timer interrupt.
   if(which_dev == 2){
-    if(p->duaration)
+    if(p->duration)
     {
       p->alarm_num++;
-      if(p->alarm_num == p->duaration && p->is_alarming == 0)
+      if(p->alarm_num == p->duration && p->is_alarming == 0)
       {
         p->alarm_num = 0;
         *p->alarm_trapframe = *p->trapframe;
