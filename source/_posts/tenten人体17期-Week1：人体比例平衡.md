@@ -151,3 +151,25 @@ categories: 绘画
 </figure>
 
 > 这些都是透视原理的推论，但意外的实用呢……
+
+## 大透视
+在透视比较强时，常犯的一个错误是胸腔骨盆的圆柱剖面过小，也就是没有表现出空间关系。这种透视下，圆柱体的底面会更多地面向观众，所以一般剖面会比较明显。这也导致圆柱之间有比较清晰的叠压关系，画面中需要着重表现这一点，否则看上去会有些奇怪。
+
+<div style="display: flex; justify-content: center;">
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/19.png" alt="剖面过小" style="height: 300px; width: auto;">
+<figcaption>剖面过小</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/20.png" alt="剖面正常" style="height: 300px; width: auto;">
+<figcaption>剖面正常</figcaption>
+</figure>
+</div>
+
+之所以强调胸腔骨盆，是因为一般情况下这俩都是侧面面向观众，如果是鞠躬什么的显然也要强调这些。四肢因为非常灵活，日常情况下也要考虑角度、剖面和长度的关系。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/21.png" alt="四肢" width="25%">
+<figcaption>四肢</figcaption>
+</figure>
