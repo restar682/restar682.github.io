@@ -95,7 +95,7 @@ footer_img: transparent
 
 # Website Background
 # Can set it to color or image url
-background: /images/background.jpg
+background: /images/background-web.jpg
 
 cover:
   # Disable the cover or not
@@ -485,7 +485,7 @@ search:
   # local search
   local_search:
     # preload the search data when the page loads.
-    preload: true
+    preload: false
     # show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # unescape html strings to the readable one.
@@ -1039,8 +1039,8 @@ inject:
     - <link rel="stylesheet" href="/css/corgi.css">
     - <link rel="stylesheet" href="/css/modify.css">
   bottom:
-    - <script defer data-pjax src="/js/personal-gallery.js"></script>
-    - <script defer data-pjax src="/js/aside-collapse.js"></script>
+    - <script async data-pjax src="/js/personal-gallery.js"></script>
+    - <script async data-pjax src="/js/aside-collapse.js"></script>
 
 # cdn settings
 # don't modify the following settings unless you know how they work
@@ -1130,7 +1130,7 @@ categoryBar:
   row: 1 #显示行数，超过行数切换为滚动显示
   message:
     - descr: '6.s081'
-      cover: /images/1.jpg
+      cover: /images/1-web.jpg
     - descr: 'CS143'
       cover: /images/2.jpg
     - descr: 'DEBUG'
@@ -1140,7 +1140,7 @@ categoryBar:
     - descr: '工具'
       cover: /images/5.jpg
     - descr: '绘画'
-      cover: /images/6.jpg
+      cover: /images/6-web.jpg
     - descr: '计网'
       cover: /images/7.jpeg
   custom_css: /css/categorybar.css
