@@ -452,7 +452,7 @@ math:
   # choose: mathjax, katex
   # leave it empty if you don't need math
   use: mathjax
-  per_page: true
+  per_page: false
   hide_scrollbar: false
 
 mathjax:
@@ -995,9 +995,10 @@ instantpage: false
 # lazyload
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   # specify the field to use lazyload (site or post)
-  field: site
+  field: post
+  native: true
   placeholder:
   blur: false
 
@@ -1132,15 +1133,15 @@ categoryBar:
     - descr: '6.s081'
       cover: /images/1-web.jpg
     - descr: 'CS143'
-      cover: /images/2.jpg
+      cover: /images/2-web.jpg
     - descr: 'DEBUG'
-      cover: /images/3.jpg
+      cover: /images/3-web.jpg
     - descr: 'UCAS-nlp'
-      cover: /images/4.jpg
+      cover: /images/4-web.jpg
     - descr: '工具'
-      cover: /images/5.jpg
+      cover: /images/5-web.jpg
     - descr: '绘画'
       cover: /images/6-web.jpg
     - descr: '计网'
-      cover: /images/7.jpeg
+      cover: /images/7-web.jpg
   custom_css: /css/categorybar.css

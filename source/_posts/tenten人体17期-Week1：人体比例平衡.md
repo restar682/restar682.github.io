@@ -198,4 +198,24 @@ categories: 绘画
 </figure>
 
 ## 面片法
-明显上面这个方法理性但比较复杂，还需要微调，我们更倾向于用面片法。
+明显上面这个方法理性但比较复杂，还需要微调，我们更倾向于用面片法。面片法就是先找中间线，然后找轮廓，然后镜像一下。这里我们不需要点到点连线，和原图能对应上更重要。
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/25.png" alt="面片法" width="35%">
+<figcaption>面片法</figcaption>
+</figure>
+
+> 注意这里轮廓不包含背阔肌。
+
+## 头部方块套嵌
+头部方块的套嵌相对简单，正面连接两侧眉尾即可，侧面连接眉尾和耳廓生长点即可，朝向就是额头和下巴连线。
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/25.png" alt="头部方块套嵌" width="35%">
+<figcaption>头部方块套嵌</figcaption>
+</figure>
+
+## 四肢基本结构
+手臂一般概括成长方体即可，大概末端 $\frac{1}{4}$ 是关节。腿部则需要做出凸起，一般在靠上 $\frac{1}{3}$ 处凸起，末端 $\frac{1}{3}$ 则是关节，注意凸起是连到关节开始处而不是直接连到末端。
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/27.png" alt="四肢比例" width="35%">
+<figcaption>四肢比例</figcaption>
+</figure>
