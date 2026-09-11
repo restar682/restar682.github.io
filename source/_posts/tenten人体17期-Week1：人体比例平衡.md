@@ -173,3 +173,29 @@ categories: 绘画
 <img src="/illustrations/tenten人体-Week1/21.png" alt="四肢" width="25%">
 <figcaption>四肢</figcaption>
 </figure>
+
+# 方块人
+## 柱体转方块
+根据方块的比例，我们是可以很容易从圆柱转成方块的：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/22.png" alt="圆柱转方块" width="75%">
+<figcaption>圆柱转方块</figcaption>
+</figure>
+
+这种方法虽然标准，但并不符合我们的需求。因为我们是把圆柱和方块的外轮廓当作胸腔和骨盆的框架，所以我们会希望圆柱和方块的外轮廓基本重合。而在这种方法下，如果角度比较侧面，那么二者相差显然是很多的。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/23.png" alt="外轮廓不太重合" width="25%">
+<figcaption>外轮廓不太重合</figcaption>
+</figure>
+
+所以我们往往会自己进行一些微调，使得他们的外轮廓更加接近。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/24.png" alt="微调" width="25%">
+<figcaption>微调</figcaption>
+</figure>
+
+## 面片法
+明显上面这个方法理性但比较复杂，还需要微调，我们更倾向于用面片法。
