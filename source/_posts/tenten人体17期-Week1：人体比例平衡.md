@@ -179,7 +179,7 @@ categories: 绘画
 根据方块的比例，我们是可以很容易从圆柱转成方块的：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/22.png" alt="圆柱转方块" width="95%">
+<img src="/illustrations/tenten人体-Week1/22.png" alt="圆柱转方块" width="100%">
 <figcaption>圆柱转方块</figcaption>
 </figure>
 
