@@ -179,7 +179,7 @@ categories: 绘画
 根据方块的比例，我们是可以很容易从圆柱转成方块的：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/22.png" alt="圆柱转方块" width="75%">
+<img src="/illustrations/tenten人体-Week1/22.png" alt="圆柱转方块" width="95%">
 <figcaption>圆柱转方块</figcaption>
 </figure>
 
@@ -198,7 +198,7 @@ categories: 绘画
 </figure>
 
 ## 面片法
-明显上面这个方法理性但比较复杂，还需要微调，我们更倾向于用面片法。面片法就是先找中间线，然后找轮廓，然后镜像一下。这里我们不需要点到点连线，和原图能对应上更重要。
+明显上面这个方法理性但比较复杂，还需要微调，简单的图我们更倾向于用面片法。面片法就是先找中间线，然后找轮廓，然后镜像一下。这里我们不需要点到点连线，和原图能对应上更重要。
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/25.png" alt="面片法" width="25%">
 <figcaption>面片法</figcaption>
@@ -227,4 +227,32 @@ categories: 绘画
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/28.png" alt="四肢比例" width="50%">
 <figcaption>四肢比例</figcaption>
+</figure>
+
+# 拓展
+## 动态优化
+动态优化的核心还是做出 140° 的胸腔骨盆方块，即使是纯正面也可以做出倾斜，有侧面就可以做出弯曲（低头挺胸收腹和肚子痛两种）。
+<div style="display: flex; justify-content: center;">
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/29.png" alt="倾斜" style="height: 250px; width: auto;">
+<figcaption>倾斜</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/30.png" alt="弯曲" style="height: 250px; width: auto;">
+<figcaption>弯曲</figcaption>
+</figure>
+</div>
+
+还可以添加扭转，更有趣一些：
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/31.png" alt="扭转" width="40%">
+<figcaption>扭转</figcaption>
+</figure>
+
+## 时钟法
+画的角度整体比较偏侧面时可以用时钟法，特别是正面和背面都能看到的情况。时钟法就是先画出侧面，然后根据方向扩展成方块。
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/32.png" alt="时钟法" width="60%">
+<figcaption>时钟法</figcaption>
 </figure>
