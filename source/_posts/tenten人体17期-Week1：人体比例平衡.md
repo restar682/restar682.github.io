@@ -129,7 +129,7 @@ categories: 绘画
 <figcaption>小技巧</figcaption>
 </figure>
 
-还要考虑近大远小，更远的椭圆应当更小但更圆：
+还要考虑近大远小，离视平线更远的椭圆应当更小但更圆：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/16.png" alt="柱体剖面" width="25%">
