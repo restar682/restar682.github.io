@@ -223,7 +223,7 @@ categories: 绘画
 </figure>
 
 ## 四肢基本结构
-手臂一般概括成长方体即可，大概末端 $\frac{1}{4}$ 是关节。腿部则需要做出凸起，一般在靠上 $\frac{1}{3}$ 处凸起，末端 $\frac{1}{3}$ 则是关节，注意凸起是连到关节开始处而不是直接连到末端。
+手臂通常概括为长方体即可，手肘与手腕各约占 $\frac{1}{4}$。腿部则需做出凸起，其中凸起的位置一般在靠上约 $\frac{1}{3}$ 处；膝盖约占 $\frac{1}{4}$，脚踝约占 $\frac{1}{3}$。注意，凸起应连到关节起始处，而不是直接连到长方体的末端。
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/28.png" alt="四肢比例" width="50%">
 <figcaption>四肢比例</figcaption>
