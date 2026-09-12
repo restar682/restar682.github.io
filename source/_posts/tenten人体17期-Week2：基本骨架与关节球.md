@@ -25,10 +25,10 @@ tags:
 <figcaption>骨盆</figcaption>
 </figure>
 
-最后加上锁骨：
+最后加上锁骨和肩胛骨：
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/5.png" alt="锁骨" width="40%">
-<figcaption>锁骨</figcaption>
+<img src="/illustrations/tenten人体-Week2/5.png" alt="锁骨和肩胛骨" width="40%">
+<figcaption>锁骨和肩胛骨</figcaption>
 </figure>
 
 # 胸腔
@@ -52,3 +52,5 @@ tags:
 # 骨盆
 
 这个一半很重要
+
+后面也是一半，前面裆部比一半少一点
