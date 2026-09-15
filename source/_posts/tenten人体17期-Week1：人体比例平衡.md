@@ -78,11 +78,11 @@ categories: 绘画
 
 但锁足点并不能代表所有重心的平衡，当人物穿着衣服、拿着武器等配饰时，锁足点往往不再适用。
 
-这是因为锁足点针对的只是裸体的情况，如果是插画，我们更常用方块中心点来判断。也就是用方块将人物相关的东西框中，那么方块中心应该在两腿之间或者经过承重脚。
+这是因为锁足点针对的只是裸体的情况，如果是插画，我们更常用米字格来判断。也就是用方框将人物相关的东西框中，那么米字格中心应该在两腿之间或者经过承重脚。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/9.png" alt="方块中心点" width="45%">
-<figcaption>方块中心点</figcaption>
+<img src="/illustrations/tenten人体-Week1/9.png" alt="米字格" width="45%">
+<figcaption>米字格</figcaption>
 </figure>
 
 在修改动态时，我们就有两种思路，要么调整脚，要么添加一些配饰来平衡画面：
@@ -99,54 +99,63 @@ categories: 绘画
 </figure>
 </div>
 
+而在大透视的情况下，米字格就不太适用了，这时候我们需要考虑整个方块的中心：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week1/12.png" alt="方块中心" width="45%">
+<figcaption>方块中心</figcaption>
+</figure>
+
 # 圆柱体
 ## 柱体绘制步骤
 这里以胸腔和骨盆的柱体为例，我们一般会处理成 4：3 的圆柱体，所以首先应该先画 4：3 的长方形面片：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/12.png" alt="长方形面片" width="25%">
+<img src="/illustrations/tenten人体-Week1/13.png" alt="长方形面片" width="25%">
 <figcaption>长方形面片</figcaption>
 </figure>
 
 这里容易出现将火柴人肩膀宽度画错的情况，是因为错将 4：3 的比例当成了胸腔线与肩膀线的比例，但实际上这是圆柱的比例。考虑到肩膀大多数时候并不位于圆柱的长轴上，因此往往会更短。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/13.png" alt="错误的肩膀宽度" width="55%">
+<img src="/illustrations/tenten人体-Week1/14.png" alt="错误的肩膀宽度" width="55%">
 <figcaption>错误的肩膀宽度</figcaption>
 </figure>
 
 然后要在此基础上画圆柱的剖面，俯视还是仰视不重要，具体弧度不也太重要，但要保证长轴位于面片上：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/14.png" alt="柱体剖面" width="25%">
+<img src="/illustrations/tenten人体-Week1/15.png" alt="柱体剖面" width="25%">
 <figcaption>柱体剖面</figcaption>
 </figure>
 
 这里会注意到要让肩膀位于圆柱上会比较困难，因此可以考虑先画圆柱再画肩膀。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/15.png" alt="小技巧" width="45%">
+<img src="/illustrations/tenten人体-Week1/16.png" alt="小技巧" width="45%">
 <figcaption>小技巧</figcaption>
 </figure>
 
 还要考虑近大远小，离视平线更远的椭圆应当更小但更圆：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/16.png" alt="柱体剖面" width="25%">
+<img src="/illustrations/tenten人体-Week1/17.png" alt="柱体剖面" width="25%">
 <figcaption>柱体剖面</figcaption>
 </figure>
 
 衍生出来的一个问题就是如果剖面过大柱子长度的压缩就会很明显，需要在画面中表现出来：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/17.png" alt="柱体长度压缩" width="40%">
+<img src="/illustrations/tenten人体-Week1/18.png" alt="柱体长度压缩" width="40%">
 <figcaption>柱体长度压缩</figcaption>
 </figure>
+
+尽管如此，单个柱体或方块的透视并没有那么重要，更重要的是整体的透视，以及柱体和方块间的衔接。
 
 方块的剖面和长度同理：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/18.png" alt="方块长度压缩" width="50%">
+<img src="/illustrations/tenten人体-Week1/19.png" alt="方块长度压缩" width="50%">
 <figcaption>方块长度压缩</figcaption>
 </figure>
 
@@ -157,12 +166,12 @@ categories: 绘画
 
 <div style="display: flex; justify-content: center;">
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/19.png" alt="剖面过小" style="height: 300px; width: auto;">
+<img src="/illustrations/tenten人体-Week1/20.png" alt="剖面过小" style="height: 300px; width: auto;">
 <figcaption>剖面过小</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/20.png" alt="剖面正常" style="height: 300px; width: auto;">
+<img src="/illustrations/tenten人体-Week1/21.png" alt="剖面正常" style="height: 300px; width: auto;">
 <figcaption>剖面正常</figcaption>
 </figure>
 </div>
@@ -170,7 +179,7 @@ categories: 绘画
 之所以强调胸腔骨盆，是因为一般情况下这俩都是侧面面向观众，如果是鞠躬什么的显然也要强调这些。四肢因为非常灵活，日常情况下也要考虑角度、剖面和长度的关系。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/21.png" alt="四肢" width="25%">
+<img src="/illustrations/tenten人体-Week1/22.png" alt="四肢" width="25%">
 <figcaption>四肢</figcaption>
 </figure>
 
@@ -179,28 +188,28 @@ categories: 绘画
 根据方块的比例，我们是可以很容易从圆柱转成方块的：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/22.png" alt="圆柱转方块" width="100%">
+<img src="/illustrations/tenten人体-Week1/23.png" alt="圆柱转方块" width="100%">
 <figcaption>圆柱转方块</figcaption>
 </figure>
 
 这种方法虽然标准，但并不符合我们的需求。因为我们是把圆柱和方块的外轮廓当作胸腔和骨盆的框架，所以我们会希望圆柱和方块的外轮廓基本重合。而在这种方法下，如果角度比较侧面，那么二者相差显然是很多的。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/23.png" alt="外轮廓不太重合" width="20%">
+<img src="/illustrations/tenten人体-Week1/24.png" alt="外轮廓不太重合" width="20%">
 <figcaption>外轮廓不太重合</figcaption>
 </figure>
 
 所以我们往往会自己进行一些微调，使得他们的外轮廓更加接近。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/24.png" alt="微调" width="20%">
+<img src="/illustrations/tenten人体-Week1/25.png" alt="微调" width="20%">
 <figcaption>微调</figcaption>
 </figure>
 
 ## 面片法
 明显上面这个方法理性但比较复杂，还需要微调，简单的图我们更倾向于用面片法。面片法就是先找中间线，然后找轮廓，然后镜像一下。这里我们不需要点到点连线，和原图能对应上更重要。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/25.png" alt="面片法" width="25%">
+<img src="/illustrations/tenten人体-Week1/26.png" alt="面片法" width="25%">
 <figcaption>面片法</figcaption>
 </figure>
 
@@ -209,23 +218,25 @@ categories: 绘画
 当然还是要灵活，比如这种透视比较强或者说柱体的圆面比较朝向画面时用切的方法反而更好一点：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/26.png" alt="透视强一点的情况" width="55%">
+<img src="/illustrations/tenten人体-Week1/27.png" alt="透视强一点的情况" width="55%">
 <figcaption>透视强一点的情况</figcaption>
 </figure>
 
-总而言之，就是要根据我们学过的各种方法中最方便的套在面前的图上，而不是被图所带跑。
+没办法找到点位时，也可以通过我们熟知的比例进行推理，用自己的框架去套临才是我们应该做的，不要被原图带跑。
+
+我们的最终目的就是得到方块人，圆柱什么的只是流程的中间产物，如果可以直接确定方块完全可以直接处理方块。
 
 ## 头部方块套嵌
 头部方块的套嵌相对简单，正面连接两侧眉尾即可，侧面连接眉尾和耳廓生长点即可，朝向就是额头和下巴连线。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/27.png" alt="头部方块套嵌" width="65%">
+<img src="/illustrations/tenten人体-Week1/28.png" alt="头部方块套嵌" width="65%">
 <figcaption>头部方块套嵌</figcaption>
 </figure>
 
 ## 四肢基本结构
-手臂通常概括为长方体即可，手肘与手腕各约占 $\frac{1}{4}$。腿部则需做出凸起，其中凸起的位置一般在靠上约 $\frac{1}{3}$ 处；膝盖约占 $\frac{1}{4}$，脚踝约占 $\frac{1}{3}$。注意，凸起应连到关节起始处，而不是直接连到长方体的末端。
+手臂通常概括为长方体即可，手肘与手腕各约占 $\frac{1}{4}$。腿部则需做出凸起，其中凸起的位置一般在靠上约 $\frac{1}{3}$ 处；膝盖约占 $\frac{1}{4}$，脚踝约占 $\frac{1}{3}$。膝盖面积约为大腿顶面的一半多，而脚踝比膝盖细一些。注意，凸起应连到关节起始处，而不是直接连到长方体的末端。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/28.png" alt="四肢比例" width="50%">
+<img src="/illustrations/tenten人体-Week1/29.png" alt="四肢比例" width="50%">
 <figcaption>四肢比例</figcaption>
 </figure>
 
@@ -234,25 +245,25 @@ categories: 绘画
 动态优化的核心还是做出 $140^\circ$ 的胸腔骨盆方块，即使是纯正面也可以做出倾斜，有侧面就可以做出弯曲（低头挺胸收腹和肚子痛两种）。
 <div style="display: flex; justify-content: center;">
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/29.png" alt="倾斜" style="height: 250px; width: auto;">
+<img src="/illustrations/tenten人体-Week1/30.png" alt="倾斜" style="height: 250px; width: auto;">
 <figcaption>倾斜</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/30.png" alt="弯曲" style="height: 250px; width: auto;">
+<img src="/illustrations/tenten人体-Week1/31.png" alt="弯曲" style="height: 250px; width: auto;">
 <figcaption>弯曲</figcaption>
 </figure>
 </div>
 
 还可以添加扭转，更有趣一些：
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/31.png" alt="扭转" width="40%">
+<img src="/illustrations/tenten人体-Week1/32.png" alt="扭转" width="40%">
 <figcaption>扭转</figcaption>
 </figure>
 
 ## 时钟法
 画的角度整体比较偏侧面时可以用时钟法，特别是正面和背面都能看到的情况。时钟法就是先画出侧面，然后根据方向扩展成方块。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week1/32.png" alt="时钟法" width="60%">
+<img src="/illustrations/tenten人体-Week1/33.png" alt="时钟法" width="60%">
 <figcaption>时钟法</figcaption>
 </figure>
