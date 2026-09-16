@@ -64,7 +64,7 @@ tags:
 <figcaption>胸腔侧面比例</figcaption>
 </figure>
 
-胸腔最重要的就是侧面形状，根据侧面形状作法线，再两边向外扩张一些就可以得到比较准确的外轮廓了。
+胸腔最重要的就是侧面形状，根据侧面形状作法线，再两边向外扩张一些就可以得到比较准确的外轮廓了。在此基础上，添加体积是非常容易的。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/9.png" alt="侧面形状" width="45%">
