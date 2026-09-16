@@ -131,6 +131,22 @@ tags:
 <figcaption>锁骨与上臂</figcaption>
 </figure>
 
-具体来说，锁骨和肩胛骨看上去像一个衣架的形状，包裹住胸腔，但和胸腔有一定距离。
+总的来看，锁骨和肩胛骨是一个衣架的形状，包裹住胸腔，但和胸腔有一定距离。整体上有一个前倾的趋势，因此正面也能看到一定的弧度。
 
-锁骨的比方块多出1/4宽，三等分处画出弧度，厚度是1/2
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/18.png" alt="锁骨与肩胛骨" width="25%">
+<figcaption>锁骨与肩胛骨</figcaption>
+</figure>
+
+具体比例可以记作“43222”：除一个 $\frac{1}{4}$ 和一个 $\frac{1}{3}$ 外，其余位置均取 $\frac{1}{2}$。锁骨的起点伸出方块 $\frac{1}{4}$，在 $\frac{1}{3}$ 处画出弧度，厚度为方块的 $\frac{1}{2}$。肩胛骨包裹着胸腔，与方块 $\frac{1}{2}$ 处相连，其高度约为方块高度的一半。
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/19.png" alt="锁骨肩胛骨比例" width="75%">
+<figcaption>锁骨肩胛骨比例</figcaption>
+</figure>
+
+除此之外，还有两条紫色线，表示肩胛骨的悬臂。肌肉附着在悬臂上，因此观众实际看到的轮廓就是这条线，它的位置在肩胛骨高度的 $\frac{1}{4}$ 处。上方那条线实际上是废线。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/20.png" alt="悬臂" width="25%">
+<figcaption>悬臂</figcaption>
+</figure>

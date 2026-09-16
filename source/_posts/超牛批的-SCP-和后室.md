@@ -5,13 +5,13 @@ description: 整理一下喜欢的几篇文章。
 tags: [摸鱼]
 ---
 # SCP
-scp-cn-1199 “君无渡河”
-scp-cn-4000 “宇宙尽头的小屋”
+[SCP-CN-1199 “君无渡河”](https://scp-wiki-cn.wikidot.com/scp-cn-1199)
+[SCP-CN-4000 “宇宙尽头的小屋”](https://scp-wiki-cn.wikidot.com/scp-cn-4000)
 
 # 后室
-level 101 “你的梦永无破晓”
+[Level 101 “你的梦永无破晓”](https://backrooms-wiki-cn.wikidot.com/level-101)
 
-level c-82 “我们终将重逢”
-level c-324 “电梯间”
-level c-1001 “打破天穹”
-level c-1366 “太阳终将再度升起”
+[Level C-82 “我们终将重逢”](https://backrooms-wiki-cn.wikidot.com/level-c-82)
+[Level C-324 “电梯间”](https://backrooms-wiki-cn.wikidot.com/level-c-324)
+[Level C-1001 “打破天穹”](https://backrooms-wiki-cn.wikidot.com/level-c-1001)
+[Level C-1366 “太阳终将再度升起”](https://backrooms-wiki-cn.wikidot.com/level-c-1366)
