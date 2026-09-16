@@ -50,24 +50,38 @@ tags:
 <figcaption>胸腔形状</figcaption>
 </figure>
 
-具体来说：胸腔与方块的交点距离占方块的 $\frac{1}{2}$，颈部开口约占方块的 $\frac{1}{3}$，并高出方块上顶面约 $\frac{1}{5}$。开口高度方面，前侧约占方块高度的 $\frac{1}{3}$，后侧约占 $\frac{1}{4}$。因此从前面可以看到后面的开口，但从后面看不到前面。
+具体来说：胸腔与方块的交点距离占方块的 $\frac{1}{2}$，颈部开口约占方块的 $\frac{1}{3}$，并高出方块上顶面约 $\frac{1}{5}$。前面的几字形约占方块高度的 $\frac{1}{3}$，后面的约占 $\frac{1}{4}$，并且更宽一些。胸腔下缘尖角都在方块的 $\frac{1}{6}$。因此从前面可以看到后面的开口，但从后面看不到前面。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/7.png" alt="胸腔正面比例" width="35%">
 <figcaption>胸腔正面比例</figcaption>
 </figure>
 
+除此之外，要注意从后方看脊椎骨是凹陷的，前面则比较圆润。
+
+<div style="display: flex; justify-content: center;">
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/8.png" alt="前面" style="height: 200px; width: auto;">
+<figcaption>前面</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/9.png" alt="后面" style="height: 200px; width: auto;">
+<figcaption>后面</figcaption>
+</figure>
+</div>
+
 从侧面看，胸腔与方块的交点距离同样为方块尺寸的 $\frac{1}{2}$，但整体位置要更靠后。前侧凸起位于靠下 $\frac{1}{3}$ 处，后侧则在一半的位置。底部两个凸起大致都在 $\frac{1}{4}$ 的位置，其中前侧凸起与底面接触。顶面只需将两条轮廓线延长相交即可。整体轮廓近似一枚横躺的鸡蛋。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/8.png" alt="胸腔侧面比例" width="20%">
+<img src="/illustrations/tenten人体-Week2/10.png" alt="胸腔侧面比例" width="20%">
 <figcaption>胸腔侧面比例</figcaption>
 </figure>
 
 胸腔最重要的就是侧面形状，根据侧面形状作法线，再两边向外扩张一些就可以得到比较准确的外轮廓了。在此基础上，添加体积是非常容易的。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/9.png" alt="侧面形状" width="45%">
+<img src="/illustrations/tenten人体-Week2/11.png" alt="侧面形状" width="45%">
 <figcaption>侧面形状</figcaption>
 </figure>
 
