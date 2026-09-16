@@ -138,7 +138,7 @@ tags:
 <figcaption>锁骨与肩胛骨</figcaption>
 </figure>
 
-具体比例可以记作“43222”：除一个 $\frac{1}{4}$ 和一个 $\frac{1}{3}$ 外，其余位置均取 $\frac{1}{2}$。锁骨的起点伸出方块 $\frac{1}{4}$，在 $\frac{1}{3}$ 处画出弧度，厚度为方块的 $\frac{1}{2}$。肩胛骨包裹着胸腔，与方块 $\frac{1}{2}$ 处相连，其高度约为方块高度的一半。
+具体来说，锁骨的起点伸出方块 $\frac{1}{4}$，在 $\frac{1}{3}$ 处画出弧度，厚度为方块的 $\frac{1}{4}$。肩胛骨包裹着胸腔，与方块 $\frac{1}{2}$ 处相连，其高度约为方块高度的一半。
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/19.png" alt="锁骨肩胛骨比例" width="75%">
 <figcaption>锁骨肩胛骨比例</figcaption>
@@ -153,3 +153,9 @@ tags:
 
 # 关节球
 ## 斜方肌+三角肌
+三角肌可分为三束，整体上可以理解成一块三角形纸片包裹上锁骨和肩胛骨。从侧面看，三角肌从侧面两个点向下延伸，与上臂外侧约 $\frac{1}{2}$ 处，整体围成一个三角形。轮廓的转折比例通常为男性四六开、女性三七开。后侧起点取在悬臂线过半的位置，保留一定厚度后向下连接，前侧也用同样的方法处理。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/21.png" alt="三角肌" width="25%">
+<figcaption>三角肌</figcaption>
+</figure>
