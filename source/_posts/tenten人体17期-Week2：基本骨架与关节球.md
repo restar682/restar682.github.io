@@ -118,7 +118,7 @@ tags:
 <figcaption>对比</figcaption>
 </figure>
 
-## 锁骨和肩胛骨
+## 锁骨+肩胛骨
 尽管我们的胸腔顶面只是一个三角块，我们还是应该把肩膀的位置理解成方块。因为锁骨是有厚度的，搭建起了一个平台。在这个平台上，胸腔、手臂和脖子像这样搭了起来：
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/16.png" alt="锁骨平台" width="75%">
@@ -150,3 +150,6 @@ tags:
 <img src="/illustrations/tenten人体-Week2/20.png" alt="悬臂" width="25%">
 <figcaption>悬臂</figcaption>
 </figure>
+
+# 关节球
+## 斜方肌+三角肌
