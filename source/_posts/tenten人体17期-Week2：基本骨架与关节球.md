@@ -138,7 +138,7 @@ tags:
 <figcaption>锁骨与肩胛骨</figcaption>
 </figure>
 
-具体来说，锁骨的起点伸出方块 $\frac{1}{4}$，在 $\frac{1}{3}$ 处画出弧度，厚度为方块的 $\frac{1}{4}$。肩胛骨包裹着胸腔，与方块 $\frac{1}{2}$ 处相连，其高度约为方块高度的一半。
+具体来说，锁骨的起点伸出方块 $\frac{1}{4}$，在 $\frac{1}{3}$ 处画出弧度，厚度为方块的 $\frac{1}{4}$。肩胛骨包裹着胸腔，与方块 $\frac{1}{2}$ 处相连。肩胛骨的高度约为方块高度的一半，可以带一点弧度。
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/19.png" alt="锁骨肩胛骨比例" width="75%">
 <figcaption>锁骨肩胛骨比例</figcaption>
