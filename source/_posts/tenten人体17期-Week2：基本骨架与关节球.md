@@ -131,7 +131,7 @@ tags:
 <figcaption>锁骨与上臂</figcaption>
 </figure>
 
-总的来看，锁骨和肩胛骨是一个衣架的形状，包裹住胸腔，但和胸腔有一定距离。整体上有一个前倾的趋势，因此正面也能看到一定的弧度。
+总的来看，锁骨和肩胛骨是一个衣架的形状，包裹住胸腔，但和胸腔有一定距离。整体上有一个前倾的趋势，因此即使是正面也能看到一定的弧度。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/18.png" alt="锁骨与肩胛骨" width="25%">
@@ -165,4 +165,11 @@ tags:
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/22.png" alt="斜方肌" width="25%">
 <figcaption>斜方肌</figcaption>
+</figure>
+
+冈下、小圆加大圆可以直接概括到一起，连接到三角肌的一半就行了：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/23.png" alt="冈下、小圆加大圆" width="25%">
+<figcaption>冈下、小圆加大圆</figcaption>
 </figure>
