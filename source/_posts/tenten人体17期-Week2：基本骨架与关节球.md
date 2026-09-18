@@ -191,4 +191,18 @@ tags:
 
 > 注意胸大肌同样是外八的，所以要注意透视的变化。
 
-然后女性还要加上乳房。
+然后女性还要加上乳房，乳房必须超过胸大肌底部面。乳房的起始点和胸大肌一样，然后两条弧线画出类似水滴的形状，接着画出侧面的圆并添加中间的结构线，最后加上胸大肌。这里胸大肌大部分被乳房遮挡，所以基本上只会露出连接肱骨的一角。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/26.png" alt="乳房结构" width="20%">
+<figcaption>乳房结构</figcaption>
+</figure>
+
+胸部还要加上乳突，注意透视变化即可。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/27.png" alt="乳突" width="20%">
+<figcaption>乳突</figcaption>
+</figure>
+
+> 如果要画特别小的胸的话，反而压扁胸腔收益更高……这辈子有机会用上这个吗
