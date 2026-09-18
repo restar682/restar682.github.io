@@ -275,9 +275,25 @@ tags:
 </figure>
 
 ## 四肢
-四肢主要是衔接，基本上都是在侧面用一个卡扣夹一下就行。膝盖就是上下两个倒梯形，然后用折线连接即可。
+### 腿部
+四肢主要是衔接，基本上都是在侧面用一个卡扣夹一下就行，腿部也不例外。膝盖就是上下两个倒梯形，然后用折线连接即可，也可以加一个小平面。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/36.png" alt="卡扣" width="20%">
-<figcaption>卡扣</figcaption>
+<img src="/illustrations/tenten人体-Week2/36.png" alt="腿部卡扣" width="20%">
+<figcaption>腿部卡扣</figcaption>
+</figure>
+
+### 手部
+手部首先要确定方向，一般三角肌和肱桡肌一侧是外侧。然后大臂小臂同样在侧面用卡扣夹起来就行，和腿部一样。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/37.png" alt="手部卡扣" width="50%">
+<figcaption>手部卡扣</figcaption>
+</figure>
+
+唯一一个例外卡扣是手心手背，这里是在手心手背夹。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/38.png" alt="手心手背" width="30%">
+<figcaption>手心手背</figcaption>
 </figure>
