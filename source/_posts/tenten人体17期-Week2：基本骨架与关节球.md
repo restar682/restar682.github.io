@@ -275,7 +275,7 @@ tags:
 </figure>
 
 ## 四肢
-四肢主要是衔接，基本上都是在侧面用一个卡扣夹一下就行。
+四肢主要是衔接，基本上都是在侧面用一个卡扣夹一下就行。膝盖就是上下两个倒梯形，然后用折线连接即可。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/36.png" alt="卡扣" width="20%">
