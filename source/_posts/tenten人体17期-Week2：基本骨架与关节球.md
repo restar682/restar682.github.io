@@ -175,6 +175,7 @@ tags:
 </figure>
 
 ## 胸部
+### 胸大肌
 先来看胸大肌，胸大肌可以看成方形加三角。在真人照片上就是过乳突画两条有起伏的线，作一个 W，然后从线的三个点位向三角肌中间连线：
 
 <figure style="text-align: center;">
@@ -184,6 +185,8 @@ tags:
 
 具体来说，胸大肌从锁骨一半出发，作七三分或八二分的有起伏的线，到胸腔开口上方结束，然后画上 W。接着从线上三个点向三角肌中间连线，因为三角肌在胸大肌上面，所以它会被三角肌遮挡一部分。这里的 W 可以稍微美化一点，跟肋骨保持一致，连接锁骨的位置也可以凹一个造型，这些都只是单纯的为了好看。
 
+有时候我们为了好看可能三角肌会画短一些，但此时胸大肌仍然应该向原本三角肌位置的中间连线，不能用现在这个中点。
+
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week2/25.png" alt="胸大肌结构" width="30%">
 <figcaption>胸大肌结构</figcaption>
@@ -191,6 +194,7 @@ tags:
 
 > 注意胸大肌同样是外八的，所以要注意透视的变化。
 
+### 乳房
 然后女性还要加上乳房，乳房必须超过胸大肌底部面。乳房的起始点和胸大肌一样，然后两条弧线画出类似水滴的形状，接着画出侧面的圆并添加中间的结构线，最后加上胸大肌。这里胸大肌大部分被乳房遮挡，所以基本上只会露出连接肱骨的一角。
 
 <figure style="text-align: center;">
@@ -198,6 +202,7 @@ tags:
 <figcaption>乳房结构</figcaption>
 </figure>
 
+### 乳突
 胸部还要加上乳突，注意透视变化即可。
 
 <figure style="text-align: center;">
@@ -206,3 +211,73 @@ tags:
 </figure>
 
 > 如果要画特别小的胸的话，反而压扁胸腔收益更高……这辈子有机会用上这个吗
+
+## 腹部
+### 腰部
+腰部实际上是包括了腹外斜肌的部分，所以应该从**胸腔三分之一转折处**开始向下连接，做一个七三或六四分的转折。根据仰视和俯视，这个转折还会有叠压关系，一般离镜头近的那条线要延伸出来一些。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/28.png" alt="腰部" width="35%">
+<figcaption>腰部</figcaption>
+</figure>
+
+除此之外，男生髂前上棘上方常有一块小赘肉，显得更加饱满：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/29.png" alt="小赘肉" width="25%">
+<figcaption>小赘肉</figcaption>
+</figure>
+
+### 腹直肌
+画腹直肌的关键是中线要顺着胸腔中线的起伏。正面看，腹部也是一个横着的 M 形，上部是小肠，内容物比较少，所以整体往内收；下面是大肠，所以会往外扩一些。一般男生三七分，女生直接五五分，肚脐眼在正中间。腹直肌的宽度不取决于胸腔开口的宽度，而是取决于**骨盆开口**的宽度，因此从骨盆直接往上连 M 形即可。厚度则是上面宽下面窄，如果是女生有脂肪垫会饱满一些，下面就可以有一些弧度，男生就可以直接连直线。还要加上腹外斜肌的体积，和腹直肌厚度差不多即可。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/30.png" alt="腹直肌" width="20%">
+<figcaption>腹直肌</figcaption>
+</figure>
+
+背面的话，完全看不到腹直肌。沿脊椎线 S 形下来，添加腰部，然后连接胸腔后侧尖角和髂后上棘做出体积就行。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/31.png" alt="背面" width="17%">
+<figcaption>背面</figcaption>
+</figure>
+
+## 臀部
+臀部从骨盆上方 $\frac{1}{3}$ 开始，长度和骨盆长度一致，连接到大腿后外侧，屁股最高点对齐骨盆底面。然后从骨盆底面顶点出发做一个内裤的形状，前面大后面小。最后将屁股一分为二，在底部作一个 W。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/32.png" alt="臀部" width="70%">
+<figcaption>臀部</figcaption>
+</figure>
+
+> 实际上这两条弧线似乎没啥用……只是确定大腿后外侧那个点用的。
+
+可以理解成小刀拉屁股，将原本的整块体积一分为二。交点处是肛门，在底面一半的位置。这里和胸腔背面一样是凹陷进去的，注意透视：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/33.png" alt="凹陷" width="20%">
+<figcaption>凹陷</figcaption>
+</figure>
+
+最后跟腿部衔接，用和胸腔一样的卡扣就行，可以加一点线表示体积。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/34.png" alt="大腿衔接" width="17%">
+<figcaption>大腿衔接</figcaption>
+</figure>
+
+运动时，臀部会相应变化，最明显的就是凸起幅度会随着变化：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/35.png" alt="运动时的变化" width="60%">
+<figcaption>运动时的变化</figcaption>
+</figure>
+
+## 四肢
+四肢主要是衔接，基本上都是在侧面用一个卡扣夹一下就行。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/36.png" alt="卡扣" width="20%">
+<figcaption>卡扣</figcaption>
+</figure>
