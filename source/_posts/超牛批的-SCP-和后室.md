@@ -6,6 +6,7 @@ tags: [摸鱼]
 ---
 # SCP
 [SCP-CN-1199 “君无渡河”](https://scp-wiki-cn.wikidot.com/scp-cn-1199)
+[SCP-CN-2000 “混沌理论”](https://scp-wiki-cn.wikidot.com/scp-cn-2000)
 [SCP-CN-4000 “宇宙尽头的小屋”](https://scp-wiki-cn.wikidot.com/scp-cn-4000)
 
 # 后室
@@ -15,3 +16,5 @@ tags: [摸鱼]
 [Level C-324 “电梯间”](https://brcn.backroomswiki.cn/level-c-324)
 [Level C-1001 “打破天穹”](https://brcn.backroomswiki.cn/level-c-1001)
 [Level C-1366 “太阳终将再度升起”](https://brcn.backroomswiki.cn/level-c-1366)
+
+[隐秘层级 “回归”](https://brcn.backroomswiki.cn/level-c-comeback)

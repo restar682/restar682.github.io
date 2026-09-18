@@ -173,3 +173,22 @@ tags:
 <img src="/illustrations/tenten人体-Week2/23.png" alt="冈下、小圆加大圆" width="25%">
 <figcaption>冈下、小圆加大圆</figcaption>
 </figure>
+
+## 胸部
+先来看胸大肌，胸大肌可以看成方形加三角。在真人照片上就是过乳突画两条有起伏的线，作一个 W，然后从线的三个点位向三角肌中间连线：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/24.png" alt="胸大肌定位" width="20%">
+<figcaption>胸大肌定位</figcaption>
+</figure>
+
+具体来说，胸大肌从锁骨一半出发，作七三分或八二分的有起伏的线，到胸腔开口上方结束，然后画上 W。接着从线上三个点向三角肌中间连线，因为三角肌在胸大肌上面，所以它会被三角肌遮挡一部分。这里的 W 可以稍微美化一点，跟肋骨保持一致，连接锁骨的位置也可以凹一个造型，这些都只是单纯的为了好看。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week2/25.png" alt="胸大肌结构" width="30%">
+<figcaption>胸大肌结构</figcaption>
+</figure>
+
+> 注意胸大肌同样是外八的，所以要注意透视的变化。
+
+然后女性还要加上乳房。
