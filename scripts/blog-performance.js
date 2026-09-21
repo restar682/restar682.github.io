@@ -1,5 +1,9 @@
 'use strict';
 
+// 图片处理约定：原图只读，保留原路径和文件，不覆盖、不删除。
+// 展示图由构建自动生成，按原宽高比缩小；网页按显示尺寸选择较小版本。
+// 衍生文件仅写入缓存和生成目录，不回写原图目录。
+
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
@@ -44,8 +48,7 @@ function optimizePage(dom, previews) {
     dom('head').prepend(preload);
   }
 
-  // Restrict previews to article illustrations. Author sizing and original
-  // assets are retained, and existing image links keep their destinations.
+  // Preserve author sizing and existing links for article illustrations.
   dom('#post #article-container img').each((index, element) => {
     const image = dom(element);
     const source = image.attr('src') || '';
@@ -67,6 +70,20 @@ function optimizePage(dom, previews) {
     if (!/aspect-ratio\s*:/i.test(image.attr('style') || '')) {
       image.attr('style', `${image.attr('style') || ''}; aspect-ratio: ${data.width} / ${data.height}`);
     }
+  });
+
+  dom('.personal-gallery img').each((_, element) => {
+    const image = dom(element);
+    const data = previews.get(image.attr('src'));
+    if (!data || !data.variants.length) return;
+    const wide = data.width / data.height >= 1.3;
+    image.attr('src', data.variants[0].url);
+    image.attr('srcset', data.variants.map(variant => `${variant.url} ${variant.width}w`).join(', '));
+    // Native lazy images can use their actual layout width. The remaining
+    // sizes cover browsers without auto-sizing, using the same grid breakpoints.
+    image.attr('sizes', wide
+      ? 'auto, (max-width: 768px) 100vw, (max-width: 1024px) 67vw, (max-width: 1300px) 33vw, 420px'
+      : 'auto, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1300px) 22vw, 280px');
   });
 
   // Homepage lists and sidebars must not compete with the above-fold images.
@@ -110,8 +127,9 @@ foreach ($job in $jobs) {
     $image = $null
     try {
         $image = [System.Drawing.Image]::FromFile($job.source)
-        # Keep transparent diagrams lossless by retaining their original PNG.
-        if ([BlogImageAlpha]::HasTransparency($image)) {
+        $transparent = [BlogImageAlpha]::HasTransparency($image)
+        # Article diagrams keep their originals; gallery thumbnails retain alpha.
+        if ($transparent -and -not $job.gallery) {
             [System.IO.File]::WriteAllText($job.done, 'transparent')
             continue
         }
@@ -122,12 +140,17 @@ foreach ($job in $jobs) {
             $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
             $options = [System.Drawing.Imaging.EncoderParameters]::new(1)
             try {
-                $graphics.Clear([System.Drawing.Color]::White)
+                if ($transparent) { $graphics.Clear([System.Drawing.Color]::Transparent) }
+                else { $graphics.Clear([System.Drawing.Color]::White) }
                 $graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
                 $graphics.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
                 $graphics.DrawImage($image, 0, 0, $width, $height)
-                $options.Param[0] = [System.Drawing.Imaging.EncoderParameter]::new([System.Drawing.Imaging.Encoder]::Quality, [long]88)
-                $bitmap.Save($variant.file, $jpeg, $options)
+                $options.Param[0] = [System.Drawing.Imaging.EncoderParameter]::new([System.Drawing.Imaging.Encoder]::Quality, [long]$job.quality)
+                if ($transparent) {
+                    $bitmap.Save([System.IO.Path]::ChangeExtension($variant.file, 'png'), [System.Drawing.Imaging.ImageFormat]::Png)
+                } else {
+                    $bitmap.Save($variant.file, $jpeg, $options)
+                }
             } finally {
                 $options.Dispose()
                 $graphics.Dispose()
@@ -161,6 +184,12 @@ function preparePreviews() {
     }
   };
   walk(path.join(hexo.source_dir, 'illustrations'));
+  const galleryDir = path.join(hexo.source_dir, 'other-images');
+  if (fs.existsSync(galleryDir)) {
+    for (const name of fs.readdirSync(galleryDir)) {
+      if (/^\d+\.(png|jpe?g)$/i.test(name)) inputs.push(path.join(galleryDir, name));
+    }
+  }
   const jobs = [];
   const entries = [];
   for (const source of inputs) {
@@ -170,14 +199,19 @@ function preparePreviews() {
     try { dimensions = imageSize(bytes); } catch { continue; }
     if (dimensions.orientation && dimensions.orientation !== 1) continue;
     const { width, height } = dimensions;
-    const hash = crypto.createHash('sha256').update('blog-preview-v1-q88').update(bytes).digest('hex').slice(0, 24);
+    const gallery = path.dirname(source) === galleryDir;
+    const quality = gallery ? 82 : 88;
+    const sizes = gallery ? [320, 640, 960] : [480, 960, 1440];
+    const hash = crypto.createHash('sha256')
+      .update(gallery ? 'gallery-preview-v2-q82' : 'blog-preview-v1-q88')
+      .update(bytes).digest('hex').slice(0, 24);
     const done = path.join(cache, `${hash}.done`);
-    const variants = [...new Set([480, 960, 1440].map(size => Math.min(width, size)))].map(size => ({
+    const variants = [...new Set(sizes.map(size => Math.min(width, size)))].map(size => ({
       width: size,
       url: `/previews/${hash}-${size}.jpg`,
       file: path.join(cache, `${hash}-${size}.jpg`)
     }));
-    const job = { source, done, variants };
+    const job = { source, done, variants, quality, gallery };
     if (!fs.existsSync(done)) jobs.push(job);
     entries.push({ source, width, height, bytes: bytes.length, variants });
   }
@@ -186,7 +220,7 @@ function preparePreviews() {
     fs.writeFileSync(jobFile, JSON.stringify(jobs));
     const scriptFile = path.join(cache, 'generate.ps1');
     fs.writeFileSync(scriptFile, previewScript);
-    hexo.log.info(`Generating article image previews (${jobs.length} changed images)`);
+    hexo.log.info(`Generating image previews (${jobs.length} changed images)`);
     execFileSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-ExecutionPolicy', 'Bypass',
       '-File', scriptFile, '-JobFile', jobFile],
     { windowsHide: true, timeout: 180000, stdio: ['ignore', 'ignore', 'inherit'] });
@@ -194,7 +228,12 @@ function preparePreviews() {
     hexo.log.warn('Image preview generation needs Windows System.Drawing; using cached previews or original images.');
   }
   for (const entry of entries) {
-    const variants = entry.variants.filter(variant => fs.existsSync(variant.file)
+    const variants = entry.variants.map(variant => {
+      const png = variant.file.replace(/\.jpg$/, '.png');
+      return !fs.existsSync(variant.file) && fs.existsSync(png)
+        ? { ...variant, file: png, url: variant.url.replace(/\.jpg$/, '.png') }
+        : variant;
+    }).filter(variant => fs.existsSync(variant.file)
       && fs.statSync(variant.file).size < entry.bytes * 0.85);
     const url = '/' + path.relative(hexo.source_dir, entry.source).split(path.sep).join('/');
     previews.set(url, { ...entry, variants });
