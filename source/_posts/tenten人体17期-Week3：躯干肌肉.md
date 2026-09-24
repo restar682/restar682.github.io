@@ -1,4 +1,4 @@
----
+﻿---
 title: tenten人体17期-Week3：躯干肌肉
 date: 2026-09-19 15:02:02
 tags:
@@ -40,3 +40,53 @@ tags:
 <figcaption>抬手</figcaption>
 </figure>
 </div>
+
+# 三角肌
+三角肌的形状与之前的关节球基本一致，分为三束。结合骨架来看，就能进一步理解各部分的形状和体积。
+
+前束覆盖锁骨的 $\frac{1}{3}$，锁骨上明显的凸点可以用来区分前束和中束，也区分了正面和侧面。胸肌则包裹了锁骨的一半，与前束之间留有间隙，因此图中能看到一部分露出的骨头。露出多少会随体型变化：壮一些时，可能完全被胸肌掩盖；瘦一些时，则会露出更多。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week3/6.png" alt="三角肌前束" width="30%">
+<figcaption>三角肌前束</figcaption>
+</figure>
+
+前束之所以有体积和顶面，是因为喙骨从后面伸出来，搭起了一个小平台。这里也能更清楚地看到前面提到的凸点。相比之下，后面没有喙骨撑起，平台较小，看起来就不太明显。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week3/7.png" alt="三角肌体积" width="40%">
+<figcaption>三角肌体积</figcaption>
+</figure>
+
+画的时候，沿用之前关节球的形状，调整整体向前倾斜的趋势即可。还要注意后束被肱三头肌挤占了一部分体积，所以会多一段转折。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week3/8.png" alt="三角肌趋势" width="25%">
+<figcaption>三角肌趋势</figcaption>
+</figure>
+
+实际画的时候，虽然可以按照之前的步骤推导，但逐步推导比较麻烦。更经验的画法是直接按比例确定肩胛骨的位置，四分之三侧时取 $\frac{1}{2}$，更偏侧面时取 $\frac{1}{4}$。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week3/9.png" alt="肩胛骨位置" width="50%">
+<figcaption>肩胛骨位置</figcaption>
+</figure>
+
+下面考虑运动，主要就是抬手。抬手时，正面看不到三角肌的中束，背面则三束都能看到。此时就体现出关节球的优越性：我们只需要考虑锁骨的运动，然后和之前一样向连线即可。
+
+锁骨绕中心点作圆周运动。当手臂与身体夹角小于 $90^\circ$ 时，锁骨不怎么移动；抬手时，锁骨就会作旋转。这里要注意弧度，和之前的透视知识点一样，朝向画面的弧度更小；厚度也一样，要跟着方块的透视变化。肩胛骨也会随之转动，可以作一条夹角略大于 $90^\circ$ 的线来代表肩胛骨，保留它原本竖直向下、与废线夹角略大于 $90^\circ$ 的特征，再同样连接到 $\frac{1}{4}$ 的位置。
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center;">
+<img src="/illustrations/tenten人体-Week3/10.png" alt="" style="width: 25%;">
+<img src="/illustrations/tenten人体-Week3/11.png" alt="" style="width: 25%;">
+</div>
+<figcaption>锁骨肩胛骨旋转</figcaption>
+</figure>
+
+然后再做出体积，我摸索出来的方法和老师的沙发法是一样的。就是先找到表示三角肌厚度的线，然后连接锁骨转折点和悬臂线，再向肱骨 $\frac{1}{2}$ 连线。最后，细化三角肌的尖角，画出三束肌肉即可。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week3/12.png" alt="沙发法" width="20%">
+<figcaption>沙发法</figcaption>
+</figure>
