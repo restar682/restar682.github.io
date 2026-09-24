@@ -90,3 +90,12 @@ tags:
 <img src="/illustrations/tenten人体-Week3/12.png" alt="沙发法" width="20%">
 <figcaption>沙发法</figcaption>
 </figure>
+
+但或许三角体法更好一些，因为厚度线和锁骨并不一定平行。我们先确定手臂侧面位置，然后作出中束三角体的形状，最后类似地进行连接。这个方法更加通用一些。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week3/13.png" alt="三角体法" width="20%">
+<figcaption>三角体法</figcaption>
+</figure>
+
+总而言之，三角肌虽然复杂，但最重要的其实也只有锁骨的运动和找手臂侧面，其余按部就班照点位连线就行。我卡住的点主要就在于手臂侧面找不准以及对厚度线的位置判断不够准确，处理过的情况多了感觉稍微准一点了。

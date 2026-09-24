@@ -153,7 +153,7 @@ categories: 绘画
 除此之外，还有两条紫色线，表示肩胛骨的悬臂。肌肉附着在悬臂上，因此观众实际看到的轮廓就是这条线，它的位置在肩胛骨高度的 $\frac{1}{4}$ 处。上方那条线实际上是废线。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/20.png" alt="悬臂" width="25%">
+<img src="/illustrations/tenten人体-Week2/20.png" alt="悬臂" width="35%">
 <figcaption>悬臂</figcaption>
 </figure>
 
@@ -162,14 +162,14 @@ categories: 绘画
 三角肌可分为三束，整体上可以理解成一块三角形纸片包裹上锁骨和肩胛骨。从侧面看，三角肌从侧面两个点向下延伸，与上臂外侧约 $\frac{1}{2}$ 处，也就是肱骨 $\frac{1}{2}$ 处，整体围成一个三角形。轮廓的转折比例通常为男性四六开、女性三七开。后侧起点取在悬臂线一大半的位置，比如 $\frac{1}{4}$ 处，保留一定厚度后向下连接，前侧锁骨转折点也用同样的方法处理。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/21.png" alt="三角肌" width="25%">
+<img src="/illustrations/tenten人体-Week2/21.png" alt="三角肌" width="30%">
 <figcaption>三角肌</figcaption>
 </figure>
 
 斜方肌更加简单。从脖子侧面靠后的地方开始，可高可低，同样向四个点位相连。与三角肌不同的是，斜方肌要连到悬臂线末端，覆盖整个肩胛骨。然后将两侧斜方肌相连，作一个 U 字形即可。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/22.png" alt="斜方肌" width="25%">
+<img src="/illustrations/tenten人体-Week2/22.png" alt="斜方肌" width="23%">
 <figcaption>斜方肌</figcaption>
 </figure>
 
@@ -306,6 +306,6 @@ categories: 绘画
 唯一一个例外卡扣是手心手背，这里是在手心手背夹。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week2/38.png" alt="手心手背" width="30%">
+<img src="/illustrations/tenten人体-Week2/38.png" alt="手心手背" width="23%">
 <figcaption>手心手背</figcaption>
 </figure>
