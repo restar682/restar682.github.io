@@ -74,11 +74,13 @@ categories: 绘画
 <figcaption>肩胛骨位置</figcaption>
 </figure>
 
-最典型的运动就是抬手。运动时，锁骨的整体形状不会改变，只会在一定范围内转动，因此关键是确定锁骨转动后的位置。单纯抬手时，锁骨绕中心点作圆周运动，同时会向后扭转。手臂与身体夹角小于 $90^\circ$ 时转动不明显，角度更大时才会有明显的变化。这里还要注意弧度和厚度的透视变化：朝向画面的弧度更小，厚度也要跟着方块的透视变化。肩胛骨也会随之转动，可以作一条夹角略大于 $90^\circ$ 的线来表示，保留它原本竖直向下、与废线夹角略大于 $90^\circ$ 的特征，再同样连接到 $\frac{1}{4}$ 的位置。
+最典型的运动就是抬手。运动时，锁骨的整体形状不会改变，只会在一定范围内转动，因此关键是确定锁骨转动后的位置。单纯抬手时，锁骨绕中心点作圆周运动，同时会向后扭转。手臂与身体夹角小于 $90^\circ$ 时，转动不明显；角度更大时，才会有明显的变化。
+
+画锁骨时，要注意朝向画面的弧度更小。而肩胛骨则要注意扭转的表现，体现在画面中就是肩胛骨的厚度线越来越往下。肩胛骨的长度线也会随锁骨转动，可以作一条夹角略大于 $90^\circ$ 的线来表示，保留它原本竖直向下、与废线夹角略大于 $90^\circ$ 的特征，再同样连接到 $\frac{1}{4}$ 的位置。
 
 <figure style="text-align: center;">
-<div style="display: flex; justify-content: center;">
-<img src="/illustrations/tenten人体-Week3/10.png" alt="" style="width: 25%;">
+<div style="display: flex; justify-content: center; align-items: center;">
+<img src="/illustrations/tenten人体-Week3/10.png" alt="" style="width: 20%; margin-right: -25px;">
 <img src="/illustrations/tenten人体-Week3/11.png" alt="" style="width: 25%;">
 </div>
 <figcaption>锁骨肩胛骨旋转</figcaption>
