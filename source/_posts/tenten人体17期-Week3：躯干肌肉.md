@@ -157,7 +157,7 @@ categories: 绘画
 <figcaption>大圆、小圆和冈下肌</figcaption>
 </figure>
 
-考虑肌肉的穿插，就是冈下肌从肩胛骨末端附近连接到三角肌一半，作一个 Y 字形代表小圆肌，二者被三角肌遮住。然后背阔肌包裹着大圆肌连接到胳肢窝，也是大概肱骨内侧 $\frac{1}{3}$ 处。
+考虑肌肉的穿插，就是冈下肌从肩胛骨末端附近连接到三角肌一半，作一个 Y 字形代表小圆肌，二者被三角肌遮住。然后背阔肌包裹着大圆肌大部分和冈下肌的一小部分连接到胳肢窝，也是大概肱骨内侧 $\frac{1}{3}$ 处。
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
