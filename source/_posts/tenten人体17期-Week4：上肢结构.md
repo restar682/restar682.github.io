@@ -74,3 +74,10 @@ tags:
 </div>
 <figcaption>肱二头肌结构</figcaption>
 </figure>
+
+我们可以重点看一下腋下的结构，有非常详细的图示。可以看到我们之前的背阔肌确实是连接到内侧 $\frac{1}{4}$ 处，和腋窝的连线平行于手臂。大臂的肌肉结构几乎就是从内侧看的样子：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/11.png" alt="腋下结构" width="80%">
+<figcaption>腋下结构</figcaption>
+</figure>
