@@ -81,3 +81,5 @@ tags:
 <img src="/illustrations/tenten人体-Week4/11.png" alt="腋下结构" width="80%">
 <figcaption>腋下结构</figcaption>
 </figure>
+
+除此之外还要注意手臂弯曲时肱二头肌比较饱满，伸直时肱三头肌比较饱满。
