@@ -85,19 +85,40 @@ tags:
 除此之外还要注意手臂弯曲时肱二头肌比较饱满，伸直时肱三头肌比较饱满。
 
 # 小臂肌肉
-小臂肌肉从肱桡肌开始，肱桡肌从肱肌下面开始。从肱肌出发，先向后绕方块一圈，然后反弧度连到大拇指内侧的位置，凸点在上半部分。然后补全伸肌群，连接到手背方块处，分为两束。接着同样补上手肘的结构，连接到小拇指靠上的位置。最后再添加屈肌群，凸点和伸肌群错开，但同样在上半部分。
+小臂肌肉从肱桡肌开始，肱桡肌从肱肌下面开始。从肱肌出发，先向后绕方块一圈，然后反弧度连到大拇指内侧的位置，凸点在上半部分。然后补全伸肌群，连接到手背方块处。接着同样补上手肘的结构，连接到小拇指靠上的位置。最后再添加屈肌群，凸点和伸肌群错开，相对低一点，但同样在上半部分。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week4/12.png" alt="小臂肌肉" width="40%">
 <figcaption>小臂肌肉</figcaption>
 </figure>
 
-再来看屈肌群更详细的结构，这里的凸起其实就是我们关节球的卡扣。这里有两个需要注意的点，一个是它被肱肌挤压，所以括号会比较靠后；另一个是它会遮挡一部分手肘，导致手肘下面看上去是倒三角形。
+这个角度看屈肌群更加明显，这里的凸起其实就是我们关节球的卡扣。这里有两个需要注意的点，一个是它被肱肌挤压，所以括号会比较靠后；另一个是它会遮挡一部分手肘，导致手肘下面看上去是倒三角形。
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
-<img src="/illustrations/tenten人体-Week4/13.png" alt="屈肌群结构" style="width: 18%; margin: 0 0 20px;">
-<img src="/illustrations/tenten人体-Week4/14.png" alt="屈肌群结构" style="width: 15%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week4/13.png" alt="屈肌群结构" style="width: 16%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week4/14.png" alt="屈肌群结构" style="width: 13%; margin: 0 0 20px;">
 </div>
 <figcaption>屈肌群结构</figcaption>
 </figure>
+
+然后来看肱桡肌更加具体的点位。肱桡肌从方块上面两指左右出发，向后包裹住方块，然后马上绕圆柱体转到大拇指内侧。
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
+<img src="/illustrations/tenten人体-Week4/15.png" alt="肱桡肌起始点" style="width: 30%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week4/16.png" alt="肱桡肌结束点" style="width: 35%; margin: 0 0 20px;">
+</div>
+<figcaption>肱桡肌结构</figcaption>
+</figure>
+
+再是伸肌群和屈肌群更加具体的形态。伸肌群实际上有很多束，我们一般只画两束，形状还是常见的闪电形，连接到手背。然后多出一块绿色的肘肌，遮挡一部分手肘。屈肌群类似也只画两束，闪电形连接到手心。屈肌群被伸肌群挤压了一部分体积，在内侧就会额外占用一部分空间。
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
+<img src="/illustrations/tenten人体-Week4/17.png" alt="伸肌群结构" style="width: 11%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week4/18.png" alt="屈肌群结构" style="width: 18%; margin: 0 0 20px;">
+</div>
+<figcaption>伸肌群和屈肌群</figcaption>
+</figure>
+
+> 可以看到伸肌群和屈肌群分别有一部分遮挡住手肘，导致手肘下面部分看上去像倒三角形。
