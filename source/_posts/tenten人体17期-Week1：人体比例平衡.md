@@ -35,7 +35,7 @@ categories: 绘画
 <figcaption>男女性比例差异</figcaption>
 </figure>
 
-再来观察侧面，画侧面的重点是：低头、挺胸、收腹，如下图所示。胸腔和骨盆夹角为 $140^\circ$。这里要看到裆部和直线有一定距离，带点顶胯的意思，这是因为人类没办法贴到直线上。还有要注意大腿开始的位置，同样是从骨盆下面的大转子开始延申出来。
+再来观察侧面，画侧面的重点是：低头、挺胸、收腹，如下图所示。胸腔和骨盆夹角为 $140^\circ$。这里要看到裆部和直线有一定距离，带点顶胯的意思，这是因为人类没办法贴到直线上。还有要注意大腿开始的位置，同样是从骨盆下面的大转子开始延伸出来。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/4.png" alt="火柴人侧面图" width="45%">
@@ -122,7 +122,7 @@ categories: 绘画
 <figcaption>错误的肩膀宽度</figcaption>
 </figure>
 
-然后要在此基础上画圆柱的剖面，俯视还是仰视不重要，具体弧度不也太重要，但要保证长轴位于面片上：
+然后要在此基础上画圆柱的剖面，俯视还是仰视不重要，具体弧度也不太重要，但要保证长轴位于面片上：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/15.png" alt="柱体剖面" width="25%">
@@ -199,7 +199,7 @@ categories: 绘画
 <figcaption>外轮廓不太重合</figcaption>
 </figure>
 
-所以我们往往会自己进行一些微调，使得他们的外轮廓更加接近。
+所以我们往往会自己进行一些微调，使得它们的外轮廓更加接近。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week1/25.png" alt="微调" width="20%">

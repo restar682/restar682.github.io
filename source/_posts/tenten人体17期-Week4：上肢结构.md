@@ -43,7 +43,7 @@ tags:
 
 这边肱肌的结构很简单，就是一个平行四边形，下面留出来一块空隙。这边的空隙是留给肱桡肌的。
 
-这里手臂弯曲幅度不大，所以手肘从方块靠近底部的位置起笔。向上以梯形结构插入肱三头肌，向下则以倒梯形收窄，再沿小臂一直延伸到小指上方一点的位置。
+这里手臂弯曲幅度不大，所以手肘从方块靠近底部的位置起笔。向上以梯形结构插入肱三头肌，向下则以倒三角形收窄，再沿小臂一直延伸到小指上方一点的位置。
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
@@ -55,7 +55,7 @@ tags:
 
 从内侧看，肱二头肌、肱三头肌和手肘的形状都没什么区别。肱肌被夹断了，所以是两个菱形，连接到手臂内侧往前一些，同样留出了空隙。这边的空隙则是留给屈肌群的。
 
-实际上，内侧的肱肌是两块，上面的被称作喙肱肌，连接喙骨和肱骨。下面的才是我们的肱肌，包裹在肱二头肌上。实际画的时候不需要纠结这么多，都理解成肱肌就行，他们在手臂抬起来的时候会非常明显。
+实际上，内侧的肱肌是两块，上面的被称作喙肱肌，连接喙骨和肱骨。下面的才是我们的肱肌，包裹在肱二头肌上。实际画的时候不需要纠结这么多，都理解成肱肌就行，它们在手臂抬起来的时候会非常明显。
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
@@ -83,3 +83,21 @@ tags:
 </figure>
 
 除此之外还要注意手臂弯曲时肱二头肌比较饱满，伸直时肱三头肌比较饱满。
+
+# 小臂肌肉
+小臂肌肉从肱桡肌开始，肱桡肌从肱肌下面开始。从肱肌出发，先向后绕方块一圈，然后反弧度连到大拇指内侧的位置，凸点在上半部分。然后补全伸肌群，连接到手背方块处，分为两束。接着同样补上手肘的结构，连接到小拇指靠上的位置。最后再添加屈肌群，凸点同样和伸肌群相反，在下半部分。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/12.png" alt="小臂肌肉" width="40%">
+<figcaption>小臂肌肉</figcaption>
+</figure>
+
+再来看屈肌群更详细的结构，这里的凸起其实就是我们关节球的卡扣。这里有两个需要注意的点，一个是它被肱肌挤压，所以括号会比较靠后；另一个是它会遮挡一部分手肘，导致手肘下面看上去是倒三角形。
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
+<img src="/illustrations/tenten人体-Week4/13.png" alt="屈肌群结构" style="width: 18%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week4/14.png" alt="屈肌群结构" style="width: 15%; margin: 0 0 20px;">
+</div>
+<figcaption>屈肌群结构</figcaption>
+</figure>
