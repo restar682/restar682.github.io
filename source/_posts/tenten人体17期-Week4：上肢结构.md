@@ -122,6 +122,8 @@ tags:
 
 再是伸肌群和屈肌群更加具体的形态。伸肌群实际上有很多束，我们一般只画两束，形状还是常见的闪电形，连接到手背。然后多出一块绿色的肘肌，遮挡一部分手肘。屈肌群类似也只画两束，闪电形连接到手心。屈肌群在大拇指部分被（伸肌群的）肱桡肌挤压了一部分体积，在内侧就会额外占用一部分空间。
 
+总的来说，（伸肌群的）肱桡肌占支配大拇指的一部分，也就是手心面的一部分，同时也涉及前臂外侧和手背区域。前臂内侧是鹰嘴，也被屈肌群占用一部分，而手心大部分是屈肌群。
+
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
 <img src="/illustrations/tenten人体-Week4/18.png" alt="伸肌群结构" style="width: 11%; margin: 0 0 20px;">
