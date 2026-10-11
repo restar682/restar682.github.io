@@ -131,3 +131,108 @@ tags:
 </figure>
 
 > 可以看到伸肌群和屈肌群分别有一部分遮挡住手肘，导致手肘下面部分看上去像倒三角形。
+
+# 手掌结构
+正如我们熟悉的那样，我们可以将手掌结构概括成方块+三角+五条线。从手背看，手指在方块之外只露出第二、第三两节，并呈放射状分布。中指从方块中间伸出，是最长的一根，长度与方块相当，而它的第二个指关节恰好把整根中指分成两半。三角形代表虎口，从方块约 $\frac{1}{4}$ 处开始。大拇指从三角形外侧开始，末端大约落在食指第二节的中间位置。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/20.png" alt="手掌背面" width="25%">
+<figcaption>手掌背面</figcaption>
+</figure>
+
+从侧面看，我们可以看到横截面是斜切的。除此之外，还可以看到背面指节是 1:1，但内侧看却是 1:1:1，这是因为指缝也有斜切的：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/21.png" alt="手掌侧面" width="35%">
+<figcaption>手掌侧面</figcaption>
+</figure>
+
+因此，从手心看的话，方块的边缘不在手指末端，而是在事业线和手指末端一半位置。确定了方块的位置，剩下的骨架就和手背没什么区别了。注意我们这里不考虑手心的转折，还是按照手背的骨架来画。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/22.png" alt="手掌正面" width="30%">
+<figcaption>手掌正面</figcaption>
+</figure>
+
+要想手的动态好看，还要注意几个额外的点：一是方块实际上带有一点点弧度，类似扇形；二是虎口和方块最好不在一个平面上，带一点扭转更好；三是手指可以适当的分组，做出一些大中小的差异，尤其是中指和无名指经常放在一起；四是手腕和手掌最好带点角度，最好是向外转一点。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/23.png" alt="动态优化" width="25%">
+<figcaption>动态优化</figcaption>
+</figure>
+
+然后来看手掌的体积。首先，方块本身长宽比是 5:3。除了方块本身，手背还有一层薄薄的隆起，手心则有三块肉垫。手背的体积很好表现，只需要作出一些弧度就行了，这其实就是前面动态部分讲过的注意点。手心的三块肉垫要复杂一些，除了连接虎口的那一块，其余部分的大致形状可以看作脚掌。多出来的连接虎口的这一块，正是手掌比脚掌灵活许多的原因。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/24.png" alt="手掌大致体积" width="20%">
+<figcaption>手掌大致体积</figcaption>
+</figure>
+
+具体来说，这三块肉垫的比例如图所示。左侧肉垫从方块 $\frac{1}{3}$ 处开始，右侧肉垫从 $\frac{1}{4}$ 处开始，向下连接到方块底部。上方肉垫从方块 $\frac{1}{4}$ 处开始向上，超出方块 $\frac{1}{4}$。通俗地说，左侧肉垫的凸起决定了事业线，上方肉垫的凸起决定了爱情线。
+
+事实上，上方肉垫的结构并没有那么简单：除了之前从侧面了解到的斜切，它还带有一定的弧度，一般是四六分。也正因为上方的肉垫有弧度，所以从侧面看时，总是只能看到三根手指的根部。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/25.png" alt="手心肉垫比例" width="90%">
+<figcaption>手心肉垫比例</figcaption>
+</figure>
+
+从纯正面看，左右两块肉垫的形状大概是这样的。大致上六四分，中间有一点距离。左侧肉垫带一点弧度（事业线），右侧肉垫几乎是长方形。除此之外，左侧肉垫的最高点也比右侧的高一些：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/26.png" alt="左右肉垫" width="15%">
+<figcaption>左右肉垫</figcaption>
+</figure>
+
+这里虎口只是一层皮，所以只需要用三角形纸片概括。它从 **$\frac{1}{4}$** 处盖到肉垫上，和左侧肉垫合成一块大的体积。因此简单理解就是内侧 $\frac{1}{3}$，外侧 $\frac{1}{4}$。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/27.png" alt="虎口" width="23%">
+<figcaption>虎口</figcaption>
+</figure>
+
+当手指运动时，对肉垫的影响本质上和臀部的变形没什么区别，都是伸直时比较薄，弯曲则会明显凸起：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/28.png" alt="手指运动" width="25%">
+<figcaption>手指运动</figcaption>
+</figure>
+
+# 手腕运动
+手腕衔接手掌和小臂，会微微有个弧度，如果不画这个小凸起会非常的奇怪。从小拇指一侧看非常明显，这也和我们之前说的手肘连接到小拇指靠上的位置一致：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/29.png" alt="手腕" width="43%">
+<figcaption>手腕</figcaption>
+</figure>
+
+另外，手腕运动时，上下基本上 $90^\circ$ 都可以转，但向内几乎不能转，向外大概可以转 $60^\circ$。
+
+# 手指
+大拇指连接到虎口一半的位置，它的轮廓本质上和膝盖是一样的。两个错开的方块，用一个斜面连接，然后侧面加上卡扣，就得到了外轮廓。指甲生长在手指上，越往外越宽，绕手指半周，有一部分嵌在肉里。因为指甲外面还有肉，所以要在外面作出小平台，不然会显得很假。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/30.png" alt="大拇指" width="43%">
+<figcaption>大拇指</figcaption>
+</figure>
+
+其余手指头分为三段，一般和我们概括骨架那样先分成两段，然后把外面那一段再分成两段。我们先用订书钉画出截面，然后在侧面用卡扣连接，注意指尖要收细一些。根部有一些凸起，我们和脚踝一样概括就好。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/31.png" alt="其余手指" width="30%">
+<figcaption>其余手指</figcaption>
+</figure>
+
+最后考虑男女差异。一般女生骨节感比较弱，指尖更尖、细，常向上翘；而男生骨节感强，指尖比较钝，常向内扣。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/32.png" alt="男女差异" width="60%">
+<figcaption>男女差异</figcaption>
+</figure>
+
+除此之外还要注意手指之间是有蹼的：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week4/33.png" alt="蹼" width="30%">
+<figcaption>蹼</figcaption>
+</figure>
