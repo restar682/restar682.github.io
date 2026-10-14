@@ -188,7 +188,7 @@ categories: 绘画
 <figcaption>左右肉垫</figcaption>
 </figure>
 
-这里虎口只是一层皮，所以只需要用三角形纸片概括。它从 **$\frac{1}{4}$** 处盖到肉垫上，和左侧肉垫合成一块大的体积。因此简单理解就是内侧 $\frac{1}{3}$，外侧 $\frac{1}{4}$。
+这里虎口只是一层皮，所以只需要用三角形纸片概括。它从 **$\frac{1}{4}$** 处盖到肉垫上，和左侧肉垫合成一块大的体积，然后根据大拇指的连接点位调整转面。简单理解就是内侧 $\frac{1}{3}$，外侧 $\frac{1}{4}$。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week4/27.png" alt="虎口" width="23%">
