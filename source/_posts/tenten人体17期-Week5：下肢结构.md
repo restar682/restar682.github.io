@@ -19,7 +19,7 @@ tags:
 <figcaption>缝匠肌</figcaption>
 </figure>
 
-包裹住 A 束的则是髂胫束。它同样从大转子出发，倒三角形状，连接到胫骨外侧靠前的位置。我们一般把他和 A 束整理到一起，不需要单独拆分出来。
+包裹住 A 束的则是髂胫束。它同样从大转子出发，倒三角形状，连接到胫骨外侧靠前的位置。我们一般把它和 A 束整理到一起，不需要单独拆分出来。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/3.png" alt="髂胫束" width="8%">
@@ -38,3 +38,16 @@ tags:
 </figure>
 
 ## 膝盖
+和手肘不同，膝盖有一块单独的髌骨，它总是跟随小腿运动。大腿股骨形如口哨，而小腿胫骨则是一个平台，下面是一个倒梯形的形状，股骨就在这个平台上滚动。髌骨是一个盾牌的形状，上面没有任何肌肉连接，靠筋膜被绑在股骨和胫骨中间。因此，一般我们会先画筋膜，再处理出髌骨的形状。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/5.png" alt="膝盖" width="50%">
+<figcaption>膝盖</figcaption>
+</figure>
+
+这里可以看到，我们在画出筋膜的轮廓后，一般就用一块投影暗示髌骨的形状就行。相较于关节球而言，就是把筋膜部分改为用闪电形概括（当然作业里面和关节球是一样的）：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/6.png" alt="膝盖" width="50%">
+<figcaption>膝盖</figcaption>
+</figure>
