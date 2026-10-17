@@ -53,3 +53,22 @@ tags:
 <img src="/illustrations/tenten人体-Week5/6.png" alt="膝盖" width="50%">
 <figcaption>膝盖</figcaption>
 </figure>
+
+膝盖弯曲时，首先符合最一般的规律，也就是被挤压的一侧肌肉会隆起，另一侧则会变得平缓。其次，小腿肌肉可以挤压大腿肌肉。这里的两条线分别暗示的是股四头肌 A 束和比目鱼肌，此外膝盖后面的缝匠肌也会露出来一部分。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/7.png" alt="膝盖弯曲" width="20%">
+<figcaption>膝盖弯曲</figcaption>
+</figure>
+
+## 臀部和大腿背面肌肉
+臀部肌肉也是分为三个部分：臀中肌、臀大肌、阔筋膜张肌。臀中肌从骨盆的括号连接到大转子，臀大肌从骶髂的菱形出发连接到大腿后外侧，阔筋膜张肌是个三角形，从髂前上棘出发连接到大腿前外侧。对比关节球，内裤的线连接的是臀部，而这里要连接到大腿后外侧，除此之外几乎没有区别。
+
+至于为什么这样的臀部看上去像羊角包而不是我们印象中那么饱满，是因为臀大肌旁边有一块脂肪垫，使得轮廓更接近圆弧。我们一般合并到臀大肌中，所以臀大肌看上去有一个转折。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/8.png" alt="臀部肌肉" width="43%">
+<figcaption>臀部肌肉</figcaption>
+</figure>
+
+> 髂胫束就是从大转子出发的，中间那一块黄色的就是髂胫束。
