@@ -33,7 +33,7 @@ tags:
 此外，空缺的一块是内收肌，它从骨盆底部中间向内连接到股骨内侧，比较方。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/4.png" alt="大腿正面肌肉" width="40%">
+<img src="/illustrations/tenten人体-Week5/4.png" alt="大腿正面肌肉" width="33%">
 <figcaption>大腿正面肌肉</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ tags:
 <figcaption>膝盖</figcaption>
 </figure>
 
-这里可以看到，我们在画出筋膜的轮廓后，一般就用一块投影暗示髌骨的形状就行。相较于关节球而言，就是把筋膜部分改为用闪电形概括（当然作业里面和关节球是一样的）：
+这里可以看到，我们在画出筋膜的轮廓后，一般就用一块投影暗示髌骨的形状就行，大概方块的 $\frac{2}{3}$ 宽。相较于关节球而言，就是把筋膜部分改为用闪电形概括。此外还可以注意到从筋膜到胫骨之间还有一个小转折，其实是胫骨本身就有个转折，一般直接忽略也行：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/6.png" alt="膝盖" width="50%">
