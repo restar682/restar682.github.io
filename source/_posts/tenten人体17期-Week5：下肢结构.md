@@ -32,7 +32,7 @@ tags:
 
 高度上，B 束最高，A 束次之，C 束最低。我们之前提到 A 束从大转子开始，此处我们是为了简化把臀部的一部分结构合并到 A 束里面了，所以是直接连接到了髂前上棘。
 
-此外，空缺的一块是内收肌，它从骨盆底部中间向内连接到股骨内侧，比较方。
+此外，空缺的一块是内收肌，它从骨盆底部中间向内连接到股骨内侧，和肱肌类似，比较方。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/4.png" alt="大腿正面肌肉" width="33%">
@@ -82,7 +82,7 @@ tags:
 
 大腿的最后一部分肌肉实际上比较复杂，包括半腱肌、半膜肌和股二头肌，但我们可以简化成股二头肌。它的形状和肱三头肌几乎是一样的，和股四头肌分界点就是臀大肌的结束点。
 
-肱二头肌上方的点位被臀大肌遮住了，下方连接到方块底部稍微靠下一点，起伏也比三头稍微弱一点。
+股二头肌上方的点位被臀大肌遮住了，下方连接到方块底部稍微靠下一点，起伏也没有那么强。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/10.png" alt="股二头肌" width="49%">
@@ -117,16 +117,37 @@ tags:
 # 小腿肌肉
 对比手臂，腿部的整体趋势是先向内再向外的，这也是承重的需求导致的。如果膝盖分的太开，走路时的重心移动会很大，需要耗费很多能量。而如果脚底板太靠近，底盘又会太小，不够稳当。综合来看，腿部形成了先向内再向外的趋势。
 
-小腿和小臂一样是三个部分：胫骨、比目鱼肌+腓肠肌、胫骨前肌。本质上，胫骨对应尺骨，胫骨前肌对应屈肌群，比目鱼肌+腓肠肌对应伸肌群。
+小腿和小臂一样是三个部分：胫骨、比目鱼肌+腓肠肌、胫骨前肌。逻辑上，胫骨对应尺骨，胫骨前肌对应屈肌群，比目鱼肌+腓肠肌对应伸肌群。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/14.png" alt="小腿结构" width="28%">
 <figcaption>小腿结构</figcaption>
 </figure>
 
-胫骨从膝盖出发，倒三角形连接到大腿脚踝，和尺骨一样可以看到两个面：
+胫骨从膝盖出发，倒三角形连接到大腿脚踝，和尺骨一样可以看到两个面。尽管所有肌肉都是外高内低，但脚踝反而是内高外低：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/15.png" alt="胫骨" width="14%">
 <figcaption>胫骨</figcaption>
+</figure>
+
+腓肠肌插进股二头肌形成的牙齿形状留出的空隙之中，两根肌腱形成一个 Y 字形，下面两块体积，最后一根跟腱连接到脚后跟。两侧是比目鱼肌，看起来就像腓肠肌的两个尖角，连接到脚踝后侧。
+
+<figure style="text-align:center;">
+  <div style="display:inline-flex; align-items:center; gap:20px;">
+    <img src="/illustrations/tenten人体-Week5/16.png" alt="比目鱼肌+腓肠肌"
+         style="width:15%; height:auto;">
+    <img src="/illustrations/tenten人体-Week5/17.png" alt="比目鱼肌+腓肠肌"
+         style="width:15%; height:auto;">
+    <img src="/illustrations/tenten人体-Week5/18.png" alt="比目鱼肌+腓肠肌"
+         style="width:30%; height:auto;">
+  </div>
+  <figcaption>比目鱼肌+腓肠肌</figcaption>
+</figure>
+
+胫骨前肌只有一束肌肉，从胫骨旁连接到脚踝前面，平常我们理解成连接到脚背也行：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/19.png" alt="胫骨前肌" width="25%">
+<figcaption>胫骨前肌</figcaption>
 </figure>
