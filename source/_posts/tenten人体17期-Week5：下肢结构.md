@@ -95,3 +95,19 @@ tags:
 <img src="/illustrations/tenten人体-Week5/11.png" alt="背面的缝匠肌和股四头肌" width="23%">
 <figcaption>背面的缝匠肌和股四头肌</figcaption>
 </figure>
+
+而比较反常识的就是正面也能看到臀部的，即使是纯正面也能看到臀中肌和阔筋膜张肌，主要原因还是大转子凸出而臀部肌肉包裹在大转子上：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/12.png" alt="正面的臀部" width="23%">
+<figcaption>正面的臀部</figcaption>
+</figure>
+
+最后是股二头肌和小腿衔接，它实际上连接在腓骨上，在弯曲和用力时非常明显：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/13.png" alt="股二头肌衔接" width="18%">
+<figcaption>股二头肌衔接</figcaption>
+</figure>
+
+> 我们可以感觉到似乎股二头肌对应的是肱二头肌，他们都是连接到较细的一根骨头上；股四头肌对应的是肱三头肌，膝盖和手肘分别嵌入其中。但肱二头肌在内侧而股二头肌在外侧，肱三头肌和股四头肌也相反……实际上是因为人类最初是爬行，后面为了直立行走就反过来了。
