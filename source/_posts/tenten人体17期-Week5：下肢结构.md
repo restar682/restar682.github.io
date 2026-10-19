@@ -151,3 +151,73 @@ tags:
 <img src="/illustrations/tenten人体-Week5/19.png" alt="胫骨前肌" width="25%">
 <figcaption>胫骨前肌</figcaption>
 </figure>
+
+# 脚掌结构
+侧面来看，脚掌的比例如图所示：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/20.png" alt="脚掌侧面" width="35%">
+<figcaption>脚掌侧面</figcaption>
+</figure>
+
+在此基础上，脚后跟方块向内收缩 $\frac{1}{5}$，后面砍掉 $\frac{1}{3}$：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/21.png" alt="脚后跟方块优化" width="35%">
+<figcaption>脚后跟方块优化</figcaption>
+</figure>
+
+然后，脚底板根据底面结构同样收缩，内侧凹陷更明显一些：
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+<img src="/illustrations/tenten人体-Week5/22.png" alt="脚底板优化" style="width: 18%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/23.png" alt="脚底板优化" style="width: 27%; margin: 0 0 20px;">
+</div>
+<figcaption>脚底板优化</figcaption>
+</figure>
+
+接下来处理脚趾。从横截面看，小脚趾是方形的内切圆，大脚趾半径和方形一样：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/24.png" alt="脚趾横截面" width="30%">
+<figcaption>脚趾横截面</figcaption>
+</figure>
+
+最后补全体积，两侧的关节球卡扣盖住小圆圈，图形轮廓节奏七三分：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/25.png" alt="脚趾体积" width="28%">
+<figcaption>脚趾体积</figcaption>
+</figure>
+
+注意这里内侧脚跟部分和外侧都有一个小平台，并且脚背其实有一个微微向外的趋势：
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+<img src="/illustrations/tenten人体-Week5/26.png" alt="小平台" style="width: 22%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/27.png" alt="小平台" style="width: 24%; margin: 0 0 20px;">
+</div>
+<figcaption>小平台</figcaption>
+</figure>
+
+脚趾整体有一个向内的趋势，五个脚趾头形状上并没有太多的区别，和大拇指是一样的：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/28.png" alt="脚趾趋势" width="45%">
+<figcaption>脚趾趋势</figcaption>
+</figure>
+
+脚的运动基本上就是绕着脚腕和指关节两个轴旋转：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/29.png" alt="脚的运动" width="45%">
+<figcaption>脚的运动</figcaption>
+</figure>
+
+踮脚时，原本有的脚底板凹陷更加明显，会有很强的穿插关系：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week5/30.png" alt="踮脚" width="30%">
+<figcaption>踮脚</figcaption>
+</figure>
