@@ -5,7 +5,7 @@ tags:
 ---
 # 大腿肌肉
 ## 大腿正面肌肉
-在关节球部分，我们了解到大腿向前凸出 $\frac{1}{3}$，这个就是股四头肌导致的。虽然实际上是四束，但我们只能看到三束。如下图所示，B 束从髂前上棘下面连接到膝盖，A 束从大转子连接到小腿外侧，C 束从股骨内侧连接到小腿内侧。可以注意到，A 束和 C 束的体积都是到大腿股骨就结束，肌腱再连接到小腿胫骨，所以画体积的时候还是只要到方块一半的位置就行了。
+在关节球部分，我们了解到大腿向前凸出 $\frac{1}{3}$，这个就是股四头肌导致的。虽然实际上是四束，但我们只能看到三束。如下图所示，B 束从髂前上棘略靠下的位置连接到膝盖，A 束从大转子连接到小腿外侧，C 束从股骨内侧连接到小腿内侧。可以注意到，A 束和 C 束的体积都是到大腿股骨就结束，肌腱再连接到小腿胫骨，所以画体积的时候还是只要到方块一半的位置就行了。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/1.png" alt="股四头肌" width="80%">
@@ -67,7 +67,10 @@ tags:
 至于为什么这样的臀部看上去像羊角包而不是我们印象中那么饱满，是因为臀大肌旁边有一块脂肪垫，使得轮廓更接近圆弧。我们一般合并到臀大肌中，所以臀大肌看上去有一个转折。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/8.png" alt="臀部肌肉" width="43%">
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+<img src="/illustrations/tenten人体-Week5/8.png" alt="臀部肌肉" style="width: 43%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/9.png" alt="臀部肌肉" style="width: 30%; margin: 0 0 20px;">
+</div>
 <figcaption>臀部肌肉</figcaption>
 </figure>
 
@@ -76,7 +79,7 @@ tags:
 男女生臀部的差异体现在男生臀部肌肉更加明显一些，和收紧臀部的感觉是一样的，导致从背面也能看到大转子：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/9.png" alt="男生臀部" width="20%">
+<img src="/illustrations/tenten人体-Week5/10.png" alt="男生臀部" width="27%">
 <figcaption>男生臀部</figcaption>
 </figure>
 
@@ -85,28 +88,28 @@ tags:
 股二头肌上方的点位被臀大肌遮住了，下方连接到方块底部稍微靠下一点，起伏也没有那么强。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/10.png" alt="股二头肌" width="49%">
+<img src="/illustrations/tenten人体-Week5/11.png" alt="股二头肌" width="49%">
 <figcaption>股二头肌</figcaption>
 </figure>
 
 此外，从背面也是能看到一点缝匠肌和股四头肌的。这很合理，因为股二头肌和肱三头肌一样只占据了侧面的一部分：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/11.png" alt="背面的缝匠肌和股四头肌" width="23%">
+<img src="/illustrations/tenten人体-Week5/12.png" alt="背面的缝匠肌和股四头肌" width="23%">
 <figcaption>背面的缝匠肌和股四头肌</figcaption>
 </figure>
 
 而比较反常识的就是正面也能看到臀部的，即使是纯正面也能看到臀中肌和阔筋膜张肌，主要原因还是大转子凸出而臀部肌肉包裹在大转子上：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/12.png" alt="正面的臀部" width="23%">
+<img src="/illustrations/tenten人体-Week5/13.png" alt="正面的臀部" width="23%">
 <figcaption>正面的臀部</figcaption>
 </figure>
 
 最后是股二头肌和小腿衔接，它实际上连接在腓骨上，在弯曲和用力时非常明显：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/13.png" alt="股二头肌衔接" width="18%">
+<img src="/illustrations/tenten人体-Week5/14.png" alt="股二头肌衔接" width="18%">
 <figcaption>股二头肌衔接</figcaption>
 </figure>
 
@@ -120,14 +123,14 @@ tags:
 小腿和小臂一样是三个部分：胫骨、比目鱼肌+腓肠肌、胫骨前肌。逻辑上，胫骨对应尺骨，胫骨前肌对应屈肌群，比目鱼肌+腓肠肌对应伸肌群。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/14.png" alt="小腿结构" width="28%">
+<img src="/illustrations/tenten人体-Week5/15.png" alt="小腿结构" width="28%">
 <figcaption>小腿结构</figcaption>
 </figure>
 
 胫骨从膝盖出发，倒三角形连接到大腿脚踝，和尺骨一样可以看到两个面。尽管所有肌肉都是外高内低，但脚踝反而是内高外低：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/15.png" alt="胫骨" width="14%">
+<img src="/illustrations/tenten人体-Week5/16.png" alt="胫骨" width="14%">
 <figcaption>胫骨</figcaption>
 </figure>
 
@@ -135,11 +138,11 @@ tags:
 
 <figure style="text-align:center;">
   <div style="display:inline-flex; align-items:center; gap:20px;">
-    <img src="/illustrations/tenten人体-Week5/16.png" alt="比目鱼肌+腓肠肌"
-         style="width:15%; height:auto;">
     <img src="/illustrations/tenten人体-Week5/17.png" alt="比目鱼肌+腓肠肌"
          style="width:15%; height:auto;">
     <img src="/illustrations/tenten人体-Week5/18.png" alt="比目鱼肌+腓肠肌"
+         style="width:15%; height:auto;">
+    <img src="/illustrations/tenten人体-Week5/19.png" alt="比目鱼肌+腓肠肌"
          style="width:30%; height:auto;">
   </div>
   <figcaption>比目鱼肌+腓肠肌</figcaption>
@@ -148,7 +151,7 @@ tags:
 胫骨前肌只有一束肌肉，从胫骨旁连接到脚踝前面，平常我们理解成连接到脚背也行：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/19.png" alt="胫骨前肌" width="25%">
+<img src="/illustrations/tenten人体-Week5/20.png" alt="胫骨前肌" width="25%">
 <figcaption>胫骨前肌</figcaption>
 </figure>
 
@@ -156,14 +159,14 @@ tags:
 侧面来看，脚掌的比例如图所示：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/20.png" alt="脚掌侧面" width="35%">
+<img src="/illustrations/tenten人体-Week5/21.png" alt="脚掌侧面" width="35%">
 <figcaption>脚掌侧面</figcaption>
 </figure>
 
 在此基础上，脚后跟方块向内收缩 $\frac{1}{5}$，后面砍掉 $\frac{1}{3}$：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/21.png" alt="脚后跟方块优化" width="35%">
+<img src="/illustrations/tenten人体-Week5/22.png" alt="脚后跟方块优化" width="35%">
 <figcaption>脚后跟方块优化</figcaption>
 </figure>
 
@@ -171,8 +174,8 @@ tags:
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-<img src="/illustrations/tenten人体-Week5/22.png" alt="脚底板优化" style="width: 18%; margin: 0 0 20px;">
-<img src="/illustrations/tenten人体-Week5/23.png" alt="脚底板优化" style="width: 27%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/23.png" alt="脚底板优化" style="width: 18%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/24.png" alt="脚底板优化" style="width: 27%; margin: 0 0 20px;">
 </div>
 <figcaption>脚底板优化</figcaption>
 </figure>
@@ -180,14 +183,14 @@ tags:
 接下来处理脚趾。从横截面看，小脚趾是方形的内切圆，大脚趾半径和方形一样：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/24.png" alt="脚趾横截面" width="30%">
+<img src="/illustrations/tenten人体-Week5/25.png" alt="脚趾横截面" width="30%">
 <figcaption>脚趾横截面</figcaption>
 </figure>
 
 最后补全体积，两侧的关节球卡扣盖住小圆圈，图形轮廓节奏七三分：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/25.png" alt="脚趾体积" width="28%">
+<img src="/illustrations/tenten人体-Week5/26.png" alt="脚趾体积" width="28%">
 <figcaption>脚趾体积</figcaption>
 </figure>
 
@@ -195,8 +198,8 @@ tags:
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-<img src="/illustrations/tenten人体-Week5/26.png" alt="小平台" style="width: 22%; margin: 0 0 20px;">
-<img src="/illustrations/tenten人体-Week5/27.png" alt="小平台" style="width: 24%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/27.png" alt="小平台" style="width: 22%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week5/28.png" alt="小平台" style="width: 24%; margin: 0 0 20px;">
 </div>
 <figcaption>小平台</figcaption>
 </figure>
@@ -204,20 +207,20 @@ tags:
 脚趾整体有一个向内的趋势，五个脚趾头形状上并没有太多的区别，和大拇指是一样的：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/28.png" alt="脚趾趋势" width="45%">
+<img src="/illustrations/tenten人体-Week5/29.png" alt="脚趾趋势" width="45%">
 <figcaption>脚趾趋势</figcaption>
 </figure>
 
 脚的运动基本上就是绕着脚腕和指关节两个轴旋转：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/29.png" alt="脚的运动" width="45%">
+<img src="/illustrations/tenten人体-Week5/30.png" alt="脚的运动" width="45%">
 <figcaption>脚的运动</figcaption>
 </figure>
 
 踮脚时，原本有的脚底板凹陷更加明显，会有很强的穿插关系：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week5/30.png" alt="踮脚" width="30%">
+<img src="/illustrations/tenten人体-Week5/31.png" alt="踮脚" width="30%">
 <figcaption>踮脚</figcaption>
 </figure>
