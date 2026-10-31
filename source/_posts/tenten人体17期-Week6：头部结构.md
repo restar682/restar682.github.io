@@ -88,3 +88,58 @@ tags:
 <img src="/illustrations/tenten人体-Week6/9.png" alt="刁钻头部" width="20%">
 <figcaption>刁钻头部</figcaption>
 </figure>
+
+# 五官
+## 眼睛
+眼睛的基本结构如图。除了我们熟悉的眉毛、眼睑和眼珠以外，要注意的就是眉弓骨的结构。上眼睑覆盖在眉弓骨上，形成 Y 字形的转折结构。从图中可以看到，睫毛从眼皮边缘靠内一点的位置长出：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/10.png" alt="眼睛结构" width="40%">
+<figcaption>眼睛结构</figcaption>
+</figure>
+
+眼睛和眉弓骨都可以分成三段来理解。眼睛整体呈双锥体，嵌在眉弓下方，并向内凹陷。所以和胸腔背面一样，这里的透视也是“近小远大”。
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+<img src="/illustrations/tenten人体-Week6/11.png" alt="眼睛体积" style="width: 22%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week6/12.png" alt="眼睛体积" style="width: 24%; margin: 0 0 20px;">
+</div>
+<figcaption>眼睛体积</figcaption>
+</figure>
+
+眼睛的造型很多变。眼睛之间夹的距离，上下三段的长度、夹角、斜率等都会影响气质。比如对于成男，外侧一段的夹角就需要比较弱：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/13.png" alt="眼睛造型" width="90%">
+<figcaption>眼睛造型</figcaption>
+</figure>
+
+眼睛的定位方法也很重要：
+
+1. 先确定额头与下巴的连线及颞线。
+2. 颞线取一半是眉尾。
+3. 眉尾附近是眼尾。
+4. 根据“三庭五眼”定出另一只眼睛。
+5. 根据透视画出双锥体。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/14.png" alt="眼睛定位" width="90%">
+<figcaption>眼睛定位</figcaption>
+</figure>
+
+也可以从眉毛来定位，这个方法似乎更加方便：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/15.png" alt="眼睛定位2" width="20%">
+<figcaption>眼睛定位2</figcaption>
+</figure>
+
+有两个需要注意的细节，一是外眼角转折更急促，这和外侧一段夹角比较弱一致；二是眼睛整体是倾斜的，从卢米斯定位眼眶位置那里也可以看出来。
+
+最后，两只眼睛需要对焦。逻辑上，虹膜是约占眼球面积一半的圆，约 $\frac{1}{3}$ 会被眼皮遮住；考虑到透视，转动角度越大，虹膜会越扁。瞳孔是一个凹陷，因此虹膜转角越大，瞳孔与虹膜中心的偏移越明显。高光则始终位于虹膜表面上。对焦即两条眼球与虹膜的连线要有交点。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/16.png" alt="虹膜对焦" width="20%">
+<figcaption>虹膜对焦</figcaption>
+</figure>
