@@ -143,3 +143,14 @@ tags:
 <img src="/illustrations/tenten人体-Week6/16.png" alt="虹膜对焦" width="20%">
 <figcaption>虹膜对焦</figcaption>
 </figure>
+
+## 鼻子
+鼻子的结构相对简单。我们先将圆弧形的眉骨剖面切分成梯形，再画出鼻子的侧面图形；然后添加厚度，注意鼻尖处窄、鼻翼处宽，鼻翼类似订书钉的结构；再连接眉骨和鼻梁，将蓝色眉骨中间的方块部分 AB 与鼻梁连接，形成漏斗状；最后将代表鼻翼的点 E、F 向上抬起一点，做一点转折。
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+<img src="/illustrations/tenten人体-Week6/17.png" alt="鼻子结构" style="width: 72%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week6/18.png" alt="鼻子结构" style="width: 15%; margin: 0 0 20px;">
+</div>
+<figcaption>鼻子结构</figcaption>
+</figure>
