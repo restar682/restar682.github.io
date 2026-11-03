@@ -156,4 +156,24 @@ tags:
 </figure>
 
 ## 嘴巴
-嘴巴要先确定嘴缝。
+嘴巴的刻画首先要确定嘴缝，即在之前确定的嘴巴弧度位置，画出类似订书钉的结构。接着，用折叠纸片的方式表现嘴巴的转折，并连接两侧嘴角，建立嘴部的体积。然后刻画唇珠，在嘴部中央的小方块上画一个倒立的小三角体，以表现唇珠的体积。之后减弱转折，使嘴部呈现出柔和的肉感。最后，从鼻底连接到上唇顶点，塑造人中的体积；下嘴唇的各个点则向面部延伸，以表现颌唇沟的体积。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/19.png" alt="嘴巴结构" width="100%">
+<figcaption>嘴巴结构</figcaption>
+</figure>
+
+张开嘴巴时，唇缝变为上下两个订书钉，在这个基础上继续细化就行：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/20.png" alt="张开的嘴巴结构" width="60%">
+<figcaption>张开的嘴巴结构</figcaption>
+</figure>
+
+## 耳朵
+耳朵整体沿着下颌线的方向生长，外形可以概括为一块棺材板。首先，添加一个具有厚度的面片，并表现出面片本身的转折。然后添加耳屏，表现为一个小凸起；接着添加对耳屏，其形状类似法杖，并将其与耳屏连接。最后刻画耳内软骨，是向外凸起的一块体积，延伸至耳垂。软骨内部还有一个 U 字形结构，用来表现其内部的体积关系。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/21.png" alt="耳朵结构" width="60%">
+<figcaption>耳朵结构</figcaption>
+</figure>
