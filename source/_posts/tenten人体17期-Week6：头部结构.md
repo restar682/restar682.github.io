@@ -13,7 +13,7 @@ categories: 绘画
 <figcaption>头部正面比例</figcaption>
 </figure>
 
-不同年龄段的头部正面比例有差异。对于小崽子，颅顶更高，脸更宽，下巴更短，耳朵也更靠下；少女则稍微长开了一点，脸没有那么宽，下巴长度也和成人差不多；少年唯一的区别就是下巴会有一个小平面。
+不同年龄段的头部正面比例有差异。对于小崽子，颅顶更高，额头更圆润，脸更宽，下巴更短，耳朵也更靠下；少女则稍微长开了一点，脸没有那么宽，下巴长度也和成人差不多；少年唯一的区别就是下巴会有一个小平面。
 
 <figure style="text-align: center;">
 <div style="display: flex; justify-content: center; gap: 40px;">
@@ -77,7 +77,7 @@ categories: 绘画
 
 > 画卢米斯头部的时候，轮廓的重要性异常显著。生套透视的话，很容易画出奇怪的外轮廓。
 
-卡通比例比较特别。额头会更鼓，颧骨的连线转折也更弱：
+卡通比例比较特别，是类似于儿童的比例。额头会更鼓，颧骨的连线转折也更弱：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week6/8.png" alt="卡通比例" width="20%">
