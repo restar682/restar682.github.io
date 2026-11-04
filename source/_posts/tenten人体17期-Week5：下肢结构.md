@@ -2,6 +2,8 @@
 title: tenten人体17期-Week5：下肢结构
 date: 2026-10-14 15:55:48
 description: 腿和脚的详细画法。
+tags: [绘画, 人体]
+categories: 绘画
 ---
 # 大腿肌肉
 ## 大腿正面肌肉
