@@ -163,7 +163,7 @@ tags:
 <figcaption>嘴巴结构</figcaption>
 </figure>
 
-张开嘴巴时，唇缝变为上下两个订书钉，在这个基础上继续细化就行：
+张开嘴巴时，唇缝变为上下两个订书钉，在这个基础上继续细化就行。这两个订书钉和眼睛类似，也是整体倾斜的：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week6/20.png" alt="张开的嘴巴结构" width="60%">
@@ -176,4 +176,14 @@ tags:
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week6/21.png" alt="耳朵结构" width="60%">
 <figcaption>耳朵结构</figcaption>
+</figure>
+
+# 头颈肩连接
+头颈肩的连接，首先确定下巴底部的面，将其概括为一个三角体。脖子对准下颌线，半径约为下颌线长度的 $\frac12$，以此为参考画出圆柱，并将其连接到胸腔顶端的三角体上。
+
+接着进行细化。考虑到喉咙凸起，中间是上宽下窄的形状，可以概括为一个三角锥体。以此作为分界，可以确定胸锁乳突肌的位置。胸锁乳突肌整体类似一个“从”字结构，中间两束比较熟悉，旁边两束是较薄的片状结构，连接到锁骨靠内 $\frac13$。最后补充斜方肌，完成头颈肩的连接。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week6/22.png" alt="头颈肩连接" width="20%">
+<figcaption>头颈肩连接</figcaption>
 </figure>
