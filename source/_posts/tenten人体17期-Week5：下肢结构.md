@@ -110,7 +110,7 @@ categories: 绘画
 <figcaption>正面的臀部</figcaption>
 </figure>
 
-最后是股二头肌和小腿衔接，它实际上连接在腓骨上，在弯曲和用力时非常明显：
+最后是股二头肌和小腿衔接，它实际上连接在腓骨上，在弯曲用力时非常明显：
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week5/14.png" alt="股二头肌衔接" width="18%">
