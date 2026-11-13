@@ -60,20 +60,20 @@ categories: 绘画
 
 16. 头部方块：可以用六个小方块构建，上方四个、下方两个，整体呈哨子形状。首先找到额头顶部（即美人尖位置），连接至下巴底部，确定面部中线；再找到眉尾，从眉尾向下画一条与中线平行的竖线，确定面部的平面。以此为基础，扩展出一个 3:2:2 的长方体：以眉尾和鼻底作为正面的分界线，耳根作为侧面的分界线，将其划分为八个小方块，最后去掉脖子处的两个下方小方块即可。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体团练6小知识点/8.png" alt="头部方块" width="70%">
+<img src="/illustrations/tenten人体团练6小知识点/8.png" alt="头部方块" width="50%">
 <figcaption>头部方块</figcaption>
 </figure>
 
 17. 骨盆结构：骨盆顶面形如括号，正面形如水杯，背面形如羊角。括号弧顶贴齐方块边缘线，杯底在距底部约1/4处，宽度约1/3，羊角的菱形部分从1/4处开始，最好向外翘起一些，也就是说顶点不要在中线上。括号与杯口的连接就是所谓的髂前上棘，要有一些弧度，稍微往下转一点。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体团练6小知识点/9.png" alt="骨盆结构图" width="70%">
+<img src="/illustrations/tenten人体团练6小知识点/9.png" alt="骨盆结构图" width="90%">
 <figcaption>骨盆结构图</figcaption>
 </figure>
 
 18. 通用圆柱方块衔接：一般都是侧面加两个小半圆夹住方块（实际上是肌肉的形状），正面凹进去，两条线是为了强调厚度。
 19. 骨盆与大腿的衔接：大腿圆柱在大腿关节球上运动形成各种下肢的动作，但还需要肌肉将骨盆和大腿衔接到一起，起到这个作用的肌肉就是臀部的肌肉群。如果把臀部看成一个整体，那么可以从骨盆距顶部约1/3位置出发，画一条与骨盆高度相当长度的弧线连接到大腿后外侧，凸起部分大约在骨盆方块底部，对应点位连线即可。然后再将臀部一分为二，先从骨盆下方菱形的底部连接到臀部凸处，再向两侧延伸，分别连线到两边大腿后外侧，勾勒出臀部外侧轮廓；再从大转子凸起位置连线到两条轮廓线，形成臀部肌肉的轮廓，也对应内裤的边线。大腿的部分是正常的圆柱方块衔接。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体团练6小知识点/10.png" alt="臀部衔接" width="70%">
+<img src="/illustrations/tenten人体团练6小知识点/10.png" alt="臀部衔接" width="80%">
 <figcaption>臀部衔接</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ categories: 绘画
 
 21. 小腿结构：小腿靠上1/3凸起，但末端比较细，没有多余的肌肉。因此小腿的凸起在2/3处结束比较合适，剩下的部分用方块概括即可。
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体团练6小知识点/13.png" alt="小腿细节" width="50%">
+<img src="/illustrations/tenten人体团练6小知识点/13.png" alt="小腿细节" width="40%">
 <figcaption>小腿细节</figcaption>
 </figure>
 
