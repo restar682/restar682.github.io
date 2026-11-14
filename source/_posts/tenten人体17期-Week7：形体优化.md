@@ -1,7 +1,9 @@
 ---
 title: tenten人体17期-Week7：形体优化
 date: 2026-11-05 15:22:00
-tags:
+description: 讲了一些构成中有关图形和剪影的基本知识，重点介绍了站姿人体的便捷概括方法，有一定启发性。
+tags: [绘画, 人体]
+categories: 绘画
 ---
 # 图形概括
 我们既可以通过选择图案的最大转折点概括成大图形，也可以切分成若干小的图形；但无论如何，第一原则是信息完整且简洁。一般我们只选择不超过五边形的图形。
@@ -55,25 +57,35 @@ tags:
 </div>
 </figure>
 
-# 人体躯干
-正如第一堂课中所学，我们通常会让胸腔与骨盆形成约 $140^\circ$ 的夹角。这种姿态体现在整体图形上，就是 K 字形。一般来说，男性挺胯时，整体呈现反 K 字形，采用一比一加七三分的比例；女性挺胸收腹时，则呈现正 K 字形，采用四六分加六四分的比例。相比于用两个方块反复调整位置，这种概括方式更加方便快捷。
-
-<figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week7/6.png" alt="K 字形" width="40%">
-<figcaption>K 字形</figcaption>
-</figure>
-
 # 图形构成
 我们来进一步研究设计中的图形构成。如前所述，同一个物体可以用不同的图形进行概括，而不同的概括方式也会赋予物体不同的视觉特征。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week7/7.png" alt="不同的图形概括" width="40%">
+<img src="/illustrations/tenten人体-Week7/6.png" alt="不同的图形概括" width="40%">
 <figcaption>不同的图形概括</figcaption>
 </figure>
 
 运用在人身上也是如此，在决定了图形之后，原本的比例也可以适当放弃：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week7/8.png" alt="腿部的图形变化" width="40%">
+<img src="/illustrations/tenten人体-Week7/7.png" alt="腿部的图形变化" width="40%">
 <figcaption>腿部的图形变化</figcaption>
+</figure>
+
+# 人体躯干
+正如第一堂课中所学，我们通常会让胸腔与骨盆形成约 $140^\circ$ 的夹角。这种姿态体现在整体图形上，就是 K 字形。一般来说，男性挺胯时，整体呈现反 K 字形，采用一比一加七三分的比例；女性挺胸收腹时，则呈现正 K 字形，采用四六分加六四分的比例。相比于用两个方块反复调整位置，这种概括方式更加方便快捷。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week7/8.png" alt="K 字形" width="40%">
+<figcaption>K 字形</figcaption>
+</figure>
+
+对于站姿，为了让姿态更有气质、避免显得呆板，我们可以将躯干整体概括为字母 R 的形状，有助于加强曲直对比：
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+<img src="/illustrations/tenten人体-Week7/9.png" alt="R 字形" style="width: 30%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week7/10.png" alt="R 字形" style="width: 30%; margin: 0 0 20px;">
+</div>
+<figcaption>R 字形</figcaption>
 </figure>
