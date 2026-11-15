@@ -10,7 +10,7 @@ categories: 绘画
 我们知道构成讲究的是点线面，人体的构成也不例外。对于人体动态而言，线体现在胸腔与骨盆约 $140^\circ$ 的夹角上。如果有一定的动态，还可以让人胯比带有一些角度。面则更多体现在整体图形的概括上，要注意整体图形是否干脆利落。前者相对容易做到，而后者通常可以通过调整动作或加强透视来实现。
 
 ## 趋势与连续线
-凌乱不堪的线显然是没有美感的，但如果线条之间具有统一的趋势，看起来就会更加协调。
+凌乱不堪的线显然是没有美感的，但如果线条之间具有统一的趋势，能联想到简单的图形，看起来就会更加协调。
 
 <figure style="text-align: center;">
 <img src="/illustrations/tenten人体-Week8/1.png" alt="趋势" width="25%">
@@ -37,3 +37,29 @@ categories: 绘画
 <img src="/illustrations/tenten人体-Week8/4.png" alt="阴阳鱼" width="60%">
 <figcaption>阴阳鱼</figcaption>
 </figure>
+
+## 常见构图
+画人体的常见构图就三种：D 形、S 形、多边形。
+
+D 形常见于大动态。在动态非常强烈时，才会有 D 字形出现：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week8/5.png" alt="D 形" width="60%">
+<figcaption>D 形</figcaption>
+</figure>
+
+S 形常见于站姿。站立时，需要平衡，所以会自然的出现阴阳鱼，进而出现 S 形：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week8/6.png" alt="S 形" width="60%">
+<figcaption>S 形</figcaption>
+</figure>
+
+坐姿等其他姿势比较自由，因此我们往往需要用稍微复杂一些的多边形去概括：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week8/7.png" alt="多边形" width="70%">
+<figcaption>多边形</figcaption>
+</figure>
+
+> 很明显这些都是我们了解过的构成内容，从趋势的角度看似乎像是一个个模板，但如果真正从图形的视角来看，就出现的水到渠成了。

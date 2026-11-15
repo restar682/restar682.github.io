@@ -5,6 +5,7 @@ const path = require('path');
 const { imageSize } = require('image-size');
 
 const IMAGE_FILE = /^(\d+)\.(?:jpe?g|png|webp|gif)$/i;
+const GALLERY_MARKER = '<!-- personal-gallery -->';
 
 function interleaveByShape(images) {
     const regular = images.filter(image => !image.isWide);
@@ -52,8 +53,17 @@ function renderGallery() {
 }
 
 hexo.extend.filter.register('before_post_render', data => {
-    if (!data.content.includes('<!-- personal-gallery -->')) return data;
+    if (!data.content.includes(GALLERY_MARKER)) return data;
 
-    data.content = data.content.replace('<!-- personal-gallery -->', renderGallery());
+    data.content = data.content.replace(GALLERY_MARKER, renderGallery());
     return data;
 });
+
+// Image-only changes do not invalidate Hexo's cached Markdown output. Refresh
+// gallery pages before the built-in render filter (priority 10), on both
+// incremental builds and server watch updates. Source files stay untouched.
+hexo.extend.filter.register('before_generate', async () => {
+    const pages = hexo.model('Page').toArray().filter(page =>
+        (page._content || '').includes(GALLERY_MARKER));
+    await Promise.all(pages.map(page => page.update({ $unset: { content: true } })));
+}, 9);
