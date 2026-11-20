@@ -89,8 +89,8 @@ categories: 绘画
 单纯依靠 ICC 结构的堆叠来理解体积可能会显得比较复杂。在实际处理时，我们可以用正 A 和反 A 来更简单地理解褶皱的平面结构。一般来说，拉力会形成正 A，挤压力则会形成反 A 以及凸起的反 A。在此基础上，再用 ICC 结构进行细化，就能将平面上的褶皱转化为具有体积感的结构。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week9/11.png" alt="ICC 结构" width="100%">
-<figcaption>ICC 结构</figcaption>
+<img src="/illustrations/tenten人体-Week9/11.png" alt="A 型褶皱" width="100%">
+<figcaption>A 型褶皱</figcaption>
 </figure>
 
 ## 流程
@@ -101,3 +101,32 @@ categories: 绘画
 3. 结合衣服材质和人物动作，分析布料的受力情况。
 4. 从构成角度对褶皱进行取舍和概括。
 5. 最后添加体积。
+
+# 头发
+## 发际线
+发际线的形状与头皮覆盖头颅的范围有关。从美人尖开始，沿着额头向两侧延伸至侧面圆圈，再顺着圆圈向下延伸。鬓角从眉峰处转折，后方则汇合到脖子的中线。
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+<img src="/illustrations/tenten人体-Week9/12.png" alt="发际线" style="width: 20%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week9/13.png" alt="发际线" style="width: 20%; margin: 0 0 20px;">
+</div>
+<figcaption>发际线</figcaption>
+</figure>
+
+头发通常先向上生长，再受到重力影响自然向下垂落。
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week9/14.png" alt="头发生长" width="20%">
+<figcaption>头发生长</figcaption>
+</figure>
+
+## 头发分区
+头发一般分为四个区域，但根据发型不同，分区也可以有变化：
+
+<figure style="text-align: center;">
+<img src="/illustrations/tenten人体-Week9/15.png" alt="头发分区" width="50%">
+<figcaption>头发分区</figcaption>
+</figure>
+
+## 发片形状节奏
