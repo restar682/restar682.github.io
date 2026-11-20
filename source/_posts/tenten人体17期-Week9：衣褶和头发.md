@@ -1,6 +1,7 @@
 ---
 title: tenten人体17期-Week9：衣褶和头发
 date: 2026-11-18 11:18:39
+description: 衣褶和头发的高度模板化的处理流程。
 tags: [绘画, 人体, 构成]
 categories: 绘画
 ---
@@ -114,10 +115,10 @@ categories: 绘画
 <figcaption>发际线</figcaption>
 </figure>
 
-头发通常先向上生长，再受到重力影响自然向下垂落。
+头发通常先向上生长，再受到重力影响自然向下垂落，这个结构常被称作蟑螂窝。
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week9/14.png" alt="头发生长" width="20%">
+<img src="/illustrations/tenten人体-Week9/14.png" alt="头发生长" width="17%">
 <figcaption>头发生长</figcaption>
 </figure>
 
@@ -125,8 +126,75 @@ categories: 绘画
 头发一般分为四个区域，但根据发型不同，分区也可以有变化：
 
 <figure style="text-align: center;">
-<img src="/illustrations/tenten人体-Week9/15.png" alt="头发分区" width="50%">
+<img src="/illustrations/tenten人体-Week9/15.png" alt="头发分区" width="40%">
 <figcaption>头发分区</figcaption>
 </figure>
 
+如图所示，确定发片分区，之后我们会对需要细化的部分进行细化：
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+<img src="/illustrations/tenten人体-Week9/16.png" alt="发片分区" style="width: 20%; margin: 0 0 20px;">
+<img src="/illustrations/tenten人体-Week9/17.png" alt="发片分区" style="width: 25%; margin: 0 0 20px;">
+</div>
+<figcaption>发片分区</figcaption>
+</figure>
+
 ## 发片形状节奏
+常见的发片有三种基本形状：三角形、D 型、K 型。前两种一般是单独出现，K 型则可以多个拼接：
+
+<figure style="text-align: center;">
+<div style="display: flex; justify-content: center; gap: 40px;">
+  <div style="width: 20%;">
+    <img src="/illustrations/tenten人体-Week9/18.png" alt="三角形" style="width: 100%; height: 140px; object-fit: contain;">
+    <div>三角形</div>
+  </div>
+  <div style="width: 20%;">
+    <img src="/illustrations/tenten人体-Week9/19.png" alt="D 型" style="width: 100%; height: 140px; object-fit: contain;">
+    <div>D 型</div>
+  </div>
+  <div style="width: 20%;">
+    <img src="/illustrations/tenten人体-Week9/20.png" alt="K 型" style="width: 100%; height: 140px; object-fit: contain;">
+    <div>K 型</div>
+  </div>
+</div>
+</figure>
+
+接下来的细化分为三个步骤：
+
+1. （可选但好用）添加蟑螂窝等转面
+
+    <figure style="text-align: center;">
+    <div style="display: flex; justify-content: center; gap: 40px;">
+    <div style="width: 30%;">
+    <img src="/illustrations/tenten人体-Week9/21.png" alt="蟑螂窝" style="width: 100%; height: 140px; object-fit: contain;">
+    <div>蟑螂窝</div>
+    </div>
+    <div style="width: 30%;">
+    <img src="/illustrations/tenten人体-Week9/22.png" alt="转面" style="width: 100%; height: 140px; object-fit: contain;">
+    <div>转面</div>
+    </div>
+    </div>
+    </figure>
+
+2. 在转折和末端添加分叉
+
+    <figure style="text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+    <img src="/illustrations/tenten人体-Week9/23.png" alt="头发分叉" style="width: 15%; margin: 0 0 20px;">
+    <img src="/illustrations/tenten人体-Week9/24.png" alt="头发分叉" style="width: 20%; margin: 0 0 20px;">
+    <img src="/illustrations/tenten人体-Week9/25.png" alt="头发分叉" style="width: 15%; margin: 0 0 20px;">
+    </div>
+    <figcaption>头发分叉</figcaption>
+    </figure>
+
+3. 添加碎发和内切割细节
+
+    <figure style="text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+    <img src="/illustrations/tenten人体-Week9/26.png" alt="碎发和细节" style="width: 15%; margin: 0 0 20px;">
+    <img src="/illustrations/tenten人体-Week9/27.png" alt="碎发和细节" style="width: 20%; margin: 0 0 20px;">
+    <img src="/illustrations/tenten人体-Week9/28.png" alt="碎发和细节" style="width: 15%; margin: 0 0 20px;">
+    </div>
+    <figcaption>碎发和细节</figcaption>
+    </figure>
